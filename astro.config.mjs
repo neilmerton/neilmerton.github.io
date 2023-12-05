@@ -5,6 +5,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://neilmerton.github.io',
   integrations: [mdx(), sitemap()],
+  site: 'https://neilmerton.github.io',
 });
