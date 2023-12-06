@@ -5,7 +5,7 @@ import { SITE_TITLE } from "../constants";
 
 <header>
   <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <a aria-label="Neil's homepage" href="/">{SITE_TITLE}</a>
     <div class="internal-links">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
@@ -37,7 +37,7 @@ import { SITE_TITLE } from "../constants";
   header {
     margin: 0;
     padding: 0 1em;
-    background: white;
+    background-color: rgb(var(--surface-background));
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
   }
   h2 {
@@ -63,7 +63,7 @@ import { SITE_TITLE } from "../constants";
     text-decoration: none;
   }
   nav a.active {
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--accent-dark);
     color: var(--accent);
     text-decoration: none;
   }
