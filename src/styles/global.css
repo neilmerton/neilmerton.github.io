@@ -7,7 +7,7 @@
 :root {
   --accent: #2337ff;
   --accent-dark: #000d8a;
-  --surface-background: 229, 233, 240;
+  --surface-background: 255, 240, 220;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
@@ -21,7 +21,7 @@
   :root {
     --accent: rgb(100, 230, 100);
     --accent-dark: rgb(80, 180, 80);
-    --surface-background: 15, 18, 25;
+    --surface-background: 1, 18, 54;
     --black: 229, 233, 240;
     --gray: 96, 115, 159;
     --gray-light: 15, 18, 25;
@@ -62,15 +62,21 @@
 }
 
 html {
+  background-attachment: fixed;
   background-color: rgb(var(--surface-background));
+  background-image: url("/background-light.svg");
+  background-size: cover;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    background-image: url("/background-dark.svg");
+  }
 }
 body {
   font-family: "Victor Mono", sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
-  background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--gray-dark));
@@ -78,10 +84,14 @@ body {
   line-height: 1.7;
 }
 main {
-  width: 720px;
+  width: 45rem;
   max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
+  margin: 1.5rem auto 0;
+  padding: 3em 3em;
+  backdrop-filter: blur(1rem);
+  background-color: rgba(var(--surface-background), 0.16);
+  border: 1px solid rgba(var(--surface-background), 0.32);
+  border-radius: 1rem;
 }
 h1,
 h2,
