@@ -7,5 +7,8 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   // base: '/neilmerton.github.io',
   integrations: [mdx(), sitemap()],
+  server: {
+    port: 3030,
+  },
   site: 'https://neilmerton.github.io',
 });
