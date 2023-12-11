@@ -118,10 +118,21 @@ export const USES_SOFTWARE_LIST: UsesItemWithHref[] = [
     title: "Arc Browser",
   },
   {
+    description: "For creating mockups of websites and apps.",
+    href: "https://figma.com/",
+    title: "Figma",
+  },
+  {
     description:
       "Whilst the built in terminal is great, I prefer iTerm2. Especially when combined with useful plugins and helpful themes.",
     href: "https://iterm2.com/",
     title: "iTerm2",
+  },
+  {
+    description:
+      "My chosen Spotlight alternative. I use this to launch apps and search for files.",
+    href: "https://www.raycast.com/",
+    title: "Raycast",
   },
   {
     description:
