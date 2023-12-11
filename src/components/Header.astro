@@ -1,4 +1,5 @@
 ---
+import Bullet from "./Bullet.astro";
 import HeaderLink from "./HeaderLink.astro";
 import Icon from "./Icon.astro";
 import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
@@ -9,27 +10,47 @@ import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
     <a aria-label="Neil's homepage" href="/">{SITE_TITLE}</a>
     <div class="internal-links">
       <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
+      <Bullet />
+      <HeaderLink href="/experience">Experience</HeaderLink>
+      <Bullet />
       <HeaderLink href="/about">About</HeaderLink>
+      <Bullet />
+      <HeaderLink href="/uses">Uses</HeaderLink>
     </div>
     <div class="social-links">
       {
-        SOCIAL_LINKS.map((link) => (
-          <a href={link.href} target="_blank">
-            <span class="sr-only">{link.description}</span>
-            <Icon icon={link.icon} color="var(--accent)" size="1.5rem" />
-          </a>
-        ))
+        SOCIAL_LINKS.map((link, index) =>
+          index > 0 ? (
+            <>
+              <Bullet />
+              <a href={link.href} target="_blank">
+                <span class="sr-only">{link.description}</span>
+                <Icon icon={link.icon} color="var(--accent)" size="1.5rem" />
+              </a>
+            </>
+          ) : (
+            <a href={link.href} target="_blank">
+              <span class="sr-only">{link.description}</span>
+              <Icon icon={link.icon} color="var(--accent)" size="1.5rem" />
+            </a>
+          ),
+        )
       }
     </div>
   </nav>
 </header>
+
 <style>
   header {
-    margin: 0;
-    padding: 0 1em;
     background-color: rgb(var(--surface-background));
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    left: 0;
+    margin: 0;
+    padding: 0 1em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
   }
   h2 {
     font-size: 1em;
@@ -60,6 +81,7 @@ import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
   }
   .social-links,
   .social-links a {
+    align-items: center;
     display: flex;
   }
   @media (max-width: 720px) {

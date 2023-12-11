@@ -1,0 +1,56 @@
+---
+import Layout from "@layouts/Page.astro";
+import { CONCEPTS_LIST, SKILLS_LIST } from "../constants";
+
+const PAGE_TITLE = "Experience - Neil Merton";
+const PAGE_DESCRIPTION =
+  "Mulitple lists of software and hardware Neil Merton uses to build websites and web applications.";
+---
+
+<Layout description={PAGE_DESCRIPTION} title={PAGE_TITLE}>
+  <h1>Experience</h1>
+  <p>
+    Over the last 20 years I've primarily worked with <abbr
+      title="Business to Business">B2B</abbr
+    > companies, helping them provide performant web-based platforms and solving
+    useability challenges.
+  </p>
+  <p>
+    These companies have been start-up <abbr title="Software as a Service"
+      >SaaS</abbr
+    > businesses, regulated <abbr title="Financial Technology">fintech</abbr>
+     disruptors and established health & safety service providers.
+  </p>
+  <p>
+    Currently I work remotely for <a href="https://www.enee.io" target="_blank"
+      >enee.io</a
+    > as the Lead Frontend Developer. To date this has been the most rewarding
+    role of my career &mdash; I'm working with a great team of people, building
+    a product that is making a difference to people in countries where they
+    don't have the luxury of a stable grid.
+  </p>
+  <p>
+    If you're curious about my career history, you can find me on <a
+      href="https://www.linkedin.com/in/neilmerton/"
+      target="_blank">LinkedIn</a
+    >, my profile is public.
+  </p>
+  <h2>Concepts</h2>
+  <ul class="concepts-list">
+    {
+      CONCEPTS_LIST.map((item) =>
+        item.title ? (
+          <li>
+            <abbr title={item.title}>{item.label}</abbr>
+          </li>
+        ) : (
+          <li>{item.label}</li>
+        ),
+      )
+    }
+  </ul>
+  <h2>Skills</h2>
+  <ul class="skills-list">
+    {SKILLS_LIST.map((item) => <li>{item.label}</li>)}
+  </ul>
+</Layout>

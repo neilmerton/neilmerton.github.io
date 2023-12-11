@@ -1,15 +1,97 @@
 ---
 import Layout from "@layouts/Page.astro";
+import { USES_HARDWARE_LIST, USES_SOFTWARE_LIST } from "../constants";
 
-const PAGE_TITLE = "Home";
-const PAGE_DESCRIPTION = "Welcome to my site!";
+const PAGE_TITLE = "What I use - Neil Merton";
+const PAGE_DESCRIPTION =
+  "Mulitple lists of software and hardware Neil Merton uses to build websites and web applications.";
 ---
 
 <Layout description={PAGE_DESCRIPTION} title={PAGE_TITLE}>
-  <h1>What Neil uses</h1>
+  <h1>What I use</h1>
   <p>
     This is a list of the tools I use to build websites. I'm always looking for
-    new tools to try out, so if you have any suggestions, please{" "}
-    <a href="https://twitter.com/neilbryson">let me know</a>.
+    new tools to try out, so if you have any suggestions, please <a
+      href="https://mas.to/@neilmerton"
+      target="_blank">let me know</a
+    >.
+  </p>
+  <h2>Software</h2>
+  <p>
+    This list could go on for a very long time, but I'll do my best to keep it
+    succinct.
+  </p>
+  <ul class="uses-list">
+    {
+      USES_SOFTWARE_LIST.map((item) => (
+        <li class="uses-list__item">
+          <a href={item.href} target="_blank">
+            <strong>{item.title}</strong>
+            <span>{item.description}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <h2>Hardware</h2>
+  <ul class="uses-list">
+    {
+      USES_HARDWARE_LIST.map((item) => (
+        <li class="uses-list__item">
+          <strong>{item.title}</strong>
+          <span>{item.description}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <p>
+    There's a few things I'd like to try in the future; including a standing
+    desk <span class="subtle">(to help with posture)</span> and improved
+    lighting.
   </p>
 </Layout>
+
+<style>
+  .uses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+    padding: 0;
+  }
+
+  .uses-list__item {
+    border: 1px solid rgba(var(--gray), 0.4);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .uses-list__item a {
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    .uses-list__item:hover {
+      border-color: rgba(var(--gray), 0.8);
+    }
+  }
+
+  .uses-list__item a strong {
+    text-decoration: underline;
+  }
+
+  .uses-list__item strong {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .uses-list__item span {
+    display: block;
+    font-size: 0.875rem;
+  }
+</style>

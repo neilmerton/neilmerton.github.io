@@ -7,7 +7,59 @@ export const ICON_PATHS = {
 };
 
 export const SITE_TITLE = "Neil Merton";
-export const SITE_DESCRIPTION = "A Frontend Developer based in Cheshire, UK";
+export const SITE_DESCRIPTION =
+  "A Frontend Developer based in Cheshire, UK, focused on accessibility and performance.";
+
+type ConceptItem = {
+  label: string;
+  title?: string;
+};
+
+export const CONCEPTS_LIST: ConceptItem[] = [
+  {
+    label: "Accessibility",
+  },
+  {
+    label: "Design",
+  },
+  {
+    label: "Performance",
+  },
+  {
+    label: "PWA",
+    title: "Progressive Web Apps",
+  },
+  {
+    label: "RWD",
+    title: "Responsive Web Design",
+  },
+  {
+    label: "UX",
+    title: "User Experience",
+  },
+  {
+    label: "Web Standards",
+  },
+];
+
+type SkillsItem = {
+  label: string;
+};
+
+export const SKILLS_LIST: SkillsItem[] = [
+  {
+    label: "CSS",
+  },
+  {
+    label: "HTML",
+  },
+  {
+    label: "JavaScript",
+  },
+  {
+    label: "TypeScript",
+  },
+];
 
 export type SocialLink = {
   description: string;
@@ -25,5 +77,62 @@ export const SOCIAL_LINKS: SocialLink[] = [
     description: `Go to ${SITE_TITLE}'s GitHub profile`,
     href: "https://github.com/neilmerton",
     icon: "github",
+  },
+];
+
+export type UsesItem = {
+  description: string;
+  title: string;
+};
+
+export const USES_HARDWARE_LIST: UsesItem[] = [
+  {
+    description: "I've been a Mac user for a long time now and I love it.",
+    title: "Apple MacBook M1 Pro 16",
+  },
+  {
+    description: "Pairs nicely with my MacBook Pro.",
+    title: "LG 27UK850-W 27 Inch 4K Monitor",
+  },
+  {
+    description:
+      "Only recently started using a mouse again, previously I was a trackpad user. So it's taking some getting used to, gestures especially.",
+    title: "Logitech MX Anywhere 2S Mouse",
+  },
+  {
+    description:
+      "This replicates the Mac keyboard nicely and have no complaints about it. Maybe I'll try one of the more clicky ones next time.",
+    title: "Logitech MX Key for Mac Keyboard",
+  },
+];
+
+export type UsesItemWithHref = UsesItem & {
+  href: string;
+};
+
+export const USES_SOFTWARE_LIST: UsesItemWithHref[] = [
+  {
+    description:
+      "I use this relatively new comer to the browser market. It has some great features and is worth checking out if you're a Mac user.",
+    href: "https://arc.net/",
+    title: "Arc Browser",
+  },
+  {
+    description:
+      "Whilst the built in terminal is great, I prefer iTerm2. Especially when combined with useful plugins and helpful themes.",
+    href: "https://iterm2.com/",
+    title: "iTerm2",
+  },
+  {
+    description:
+      "My favourite coding font. I use this in all my editors and terminals. And even on this website.",
+    href: "https://rubjo.github.io/victor-mono/",
+    title: "Victor Mono Font",
+  },
+  {
+    description:
+      "This has been my goto choice for a while now. I love the simplicity of it and the fact that it just works.",
+    href: "https://www.jetbrains.com/webstorm/",
+    title: "Visual Studio Code",
   },
 ];
