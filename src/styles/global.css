@@ -5,8 +5,8 @@
  */
 
 :root {
-  --accent: #2337ff;
-  --accent-dark: #000d8a;
+  --accent: rgb(35, 55, 255);
+  --accent-dark: rgb(0, 13, 138);
   --surface-background: 255, 240, 220;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
@@ -65,6 +65,7 @@ html {
   background-attachment: fixed;
   background-color: rgb(var(--surface-background));
   background-image: url("/background-light.svg");
+  background-position: center bottom;
   background-size: cover;
 }
 @media (prefers-color-scheme: dark) {
@@ -72,58 +73,52 @@ html {
     background-image: url("/background-dark.svg");
   }
 }
+
 body {
+  color: rgb(var(--gray-dark));
   font-family: "Victor Mono", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
   margin: 0;
+  overflow-wrap: break-word;
   padding: 0;
   text-align: left;
   word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
-  font-size: 20px;
-  line-height: 1.7;
 }
-main {
-  width: 45rem;
-  max-width: calc(100% - 2em);
-  margin: 3rem auto 0;
-  padding: 3em 3em;
-  backdrop-filter: blur(1rem);
-  background-color: rgba(var(--surface-background), 0.16);
-  border: 1px solid rgba(var(--surface-background), 0.32);
-  border-radius: 1rem;
-}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
-  line-height: 1.2;
   font-style: italic;
   font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
 }
 h1 {
-  font-size: 3.052em;
+  font-size: 2.5em;
 }
 h2 {
-  font-size: 2.441em;
+  font-size: 2em;
 }
 h3 {
-  font-size: 1.953em;
+  font-size: 1.75em;
 }
 h4 {
-  font-size: 1.563em;
+  font-size: 1.5em;
 }
 h5 {
   font-size: 1.25em;
 }
+
 strong,
 b {
   font-weight: 600;
 }
+
 a {
   color: var(--accent);
   text-underline-offset: 0.125rem;
@@ -133,16 +128,19 @@ a {
     color: var(--accent-dark);
   }
 }
+
 abbr {
   cursor: help;
   text-underline-offset: 0.125rem;
 }
+
 p {
   margin-bottom: 1em;
 }
 .prose p {
   margin-bottom: 2em;
 }
+
 textarea {
   width: 100%;
   font-size: 16px;
@@ -150,14 +148,16 @@ textarea {
 input {
   font-size: 16px;
 }
+
 table {
   width: 100%;
 }
+
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
 }
+
 code {
   padding: 2px 5px;
   background-color: rgb(var(--gray-light));
@@ -165,49 +165,65 @@ code {
 }
 pre {
   padding: 1.5em;
-  border-radius: 8px;
+  border-radius: 0.5rem;
+  
+  > code {
+    all: unset;
+  }
 }
-pre > code {
-  all: unset;
-}
+
 blockquote {
   border-left: 0.25rem solid var(--accent);
   padding: 0 0 0 20px;
   margin: 0px;
   font-size: 1.333em;
 }
+
 hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
 }
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-  main {
-    padding: 1em;
-  }
+
+main {
+  backdrop-filter: blur(1rem);
+  background-color: rgba(var(--surface-background), 0.16);
+  border: 1px solid rgba(var(--surface-background), 0.32);
+  margin: 0 1.5rem;
+  padding: 2rem 1.5rem;
+  max-width: 100%;
 }
-@media (max-width: 820px) {
-  main {
-    width: calc(100% - 8em);
-  }
+
+.sr-only {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .subtle {
   opacity: 0.64;
 }
 
-.sr-only {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  white-space: nowrap;
+@media (min-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+  main {
+    margin: 5rem auto 0;
+    padding: 1em;
+    width: 40rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 46.5rem;
+  }
 }
