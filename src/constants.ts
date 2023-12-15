@@ -140,7 +140,7 @@ export const USES_SOFTWARE_LIST: UsesItemWithHref[] = [
   },
   {
     description:
-      "My favourite coding font. I use this in all my editors and terminals. And even on this website.",
+      "My favourite coding font. I use this in both my editor and terminals.",
     href: "https://rubjo.github.io/victor-mono/",
     title: "Victor Mono Font",
   },
