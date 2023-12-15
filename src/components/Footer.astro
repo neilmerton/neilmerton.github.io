@@ -39,28 +39,67 @@ const year = today.getFullYear();
 <style>
   footer {
     color: rgb(var(--gray));
-    padding: 2em 1em 3em 1em;
+    margin-block-end: 5rem;
+    padding: 1rem 2rem;
   }
 
   .container {
     align-items: center;
     display: flex;
+    flex-direction: column;
     font-size: 80%;
-    justify-content: space-between;
-    margin: auto;
-    max-width: calc(100% - 2em);
-    width: 720px;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+
+    p {
+      text-align: center;
+    }
   }
+
   .social-links {
     display: flex;
     justify-content: center;
     gap: 1em;
+
+    a {
+      text-decoration: none;
+      color: var(--accent);
+
+      &:hover {
+        color: var(--accent-dark);
+      }
+    }
   }
-  .social-links a {
-    text-decoration: none;
-    color: var(--accent);
+
+  @media (min-width: 720px) {
+    footer {
+      margin-block-end: 0;
+    }
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .social-links {
+      flex-direction: row;
+    }
   }
-  .social-links a:hover {
-    color: var(--accent-dark);
+
+  @media (min-width: 720px) {
+    footer {
+      margin-block: 2rem;
+
+      .container {
+        width: 40rem;
+      }
+    }
   }
+
+@media (min-width: 1024px) {
+  footer {
+    .container {
+      width: 46.5rem;
+    }
+  }
+}
 </style>

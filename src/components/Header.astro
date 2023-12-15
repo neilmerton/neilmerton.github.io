@@ -2,20 +2,36 @@
 import Bullet from "./Bullet.astro";
 import HeaderLink from "./HeaderLink.astro";
 import Icon from "./Icon.astro";
+import { Image } from 'astro:assets';
 import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
 ---
 
 <header>
   <nav>
-    <a aria-label="Neil Merton's homepage" href="/">{SITE_TITLE}</a>
+    <a aria-label="Neil Merton's homepage" href="/">
+      <Image
+        src="/profile_400x400.jpeg"
+        alt="Neil Merton's logo"
+        width="32"
+        height="32"
+      />
+      <span>{SITE_TITLE}</span>
+    </a>
     <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/experience">
+        <Icon icon="experience" color="var(--accent)" size="1.5rem" />
+        <span>Experience</span>
+      </HeaderLink>
       <Bullet />
-      <HeaderLink href="/experience">Experience</HeaderLink>
+      <HeaderLink href="/about">
+        <Icon icon="about" color="var(--accent)" size="1.5rem" />
+        <span>About</span>
+      </HeaderLink>
       <Bullet />
-      <HeaderLink href="/about">About</HeaderLink>
-      <Bullet />
-      <HeaderLink href="/uses">Uses</HeaderLink>
+      <HeaderLink href="/uses">
+        <Icon icon="uses" color="var(--accent)" size="1.5rem" />
+        <span>Uses</span>
+      </HeaderLink>
     </div>
     <div class="social-links">
       {
@@ -43,50 +59,100 @@ import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
 <style>
   header {
     background-color: rgb(var(--surface-background));
+    bottom: 0;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
     left: 0;
     margin: 0;
     padding: 0 1em;
     position: fixed;
     right: 0;
-    top: 0;
     z-index: 1;
   }
-  h2 {
-    font-size: 1em;
-    font-weight: 500;
-    margin: 0;
-  }
 
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
   nav {
     align-items: center;
+    color: rgb(var(--gray));
     display: flex;
     gap: 0.5rem;
-    justify-content: space-between;
+    justify-content: center;
+
+    a {
+      align-items: center;
+      border-bottom: 0.2rem solid transparent;
+      color: rgb(var(--black));
+      display: inline-flex;
+      gap: 0.75rem;
+      margin-block-end: 0.125rem;
+      padding: 1em 1em 0.8rem;
+      text-decoration: none;
+
+      &.active {
+        border-bottom-color: var(--accent-dark);
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      &[aria-label] span {
+        display: none;
+      }
+
+      img {
+        border-radius: 0.5rem;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    .internal-links {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+    }
   }
-  nav a {
-    color: var(--black);
-    border-bottom: 0.2rem solid transparent;
-    padding: 1em 1em 0.8rem;
-    text-decoration: none;
-  }
-  nav a.active {
-    border-bottom-color: var(--accent-dark);
-    color: var(--accent);
-    text-decoration: none;
-  }
+
   .social-links,
   .social-links a {
     align-items: center;
-    display: flex;
+    display: none;
+    gap: 0.5rem;
   }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
+  
+  @media (min-width: 720px) {
+    header {
+      bottom: auto;
+      top: 0;
+    }
+    nav {
+      gap: 1rem;
+      justify-content: space-between;
+
+      a {
+        margin-block-end: 0;
+        padding: 1em 0.5em 0.8em;
+
+        &[aria-label] span {
+          color: rgb(var(--black));
+          display: inline-block;
+        }
+
+        span {
+          color: rgb(var(--black));
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    nav a span {
+      color: rgb(var(--black));
+      display: inline-block;
+    }
+    .social-links,
+    .social-links a {
+      display: flex;
     }
   }
 </style>
