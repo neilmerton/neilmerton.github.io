@@ -3,6 +3,7 @@ import Bullet from "./Bullet.astro";
 import HeaderLink from "./HeaderLink.astro";
 import Icon from "./Icon.astro";
 import { Image } from 'astro:assets';
+import profileImage from "../assets/profile_400x400.jpeg";
 import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
 ---
 
@@ -10,8 +11,8 @@ import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
   <nav>
     <a aria-label="Neil Merton's homepage" href="/">
       <Image
-        src="/profile_400x400.jpeg"
-        alt="Neil Merton's logo"
+        alt="Neil Merton's photo"
+        src={profileImage}
         width="32"
         height="32"
       />
