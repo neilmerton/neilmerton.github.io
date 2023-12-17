@@ -1,9 +1,15 @@
 ---
 import Layout from "@layouts/Page.astro";
+const PAGE_TITLE = "About - Neil Merton";
+const PAGE_DESCRIPTION =
+  "Learn more about Neil Merton and what makes him tick (tock).";
 ---
 
-<Layout title="About Me" description="Lorem ipsum dolor sit amet">
-  <h1>About</h1>
+<Layout
+  pageTitle="About"
+  seoDescription={PAGE_DESCRIPTION}
+  seoTitle={PAGE_TITLE}
+>
   <p>
     Nowadays we face a different sort of browser war; one where the browser is
     constantly tracking what we do as users. The greed of advertising companies
