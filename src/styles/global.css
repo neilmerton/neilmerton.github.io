@@ -100,10 +100,23 @@ a {
   }
 }
 
-abbr {
-  cursor: help;
-  text-underline-offset: 0.125rem;
+@media (hover: hover) {
+  abbr {
+    cursor: help;
+    text-underline-offset: 0.125rem;
+  }
 }
+@media (hover: none) {
+  abbr {
+    text-decoration: none !important;
+
+    &[title]::after {
+      content: " (" attr(title) ")";
+      opacity: 0.64;
+    }
+  }
+}
+
 
 p {
   margin-bottom: 1em;
@@ -166,7 +179,7 @@ main {
     position: relative;
     text-transform: lowercase;
 
-    &:before {
+    &::before {
       color: var(--accent-dark);
       content: "/";
       left: -1.5rem;
