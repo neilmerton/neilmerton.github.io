@@ -39,8 +39,8 @@ const year = today.getFullYear();
 <style>
   footer {
     color: rgb(var(--gray));
-    margin-block-end: 5rem;
-    padding: 1rem 2rem;
+    padding-block-end: 6rem;
+    width: 100%;
   }
 
   .container {
@@ -74,32 +74,25 @@ const year = today.getFullYear();
 
   @media (min-width: 720px) {
     footer {
-      margin-block-end: 0;
-    }
-    .container {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    .social-links {
-      flex-direction: row;
-    }
-  }
-
-  @media (min-width: 720px) {
-    footer {
-      margin-block: 2rem;
+      padding-block: 2rem;
 
       .container {
-        width: 40rem;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 32rem;
+      }
+
+      .social-links {
+        flex-direction: row;
       }
     }
   }
 
-@media (min-width: 1024px) {
-  footer {
-    .container {
-      width: 46.5rem;
+  @media (min-width: 1024px) {
+    footer {
+      .container {
+        width: 44rem;
+      }
     }
   }
-}
 </style>

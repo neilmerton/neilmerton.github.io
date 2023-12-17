@@ -43,14 +43,19 @@
 
 html {
   background-color: rgb(var(--surface-background));
-}
-
-body {
   color: rgb(var(--gray-dark));
   font-family: "Manrope Variable", sans-serif;
   font-size: 1.125rem;
-  font-weight: 200;
+  font-weight: 250;
   line-height: 1.6;
+}
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 1.25rem
+  }
+}
+
+body {
   margin: 0;
   overflow-wrap: break-word;
   padding: 0;
@@ -171,9 +176,8 @@ hr {
 main {
   margin: 0 1.5rem;
   padding: 2rem 1.5rem;
-  max-width: 100%;
 
-  > h1.page-title {
+  & > h1.page-title {
     display: flex;
     gap: 0.25rem;
     position: relative;
@@ -186,6 +190,20 @@ main {
       opacity: 0.64;
       position: absolute;
     }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  main {
+    margin: 5rem auto 0;
+    padding: 1em;
+    width: 32rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    width: 44rem;
   }
 }
 
@@ -205,18 +223,4 @@ main {
 
 .subtle {
   opacity: 0.64;
-}
-
-@media (min-width: 720px) {
-  main {
-    margin: 5rem auto 0;
-    padding: 1em;
-    width: 40rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  main {
-    width: 46.5rem;
-  }
 }
