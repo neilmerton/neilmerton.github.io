@@ -186,9 +186,11 @@ main {
     &::before {
       color: var(--accent-dark);
       content: "/";
+      font-size: 2rem;
       left: -1.5rem;
       opacity: 0.64;
       position: absolute;
+      top: 0.575rem;
     }
   }
 }

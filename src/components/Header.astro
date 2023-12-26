@@ -53,7 +53,8 @@ import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
 <style>
   header {
     background-color: rgb(var(--surface-background));
-    border-radius: 1rem;
+    border: 1px solid rgb(var(--black), 8%);
+    border-radius: 0.5rem;
     bottom: 1rem;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
     left: 1rem;
@@ -117,8 +118,10 @@ import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
   @media (min-width: 720px) {
     header {
       bottom: auto;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-radius: 0;
+      border-width: 0 0 1px 0;
+      left: 0;
+      right: 0;
       top: 0;
     }
     nav {
