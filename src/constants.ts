@@ -152,7 +152,7 @@ export const USES_SOFTWARE_LIST: UsesItemWithHref[] = [
   {
     description:
       "This has been my goto choice for a while now. I love the simplicity of it and the fact that it just works.",
-    href: "https://www.jetbrains.com/webstorm/",
+    href: "https://code.visualstudio.com/",
     title: "Visual Studio Code",
   },
 ];
