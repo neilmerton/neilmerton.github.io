@@ -100,8 +100,8 @@ export const USES_HARDWARE_LIST: UsesItem[] = [
   },
   {
     description:
-      "Only recently started using a mouse again, previously I was a trackpad user. So it's taking some getting used to, gestures especially.",
-    title: "Logitech MX Anywhere 2S Mouse",
+      "Only recently started using a mouse again, previously I was a trackpad user. I'm not yet 100% sold on this mouse, the thumb button seems a little hit and miss.",
+    title: "Logitech MX Master 3S for Mac Mouse",
   },
   {
     description:
