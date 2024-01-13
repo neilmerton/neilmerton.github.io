@@ -39,7 +39,7 @@ const year = today.getFullYear();
 <style>
   footer {
     color: rgb(var(--gray));
-    padding-block-end: 6rem;
+    padding-block: 2rem 6rem;
     width: 100%;
   }
 
@@ -49,8 +49,6 @@ const year = today.getFullYear();
     flex-direction: column;
     font-size: 80%;
     gap: 1rem;
-    margin: 0 auto;
-    width: 100%;
 
     p {
       text-align: center;
@@ -75,23 +73,13 @@ const year = today.getFullYear();
   @media (min-width: 720px) {
     footer {
       padding-block: 2rem;
-
       .container {
         flex-direction: row;
         justify-content: space-between;
-        width: 32rem;
       }
 
       .social-links {
         flex-direction: row;
-      }
-    }
-  }
-
-  @media (min-width: 1024px) {
-    footer {
-      .container {
-        width: 44rem;
       }
     }
   }

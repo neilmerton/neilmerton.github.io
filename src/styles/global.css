@@ -5,13 +5,13 @@
  */
 
 :root {
-  --accent: hsl(14, 87%, 66%);
-  --accent-dark: hsl(14, 87%, 53%);
-  --surface-background: 255, 240, 230;
-  --black: 15, 18, 25;
-  --gray: 120, 113, 108;
-  --gray-light: 231, 229, 228;
-  --gray-dark: 87, 83, 78;
+  --accent: hsl(15, 85%, 50%);
+  --accent-dark: hsl(15, 88%, 40%);
+  --surface-background: 255, 245, 235;
+  --black: 10, 15, 20;
+  --gray: 120, 110, 100;
+  --gray-light: 230, 225, 220;
+  --gray-dark: 90, 85, 80;
   --gray-gradient: rgba(var(--gray-light), 50%), rgb(var(--surface-background));
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
     0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
@@ -46,7 +46,7 @@ html {
   color: rgb(var(--gray-dark));
   font-family: "Manrope Variable", sans-serif;
   font-size: 1.125rem;
-  font-weight: 250;
+  font-weight: 300;
   line-height: 1.6;
 }
 @media screen and (min-width: 720px) {
@@ -58,7 +58,7 @@ html {
 body {
   margin: 0;
   overflow-wrap: break-word;
-  padding: 0;
+  padding: 2rem;
   text-align: left;
   word-wrap: break-word;
 }
@@ -96,12 +96,12 @@ b {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-underline-offset: 0.125rem;
 }
 @media (hover: hover) {
   a:hover {
-    color: var(--accent-dark);
+    color: var(--accent);
   }
 }
 
@@ -174,37 +174,28 @@ hr {
 }
 
 main {
-  margin: 0 1.5rem;
-  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
 
-  & > h1.page-title {
-    display: flex;
-    gap: 0.25rem;
-    position: relative;
-    text-transform: lowercase;
-
-    &::before {
-      color: var(--accent-dark);
-      content: "/";
-      font-size: 2rem;
-      left: -1.5rem;
-      opacity: 0.64;
-      position: absolute;
-      top: 0.575rem;
-    }
-  }
+.container {
+  width: 100%;
 }
 
 @media screen and (min-width: 720px) {
-  main {
-    margin: 5rem auto 0;
-    padding: 1em;
-    width: 32rem;
+  main.container {
+    margin-top: 5rem;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 33rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  main {
+  .container {
     width: 44rem;
   }
 }
@@ -224,5 +215,5 @@ main {
 }
 
 .subtle {
-  opacity: 0.64;
+  color: rgb(var(--gray))
 }
