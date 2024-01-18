@@ -106,7 +106,7 @@ export const USES_HARDWARE_LIST: UsesItem[] = [
   {
     description:
       "This replicates the Mac keyboard nicely and have no complaints about it. Maybe I'll try one of the more clicky ones next time.",
-    title: "Logitech MX Key for Mac Keyboard",
+    title: "Logitech MX Keys for Mac Keyboard",
   },
   {
     description:
@@ -115,7 +115,7 @@ export const USES_HARDWARE_LIST: UsesItem[] = [
   },
   {
     description:
-      "My first iPhone was the 3GS. After the iPhone 4 I switched over to Android. I've been back on iOS since the iPhone 8 Pro, want can't see myself going back to Android any time soon.",
+      "My first iPhone was the 3GS. After the iPhone 4 I switched over to Android. I've been back on iOS since the iPhone 8 Pro, I can't see myself going back to Android any time soon.",
     title: "Apple iPhone 13 Pro",
   },
 ];
