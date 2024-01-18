@@ -10,5 +10,5 @@ export default defineConfig({
   server: {
     port: 3030,
   },
-  site: 'https://neilmerton.github.io',
+  site: 'https://neil.merton.dev',
 });
