@@ -110,6 +110,11 @@ export const USES_HARDWARE_LIST: UsesItem[] = [
   },
   {
     description:
+      "I enjoy listening to music, and this system works for me. I'm sure it wouldn't if you're an audiophile though.",
+    title: "Logitech Z333 2.1 Speaker System",
+  },
+  {
+    description:
       "My first iPhone was the 3GS. After the iPhone 4 I switched over to Android. I've been back on iOS since the iPhone 8 Pro, want can't see myself going back to Android any time soon.",
     title: "Apple iPhone 13 Pro",
   },
