@@ -116,7 +116,7 @@ export const USES_HARDWARE_LIST: UsesItem[] = [
   {
     description:
       "My first iPhone was the 3GS. After the iPhone 4 I switched over to Android. I've been back on iOS since the iPhone 8 Pro, I can't see myself going back to Android any time soon.",
-    title: "Apple iPhone 13 Pro",
+    title: "Apple iPhone 15 Pro Max",
   },
 ];
 

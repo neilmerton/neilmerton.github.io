@@ -1,5 +1,7 @@
 ---
+import SectionHeader from "@components/SectionHeader.astro";
 import Layout from "@layouts/Page.astro";
+
 const PAGE_TITLE = "About - Neil Merton";
 const PAGE_DESCRIPTION =
   "Learn more about Neil Merton and what makes him tick (tock).";
@@ -10,6 +12,7 @@ const PAGE_DESCRIPTION =
   seoDescription={PAGE_DESCRIPTION}
   seoTitle={PAGE_TITLE}
 >
+  <SectionHeader title="About" />
   <p>
     Nowadays we face a different sort of browser war; one where the browser is
     constantly tracking what we do as users. The greed of advertising companies
