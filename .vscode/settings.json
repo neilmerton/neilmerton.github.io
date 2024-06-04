@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["neilmerton", "withastro"]
+  "cSpell.words": ["neilmerton", "withastro"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

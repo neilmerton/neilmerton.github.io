@@ -6,9 +6,11 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"]
     }
-  }
+  },
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.astro"]
 }

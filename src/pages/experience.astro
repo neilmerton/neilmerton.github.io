@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Page.astro";
-import { CONCEPTS_LIST, SKILLS_LIST } from "../constants";
+import { CONCEPTS_LIST } from "@constants/concepts";
+import { SKILLS_LIST } from "@constants/skills";
 
 const PAGE_TITLE = "Experience - Neil Merton";
 const PAGE_DESCRIPTION =
@@ -22,15 +23,15 @@ const PAGE_DESCRIPTION =
     These companies have been start-up <abbr title="Software as a Service"
       >SaaS</abbr
     > businesses, regulated <abbr title="Financial Technology">fintech</abbr>
-     disruptors and established health & safety service providers.
+    disruptors and established health & safety service providers.
   </p>
   <p>
     Currently I work remotely for <a href="https://www.enee.io" target="_blank"
       >enee.io</a
-    > as the Lead Frontend Developer. To date this has been the most rewarding
-    role of my career &mdash; I'm working with a great team of people, building
-    a product that is making a difference to people in countries where they
-    don't have the luxury of a stable grid.
+    > as the Lead Frontend Developer. To date this has been the most rewarding role
+    of my career &mdash; I'm working with a great team of people, building a product
+    that is making a difference to people in countries where they don't have the
+    luxury of a stable grid.
   </p>
   <p>
     If you're curious about my career history, you can find me on <a
@@ -48,7 +49,7 @@ const PAGE_DESCRIPTION =
           </li>
         ) : (
           <li>{item.label}</li>
-        ),
+        )
       )
     }
   </ul>

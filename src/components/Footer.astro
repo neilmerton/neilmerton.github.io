@@ -1,7 +1,8 @@
 ---
 import Bullet from "./Bullet.astro";
 import Icon from "./Icon.astro";
-import { SITE_TITLE, SOCIAL_LINKS } from "../constants";
+import { SOCIAL_LINKS } from "@constants/links";
+import { SITE_TITLE } from "@constants/site";
 
 const today = new Date();
 const year = today.getFullYear();
@@ -29,7 +30,7 @@ const year = today.getFullYear();
               <span class="sr-only">{link.description}</span>
               <Icon icon={link.icon} color="var(--accent)" size="1.25rem" />
             </a>
-          ),
+          )
         )
       }
     </div>

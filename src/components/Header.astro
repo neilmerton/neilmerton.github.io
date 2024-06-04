@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import HeaderLink from "./HeaderLink.astro";
-import profileImage from "../assets/profile_400x400.jpeg";
-import { SITE_TITLE } from "../constants";
+import HeaderLink from "@components/HeaderLink.astro";
+import profileImage from "@assets/profile_400x400.jpeg";
+import { SITE_TITLE } from "@constants/site";
 ---
 
 <header>
@@ -15,7 +15,7 @@ import { SITE_TITLE } from "../constants";
     <div class="internal-links">
       <HeaderLink href="/experience">Experience</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="/uses">Uses</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
     </div>
   </nav>
 </header>
