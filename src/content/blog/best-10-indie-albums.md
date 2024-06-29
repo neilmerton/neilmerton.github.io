@@ -25,3 +25,11 @@ Highlights for me personally have always been "Consider", "Clouds" and "Sad Face
 Normally I have to be in a melancholy mood to listen to this album (I guess the title of the album give that away).
 
 The opening track is their cover of Bob Dylan's "The Time They Are A Changin'". A few songs in you're introduced to "Without Eyes"; which at the time was pointing fingers are the struggles happening in South Africa.
+
+## Adam Again - Homeboys
+
+![Adam Again - Homeboys album cover](../../assets/images/adam-again--homeboys.jpg) Released in 1990, it contains 10 tracks. Again there's contributions to this album by one of the members of "The Choir", it was also recorded at "Neverland", the studio owned by "The Choir".
+
+The album is more blues than guitar-driven rock, there's plenty of Fender Rhodes organ scattered throughout. The album tells of hard-times, love and loss.
+
+If I'm pressed, I'd say the must-listen songs are "Homeboys", "Hide Away" and "No Regrets". However, this album is so good listened to from start to finish.
