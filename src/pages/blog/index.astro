@@ -18,11 +18,19 @@ const posts = (await getCollection("blog")).sort(
     <style>
       main {
         width: 100%;
+
+        > h1 {
+          margin-block-end: 1rem;
+        }
       }
 
       @media screen and (min-width: 768px) {
         main {
           width: 640px;
+
+          > h1 {
+            display: none;
+          }
         }
       }
 
@@ -99,9 +107,11 @@ const posts = (await getCollection("blog")).sort(
       }
     </style>
   </head>
+
   <body>
     <Header />
     <main>
+      <h1 class="page-title">Blog</h1>
       <section>
         <ul>
           {
