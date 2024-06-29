@@ -1,7 +1,8 @@
 ---
-title: "First post"
+title: "First post with a lengthy title"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 08 2022"
+updatedDate: "Jun 29 2024"
 heroImage: "/blog-placeholder-3.jpg"
 ---
 
