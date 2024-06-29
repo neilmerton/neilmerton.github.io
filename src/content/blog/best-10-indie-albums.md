@@ -32,7 +32,7 @@ Highlights for me personally have always been "Consider", "Clouds" and "Sad Face
 
 Normally I have to be in a melancholy mood to listen to this album (I guess the title of the album give that away).
 
-The opening track is their cover of Bob Dylan's "The Time They Are A Changin'". A few songs in you're introduced to "Without Eyes"; which at the time was pointing fingers are the struggles happening in South Africa.
+The opening track is their cover of Bob Dylan's "The Times They Are A-Changin'". A few songs in you're introduced to "Without Eyes"; which at the time was pointing fingers are the struggles happening in South Africa.
 
 ## Adam Again - Homeboys
 
