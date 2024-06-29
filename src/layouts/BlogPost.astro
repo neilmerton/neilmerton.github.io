@@ -7,7 +7,8 @@ import FormattedDate from "@components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, mainClass } =
+  Astro.props;
 ---
 
 <html lang="en">
@@ -49,12 +50,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         font-size: 0.8rem;
         font-style: italic;
       }
+
+      main.albums-list {
+        p > img {
+          float: left;
+          margin-inline-end: 1rem;
+        }
+      }
+
+      @media (max-width: 720px) {
+        main.albums-list {
+          p > img {
+            display: block;
+            float: none;
+            margin-block-end: 1rem;
+            margin-inline: auto;
+          }
+        }
+      }
     </style>
   </head>
 
   <body>
     <Header />
-    <main>
+    <main class={mainClass}>
       <article>
         <div class="hero-image">
           {
