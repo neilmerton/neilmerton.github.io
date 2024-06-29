@@ -16,7 +16,7 @@ These aren't necessarily in favourite order, chronologically discovered is proba
 
 Apart from Mike Knott's vocals, Brian Doidge provides superb guitar and bass. A fine example of this is the track "Plague Of Flies", and yes, this is how you get a guitar to buzz like the beating wings of 1,000 flies.
 
-"Bye Bye Colour" (odd, an American band releasing an America album and spelling 'colour' the "correct" way) is a stand-out track, so "Lonely Boy" (Bridgett Knott's haunting vocals, shiver!).
+"Bye Bye Colour" (odd, an American band releasing an America album and spelling 'colour' the "correct" way) is a stand-out track, so is "Lonely Boy" (Bridgett Knott's haunting vocals, shiver!).
 
 ## The Choir - Chase The Kangaroo
 
