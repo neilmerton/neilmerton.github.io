@@ -10,6 +10,14 @@ mainClass: "albums-list"
 
 These aren't necessarily in favourite order, chronologically discovered is probably closer.
 
+## L.S.U. - Shaded Pain
+
+![L.S.U. - Shaded Pain album cover](../../assets/images/l-s-u--shaded-pain.jpg) Release in 1987 it contains 10 tracks, this is an album that stands out and causes a lot of polarised opinions. Most Mike Knott fans really don't like it, however I think it's such a gem.
+
+Apart from Mike Knott's vocals, Brian Doidge provides superb guitar and bass. A fine example of this is the track "Plague Of Flies", and yes, this is how you get a guitar to buzz like the beating wings of 1,000 flies.
+
+"Bye Bye Colour" (odd, an American band releasing an America album and spelling 'colour' the "correct" way) is a stand-out track, so "Lonely Boy" (Bridgett Knott's haunting vocals, shiver!).
+
 ## The Choir - Chase The Kangaroo
 
 ![The Choir - Chase The Kangaroo album cover](../../assets/images/the-choir--chase-the-kangaroo.jpg) Originally released in 1988, it contained 10 tracks. They re-released the album in 2012 where it contains an additional 5 tracks taken off an earlier release ("Shades of Grey", released in 1986), this is usually the version you'll find on streaming services.
