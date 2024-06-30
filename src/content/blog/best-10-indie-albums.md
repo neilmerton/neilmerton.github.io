@@ -52,7 +52,7 @@ I still listen to this album, on a regular basis. It could have been recorded ye
 
 Love And Rockets never really took off in their home country UK, which is a shame. But parts of me is glad - it's a rarity to talk to anyone who knows of them.
 
-An interesting story; my brother and I were fortunate enough to spend his 21st birthday month recording 3 tracks at "Far Heath Studio", which has a connection with the bank. The following year we bumped into Daniel Ash and David J. while at a Spritualized concert in Leicester - we had met our idols.
+An interesting story; in 1994 my brother and I were fortunate enough to spend his 21st birthday money recording 3 tracks at "Far Heath Studio", which has a connection with the band. The following year we bumped into Daniel Ash and David J. while at a Spritualized concert in Leicester - we had met our idols.
 
 ## Catherine Wheel - Ferment
 
