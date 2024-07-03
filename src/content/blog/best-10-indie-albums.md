@@ -68,6 +68,12 @@ Both my brother and I have fond memories of seeing this band live, in Stoke-on-T
 
 What makes this album superb? It's full of songs that expand and contract in sound. More than half the tracks exceed 5:30 minutes in length. The penultimate track "Blood And Thunder" is a sprawling 10:22 musical journey and definitely should be listened to.
 
+## This Morn' Omina - 7 Years Of Famine
+
+![This Morn' Omina - 7 Years Of Famine album cover](../../assets/images/this-morn-omina--7-years-of-famine.jpg) Released in 2002, it contains 7 tracks, the shortest being 5:30 minutes, the longest 12:46. This is from my DJing days playing lots of Industrial music in any club that would have me.
+
+What makes this album (and band) special to me is that they blended both Tribal and Industrial music seamlessly that worked so well on the dance floor. The song I would regularly play is "One eYed Man", such a tune, even if it's the shortest track on the album.
+
 ## The Joy Formidable - The Big Roar
 
 ![The Joy Formidable - The Big Roar album cover](../../assets/images/the-joy-formidable--the-big-roar.jpg) Released in 2011, this is a relatively local band (from North Wales) and I can't for the life of me remember how I found out about them. But boy, am I glad I did.
