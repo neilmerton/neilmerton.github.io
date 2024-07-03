@@ -31,7 +31,7 @@ Highlights for me personally have always been "Consider", "Clouds" and "Sad Face
 
 ![Veil of Ashes - Pain album cover](../../assets/images/veil-of-ashes--pain.jpg) Released in 1989, it contains 11 tracks. Two of the members from "The Choir" contributed to this album, providing backing vocals on Track 1 and some engineering assistance.
 
-Normally I have to be in a melancholy mood to listen to this album (I guess the title of the album give that away).
+Normally I have to be in a melancholy mood to listen to this album (the title sort of gives that away).
 
 The opening track is their cover of Bob Dylan's "The Times They Are A-Changin'". A few songs in you're introduced to "Without Eyes"; which at the time was pointing fingers are the struggles happening in South Africa.
 
