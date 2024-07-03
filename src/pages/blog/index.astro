@@ -24,12 +24,17 @@ const posts = (await getCollection("blog")).sort(
         }
       }
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 720px) {
         main {
+          margin-top: 5rem;
           width: 640px;
 
           > h1 {
             display: none;
+          }
+
+          > section {
+            padding: 1rem;
           }
         }
       }
@@ -118,12 +123,14 @@ const posts = (await getCollection("blog")).sort(
             posts.map((post) => (
               <li>
                 <a href={`/blog/${post.slug}/`}>
-                  <img
-                    width={720}
-                    height={360}
-                    src={post.data.heroImage}
-                    alt={post.data.title}
-                  />
+                  {post.data.heroImage && (
+                    <img
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage}
+                      alt={post.data.title}
+                    />
+                  )}
                   <h4 class="title">{post.data.title}</h4>
                   <p class="date">
                     <FormattedDate date={post.data.pubDate} />

@@ -2,7 +2,6 @@
 title: "Best 10 Indie Albums"
 description: "These are the indie albums I regularly return to when I'm not sure what to listen to."
 pubDate: "Jun 29 2024"
-heroImage: "/blog-placeholder-3.jpg"
 mainClass: "albums-list"
 ---
 
