@@ -15,6 +15,31 @@ const { title, description, pubDate, updatedDate, heroImage, mainClass } =
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
     <style>
+      html {
+        scroll-timeline: --page-scroll block;
+      }
+
+      @keyframes grow-progress {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      #progress {
+        animation: grow-progress auto linear;
+        animation-timeline: --page-scroll;
+        background: rgb(var(--gray-dark));
+        height: 0.2em;
+        left: 0;
+        position: fixed;
+        top: 0;
+        transform-origin: 0 50%;
+        width: 100%;
+        z-index: 10;
+      }
       .hero-image {
         width: 100%;
       }
@@ -51,13 +76,8 @@ const { title, description, pubDate, updatedDate, heroImage, mainClass } =
         font-style: italic;
       }
 
-      main.albums-list p > img {
-        float: left;
-        margin-inline-end: 1rem;
-      }
-
-      @media (max-width: 720px) {
-        main.albums-list p > img {
+      main.albums-list {
+        p > img {
           display: block;
           float: none;
           margin-block-end: 1rem;
@@ -65,15 +85,23 @@ const { title, description, pubDate, updatedDate, heroImage, mainClass } =
         }
       }
 
-      @media screen and (min-width: 720px) {
+      @media (min-width: 720px) {
         main {
           margin-top: 5rem;
+        }
+        main.albums-list {
+          p > img {
+            float: left;
+            margin-inline-end: 1rem;
+            margin-inline-start: 0;
+          }
         }
       }
     </style>
   </head>
 
   <body>
+    <div id="progress"></div>
     <Header />
     <main class={mainClass}>
       <article>
