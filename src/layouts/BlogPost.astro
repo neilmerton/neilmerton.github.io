@@ -15,30 +15,32 @@ const { title, description, pubDate, updatedDate, heroImage, mainClass } =
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
     <style>
-      html {
-        scroll-timeline: --page-scroll block;
-      }
-
-      @keyframes grow-progress {
-        from {
-          transform: scaleX(0);
+      @supports (animation-timeline: view()) {
+        html {
+          scroll-timeline: --page-scroll block;
         }
-        to {
-          transform: scaleX(1);
-        }
-      }
 
-      #progress {
-        animation: grow-progress auto linear;
-        animation-timeline: --page-scroll;
-        background: rgb(var(--gray-dark));
-        height: 0.2em;
-        left: 0;
-        position: fixed;
-        top: 0;
-        transform-origin: 0 50%;
-        width: 100%;
-        z-index: 10;
+        @keyframes grow-progress {
+          from {
+            transform: scaleX(0);
+          }
+          to {
+            transform: scaleX(1);
+          }
+        }
+
+        #progress {
+          animation: grow-progress auto linear;
+          animation-timeline: --page-scroll;
+          background: rgb(var(--gray-dark));
+          height: 0.2em;
+          left: 0;
+          position: fixed;
+          top: 0;
+          transform-origin: 0 50%;
+          width: 100%;
+          z-index: 10;
+        }
       }
       .hero-image {
         width: 100%;
