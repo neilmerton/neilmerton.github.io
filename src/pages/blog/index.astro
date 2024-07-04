@@ -29,19 +29,15 @@ const posts = (await getCollection("blog")).sort(
           margin-top: 5rem;
           width: 640px;
 
-          > h1 {
-            display: none;
-          }
-
           > section {
-            padding: 1rem;
+            padding-block: 1rem;
           }
         }
       }
 
       @media screen and (min-width: 1024px) {
         main {
-          width: 768px;
+          width: 44rem;
         }
       }
 
@@ -51,6 +47,7 @@ const posts = (await getCollection("blog")).sort(
         gap: 2rem;
         list-style-type: none;
         margin: 0;
+        margin-block-start: 2rem;
         padding: 0;
       }
       ul li {
@@ -58,10 +55,10 @@ const posts = (await getCollection("blog")).sort(
       }
       ul li * {
         text-decoration: none;
-        transition: 0.2s ease;
+        transition: color 0.2s ease;
       }
       ul li:first-child {
-        margin-bottom: 1rem;
+        margin-block-end: 1rem;
         text-align: center;
         width: 100%;
       }
@@ -69,12 +66,12 @@ const posts = (await getCollection("blog")).sort(
         width: 100%;
       }
       ul li:first-child .title {
-        font-size: 2.369rem;
+        font-size: 2rem;
       }
       ul li img {
         border: 2px solid rgb(var(--black));
         border-radius: 0.825rem;
-        margin-bottom: 0.5rem;
+        margin-block-end: 0.5rem;
       }
       ul li a {
         display: block;
@@ -104,7 +101,7 @@ const posts = (await getCollection("blog")).sort(
           width: 100%;
         }
         ul li:first-child {
-          margin-bottom: 0;
+          margin-block-end: 0;
         }
         ul li:first-child .title {
           font-size: 1.563em;
@@ -118,6 +115,12 @@ const posts = (await getCollection("blog")).sort(
     <main>
       <h1 class="page-title">Blog</h1>
       <section>
+        <p>
+          Below you'll find some written versions of my thoughts. Opinions
+          expressed in these posts are my own, and don't reflect those of my
+          employer.
+        </p>
+        <hr />
         <ul>
           {
             posts.map((post) => (
