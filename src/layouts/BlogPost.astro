@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "@components/BaseHead.astro";
+import BlogFooter from "@components/BlogFooter.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import FormattedDate from "@components/FormattedDate.astro";
@@ -13,7 +14,11 @@ const { title, description, pubDate, updatedDate, heroImage, mainClass } =
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={heroImage} />
+    <BaseHead
+      title={`${title} - Blog - Neil Merton`}
+      description={description}
+      image={heroImage}
+    />
     <style>
       @supports (animation-timeline: view()) {
         html {
@@ -130,13 +135,9 @@ const { title, description, pubDate, updatedDate, heroImage, mainClass } =
             </div>
           </header>
           <slot />
+          <BlogFooter />
         </div>
       </article>
-      <footer>
-        <p class="prose">
-          <a href="/blog">Back to blog</a>
-        </p>
-      </footer>
     </main>
     <Footer />
   </body>
