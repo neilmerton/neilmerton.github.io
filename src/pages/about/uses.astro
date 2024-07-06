@@ -2,15 +2,16 @@
 import Layout from "@layouts/Page.astro";
 import { USES_HARDWARE_LIST, USES_SOFTWARE_LIST } from "@constants/uses";
 
-const PAGE_TITLE = "Uses - Neil Merton";
-const PAGE_DESCRIPTION =
+const PAGE_TITLE = "Uses";
+const SEO_TITLE = "Uses - Neil Merton";
+const SEO_DESCRIPTION =
   "Mulitple lists of software and hardware Neil Merton uses to build websites and web applications.";
 ---
 
 <Layout
-  pageTitle="Uses"
-  seoDescription={PAGE_DESCRIPTION}
-  seoTitle={PAGE_TITLE}
+  pageTitle={PAGE_TITLE}
+  seoDescription={SEO_DESCRIPTION}
+  seoTitle={SEO_TITLE}
 >
   <p>
     Inspired by <a href="https://wesbos.com/" rel="nofollow" target="_blank"

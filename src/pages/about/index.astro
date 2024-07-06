@@ -2,15 +2,16 @@
 import SectionHeader from "@components/SectionHeader.astro";
 import Layout from "@layouts/Page.astro";
 
-const PAGE_TITLE = "About - Neil Merton";
-const PAGE_DESCRIPTION =
+const PAGE_TITLE = "About";
+const SEO_TITLE = "About - Neil Merton";
+const SEO_DESCRIPTION =
   "Learn more about Neil Merton and what makes him tick (tock).";
 ---
 
 <Layout
-  pageTitle="About"
-  seoDescription={PAGE_DESCRIPTION}
-  seoTitle={PAGE_TITLE}
+  pageTitle={PAGE_TITLE}
+  seoDescription={SEO_DESCRIPTION}
+  seoTitle={SEO_TITLE}
 >
   <SectionHeader title="About" />
   <article>
