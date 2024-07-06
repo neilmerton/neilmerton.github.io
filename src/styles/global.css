@@ -1,6 +1,5 @@
 /*
   The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
@@ -9,26 +8,26 @@
   --accent-dark: hsl(15, 88%, 40%);
   --surface-background: 255, 245, 235;
   --black: 10, 15, 20;
-  --gray: 120, 110, 100;
-  --gray-light: 230, 225, 220;
-  --gray-dark: 90, 85, 80;
-  --gray-gradient: rgba(var(--gray-light), 50%), rgb(var(--surface-background));
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+  --grey: 120, 110, 100;
+  --grey-light: 230, 225, 220;
+  --grey-dark: 90, 85, 80;
+  --grey-gradient: rgba(var(--grey-light), 50%), rgb(var(--surface-background));
+  --box-shadow: 0 2px 6px rgba(var(--grey), 25%),
+    0 8px 24px rgba(var(--grey), 33%), 0 16px 32px rgba(var(--grey), 33%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent: hsl(210, 75%, 50%);
-    --accent-dark: hsl(210, 75%, 60%);
+    --accent: hsl(210, 75%, 60%);
+    --accent-dark: hsl(210, 75%, 70%);
     --surface-background: 25, 25, 30;
     --black: 229, 233, 240;
-    --gray: 168, 162, 158;
-    --gray-light: 87, 83, 78;
-    --gray-dark: 231, 229, 228;
-    --gray-gradient: rgba(var(--gray-light), 50%), rgb(var(--surface-background));
-    --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-      0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+    --grey: 168, 162, 158;
+    --grey-light: 87, 83, 78;
+    --grey-dark: 231, 229, 228;
+    --grey-gradient: rgba(var(--grey-light), 50%), rgb(var(--surface-background));
+    --box-shadow: 0 2px 6px rgba(var(--grey), 25%),
+      0 8px 24px rgba(var(--grey), 33%), 0 16px 32px rgba(var(--grey), 33%);
   }
 }
 
@@ -43,7 +42,7 @@
 
 html {
   background-color: rgb(var(--surface-background));
-  color: rgb(var(--gray-dark));
+  color: rgb(var(--grey-dark));
   font-family: "Manrope Variable", sans-serif;
   font-size: 1.125rem;
   font-weight: 300;
@@ -69,7 +68,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: rgb(var(--gray));
+  color: rgb(var(--grey));
   font-weight: 500;
   line-height: 1.3;
   margin: 0;
@@ -150,13 +149,13 @@ img {
 }
 
 code {
-  padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
+  background-color: rgb(var(--grey-light));
   border-radius: 2px;
+  padding: 2px 5px;
 }
 pre {
-  padding: 1.5em;
   border-radius: 0.5rem;
+  padding: 1.5em;
   
   > code {
     all: unset;
@@ -172,7 +171,7 @@ blockquote {
 
 hr {
   border: none;
-  border-top: 1px solid rgb(var(--gray-light));
+  border-top: 1px solid rgb(var(--grey-light));
 }
 
 main {
@@ -217,5 +216,5 @@ main {
 }
 
 .subtle {
-  color: rgb(var(--gray))
+  color: rgb(var(--grey))
 }
