@@ -90,6 +90,10 @@ h5 {
   font-size: 1.25em;
 }
 
+.prose h2, .prose h3, .prose h4 {
+  margin-block-start: 2rem;
+}
+
 strong,
 b {
   font-weight: 600;
@@ -128,7 +132,7 @@ p {
   margin-block-start: 1em;
 }
 .prose p {
-  margin-top: 2em;
+  margin-block-start: 1.5em;
 }
 
 textarea {
