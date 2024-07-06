@@ -2,6 +2,7 @@
 title: "Best 10 Indie Albums"
 description: "These are the indie albums I regularly return to when I'm not sure what to listen to."
 pubDate: "Jun 29 2024"
+updatedDate: "Jul 6 2024"
 tags: ["lists", "music", "review"]
 mainClass: "albums-list"
 draft: false
@@ -84,3 +85,9 @@ The opening track "The Everchanging Spectrum Of A Lie" is such a beast. At 7:45,
 For me though, the stand-out track is "Whirring", it's a beautiful creation, and an epic.
 
 I've only seen them live once, and they were amazing. It was at the smallest of the Manchester Academy venues, and they blew (not literally) the place apart with sound. How 3 musicians can produce so much sound is mind-boggling. They are on my "must see again" list.
+
+## The Lonely Forest - Arrows
+
+![The Lonely Forest - Arrows album cover](../../assets/images/the-lonely-forest--arrows.jpg) Also released in 2011, I discovered this group too late. John Van Deusen (singer, writer, musician) released a solo album on Tooth & Nail Records (I'm a big fan of this record label) and I had to find out more about him, which led me to "The Lonely Forest".
+
+I absolutely love track "Turn Off This Song And Go Outside". It's reminds me to get outdoors more.
