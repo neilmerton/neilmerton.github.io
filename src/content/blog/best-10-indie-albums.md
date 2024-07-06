@@ -4,6 +4,7 @@ description: "These are the indie albums I regularly return to when I'm not sure
 pubDate: "Jun 29 2024"
 tags: ["lists", "music", "review"]
 mainClass: "albums-list"
+draft: false
 ---
 
 [Some people](https://hicks.design/journal/hicks-design-best-15-albums) will have their go-to list of their favourite albums. As my first post on my blog (I'm not a stranger to maintaining a blog - I had one, back in the early naughties, that I regularly updated) I thought it apt to share what I can be guaranteed to tantalise my ears.
