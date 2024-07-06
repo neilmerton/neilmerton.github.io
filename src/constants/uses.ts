@@ -46,7 +46,8 @@ export const USES_SOFTWARE_LIST: UsesItemWithHref[] = [
     title: "Arc Browser",
   },
   {
-    description: "For creating mockups of websites and apps.",
+    description:
+      "For creating mockups of websites and apps. I have started dabbling with PenPot recently.",
     href: "https://figma.com/",
     title: "Figma",
   },

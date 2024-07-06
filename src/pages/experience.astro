@@ -2,6 +2,7 @@
 import Layout from "@layouts/Page.astro";
 import { CONCEPTS_LIST } from "@constants/concepts";
 import { SKILLS_LIST } from "@constants/skills";
+import { TOOLS_LIST } from "@constants/tools";
 
 const PAGE_TITLE = "Experience - Neil Merton";
 const PAGE_DESCRIPTION =
@@ -57,4 +58,13 @@ const PAGE_DESCRIPTION =
   <ul class="skills-list">
     {SKILLS_LIST.map((item) => <li>{item.label}</li>)}
   </ul>
+  <h2>Tools</h2>
+  <ul class="tools-list">
+    {TOOLS_LIST.map((item) => <li>{item.label}</li>)}
+  </ul>
+  <p>
+    You can find more details around tools on my <a href="/about/uses"
+      >Uses page</a
+    >.
+  </p>
 </Layout>
