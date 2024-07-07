@@ -9,7 +9,12 @@ import { SITE_TITLE } from "@constants/site";
   <p aria-hidden="true" class="container">Person information</p>
   <nav class="container">
     <a aria-label="Neil Merton's homepage" href="/">
-      <Image alt="" src={profileImage} width="32" height="32" />
+      <Image
+        alt={`Photo of ${SITE_TITLE}`}
+        src={profileImage}
+        width="32"
+        height="32"
+      />
       <strong>{SITE_TITLE}</strong>
     </a>
     <div class="internal-links">
