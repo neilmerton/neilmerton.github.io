@@ -2,11 +2,14 @@
 title: "MTB flat pedals"
 description: "My experiences with and review of MTB flat pedals."
 pubDate: "Jul 6 2024"
+updatedDate: "Aug 5 2024"
 tags: ["lists", "mtb", "review"]
 draft: false
 ---
 
 I've been riding mountain bikes since 2018, and I've only ever used flat pedals on my bikes. During this time I've used a few different pedals, I'll give my honest review on these below.
+
+_Note:_ I've worn **Five Ten Freerider**'s for most of my biking experience. I'm on my second pair. This should add some context to the reviews.
 
 ## Race Face - Chester Pedal
 
@@ -55,3 +58,15 @@ Number of pins per side: 11
 After not getting on with the Penthouse pedals, not matter how much I wanted to, I was back on the hunt again for my next set of pedals.
 
 I have high-hopes (regardless of the online reviews) for these pedals. They have the most pins in any of the previous pairs of pedals I've owned.
+
+## Burgtec - Penthouse Mk5 B-Rage Edition Pedal
+
+![Black Burgtec - Penthouse Mk5 B-Rage pedal - image from Tweed Valley Bikes](../../assets/images/burgtec--penthouse-mk5-b-rage-pedal-black.webp)
+
+Number of pins per side: 11
+
+I should have listened to the online reviews - these pedals didn't live up to my expectations. But thankfully Burgtec released a new version of the Mk5 pedal - the B-Rage edition.
+
+When I saw them I knew they would deliver. Each side has three pins in the centre, of course these are going to be grippy, right?
+
+I've had three rides on them so far, and they seem to be gripping well enough.
