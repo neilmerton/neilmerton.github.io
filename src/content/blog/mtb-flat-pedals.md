@@ -65,7 +65,7 @@ I have high-hopes (regardless of the online reviews) for these pedals. They have
 
 Number of pins per side: 11
 
-I should have listened to the online reviews - these pedals didn't live up to my expectations. But thankfully Burgtec released a new version of the Mk5 pedal - the B-Rage edition.
+I should have listened to the online reviews - those PWN Range pedals didn't live up to my expectations. But thankfully Burgtec released a new version of the Mk5 pedal - the B-Rage edition.
 
 When I saw them I knew they would deliver. Each side has three pins in the centre, of course these are going to be grippy, right?
 
