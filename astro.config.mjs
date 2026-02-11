@@ -1,11 +1,19 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  // base: '/neilmerton.github.io',
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.bunny(),
+        name: "Manrope",
+        cssVariable: '--font-manrope',
+      }
+    ]
+  },
   integrations: [mdx(), sitemap()],
   server: {
     port: 3030,
