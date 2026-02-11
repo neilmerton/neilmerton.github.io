@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import HeaderLink from "@components/HeaderLink.astro";
 import profileImage from "@assets/profile_400x400.jpeg";
 import { SITE_TITLE } from "@constants/site";
+
+const imageSize = 32;
 ---
 
 <header>
@@ -12,8 +14,8 @@ import { SITE_TITLE } from "@constants/site";
       <Image
         alt={`Photo of ${SITE_TITLE}`}
         src={profileImage}
-        width="32"
-        height="32"
+        width={imageSize}
+        height={imageSize}
       />
       <strong>{SITE_TITLE}</strong>
     </a>
