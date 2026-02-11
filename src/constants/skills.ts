@@ -13,9 +13,6 @@ export const SKILLS_LIST: SkillsItem[] = [
     label: "HTML",
   },
   {
-    label: "JavaScript",
-  },
-  {
     label: "TypeScript",
   },
 ];
