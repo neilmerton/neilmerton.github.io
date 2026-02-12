@@ -2,10 +2,10 @@
 import SectionHeaderNav from "@components/SectionHeaderNav.astro";
 import Layout from "@layouts/Page.astro";
 
-const PAGE_TITLE = "About";
-const SEO_TITLE = "About - Neil Merton";
+const PAGE_TITLE = "Colophon";
+const SEO_TITLE = "Colophon - Neil Merton";
 const SEO_DESCRIPTION =
-  "Learn more about Neil Merton and what makes him tick (tock).";
+  "Learn more about how Neil Merton has built this website and the approach to it's development and deployment.";
 ---
 
 <Layout
@@ -13,7 +13,6 @@ const SEO_DESCRIPTION =
   seoDescription={SEO_DESCRIPTION}
   seoTitle={SEO_TITLE}
 >
-  <SectionHeaderNav />
   <article>
     <p>
       This website is built using <a href="https://astro.build" target="_blank"
@@ -44,5 +43,8 @@ const SEO_DESCRIPTION =
       want to have to deal with the legal implications of collecting data, so
       it's just easier to not do it at all.
     </p>
+    <footer>
+      <p>Return to <a href="/about">About</a> page.</p>
+    </footer>
   </article>
 </Layout>

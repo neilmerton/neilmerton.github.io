@@ -5,7 +5,7 @@ import { USES_HARDWARE_LIST, USES_SOFTWARE_LIST } from "@constants/uses";
 const PAGE_TITLE = "Uses";
 const SEO_TITLE = "Uses - Neil Merton";
 const SEO_DESCRIPTION =
-  "Mulitple lists of software and hardware Neil Merton uses to build websites and web applications.";
+  "Multiple lists of software and hardware Neil Merton uses to build websites and web applications.";
 ---
 
 <Layout
@@ -13,52 +13,57 @@ const SEO_DESCRIPTION =
   seoDescription={SEO_DESCRIPTION}
   seoTitle={SEO_TITLE}
 >
-  <p>
-    Inspired by <a href="https://wesbos.com/" rel="nofollow" target="_blank"
-      >Wes Bos</a
-    > and <a href="https://uses.tech/" rel="nofollow" target="_blank"
-      >uses.tech</a
-    >, here is a list of some of the tech related things I use on a regular
-    basis.
-  </p>
-  <p>
-    If you have any suggestions, please <a
-      href="https://mas.to/@neilmerton"
-      target="_blank">let me know</a
-    >.
-  </p>
-  <h2 id="software">Software</h2>
-  <p>
-    This list could go on for a very long time, but I'll do my best to keep it
-    succinct.
-  </p>
-  <ul class="uses-list">
-    {
-      USES_SOFTWARE_LIST.map((item) => (
-        <li class="uses-list__item">
-          <a href={item.href} target="_blank">
+  <article>
+    <p>
+      Inspired by <a href="https://wesbos.com/" rel="nofollow" target="_blank"
+        >Wes Bos</a
+      > and <a href="https://uses.tech/" rel="nofollow" target="_blank"
+        >uses.tech</a
+      >, here is a list of some of the tech related things I use on a regular
+      basis.
+    </p>
+    <p>
+      If you have any suggestions, please <a
+        href="https://mas.to/@neilmerton"
+        target="_blank">let me know</a
+      >.
+    </p>
+    <h2 id="software">Software</h2>
+    <p>
+      This list could go on for a very long time, but I'll do my best to keep it
+      succinct.
+    </p>
+    <ul class="uses-list">
+      {
+        USES_SOFTWARE_LIST.map((item) => (
+          <li class="uses-list__item">
+            <a href={item.href} target="_blank">
+              <strong>{item.title}</strong>
+              <span>{item.description}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <h2 id="hardware">Hardware</h2>
+    <ul class="uses-list">
+      {
+        USES_HARDWARE_LIST.map((item) => (
+          <li class="uses-list__item">
             <strong>{item.title}</strong>
             <span>{item.description}</span>
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-  <h2 id="hardware">Hardware</h2>
-  <ul class="uses-list">
-    {
-      USES_HARDWARE_LIST.map((item) => (
-        <li class="uses-list__item">
-          <strong>{item.title}</strong>
-          <span>{item.description}</span>
-        </li>
-      ))
-    }
-  </ul>
-  <p>
-    There's a few things I'd like to try in the future; including a standing
-    desk <span class="subtle">(to help with posture)</span> and improved lighting.
-  </p>
+          </li>
+        ))
+      }
+    </ul>
+    <p>
+      There's a few things I'd like to try in the future; including a standing
+      desk <span class="subtle">(to help with posture)</span> and improved lighting.
+    </p>
+    <footer>
+      <p>Return to <a href="/about">About</a> page.</p>
+    </footer>
+  </article>
 </Layout>
 
 <style>
