@@ -19,6 +19,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "mastodon",
   },
   {
+    description: `Examples of ${SITE_TITLE}'s work on CodePen`,
+    href: "https://codepen.io/neilmerton",
+    icon: "codePen",
+  },
+  {
     description: `Go to ${SITE_TITLE}'s GitHub profile`,
     href: "https://github.com/neilmerton",
     icon: "github",
