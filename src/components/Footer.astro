@@ -22,15 +22,15 @@ const year = today.getFullYear();
               <Bullet />
               <a href={link.href} target="_blank">
                 <span class="sr-only">{link.description}</span>
-                <Icon icon={link.icon} color="var(--accent)" size="1.25rem" />
+                <Icon icon={link.icon} color="var(--accent)" size="1.2rem" />
               </a>
             </>
           ) : (
             <a href={link.href} target="_blank">
               <span class="sr-only">{link.description}</span>
-              <Icon icon={link.icon} color="var(--accent)" size="1.25rem" />
+              <Icon icon={link.icon} color="var(--accent)" size="1.2rem" />
             </a>
-          )
+          ),
         )
       }
     </div>
