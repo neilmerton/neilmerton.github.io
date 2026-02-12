@@ -4,8 +4,8 @@
  */
 
 :root {
-  --accent: hsl(15, 85%, 50%);
-  --accent-dark: hsl(15, 88%, 40%);
+  --accent: hsl(240, 85%, 50%);
+  --accent-dark: hsl(240, 88%, 40%);
   --surface-background: 255, 245, 235;
   --black: 10, 15, 20;
   --grey: 120, 110, 100;
