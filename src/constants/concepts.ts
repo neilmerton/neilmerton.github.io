@@ -8,7 +8,7 @@ type ConceptItem = {
 
 export const CONCEPTS_LIST: ConceptItem[] = [
   {
-    label: "Accessibility",
+    label: "Accessibility (WCAG)",
   },
   {
     label: "Design",
