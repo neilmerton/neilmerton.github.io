@@ -42,14 +42,16 @@ const SEO_DESCRIPTION =
           </p>
           <p class="description">{post.data.description}</p>
           {post.data.tags && (
-            <ul class="tags">
-              <li>Tagged with</li>
-              {post.data.tags.map((tag) => (
-                <li>
-                  <a href={`/blog/tags/${tag}`}>{tag}</a>
-                </li>
-              ))}
-            </ul>
+            <div class="tags-container">
+              <p>Tagged with:</p>
+              <ul class="tags">
+                {post.data.tags.map((tag) => (
+                  <li>
+                    <a href={`/blog/tags/${tag}`}>{tag}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </li>
       ))
@@ -61,6 +63,7 @@ const SEO_DESCRIPTION =
   .posts {
     list-style: none;
     margin: 0;
+    margin-block-start: 1rem;
     padding: 0;
 
     a {
@@ -86,22 +89,40 @@ const SEO_DESCRIPTION =
       font-size: 90%;
     }
 
+    .tags-container {
+      color: rgb(var(--grey));
+      display: flex;
+      flex-direction: column;
+      font-size: 0.8rem;
+    }
+
     .tags {
       display: flex;
       gap: 0.5rem;
       list-style: none;
       margin: 0;
+      overflow-y: auto;
       padding: 0;
-      padding-block-start: 1rem;
+      padding-block-start: 0.5rem;
 
       li {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         padding-block-start: 0;
+      }
+
+      a {
+        background-color: var(--accent);
+        border-radius: 0.25rem;
+        color: white;
+        display: inline-block;
+        padding: 0.125rem 0.25rem;
+        white-space: nowrap;
       }
     }
 
     .title {
       color: var(--accent);
+      margin: 0;
     }
 
     .draft {
