@@ -1,0 +1,100 @@
+---
+import { formatDate } from "../utils";
+
+interface Props {
+  post: {
+    slug: string;
+    data: {
+      title: string;
+      pubDate: Date;
+      description: string;
+      tags: string[];
+    };
+  };
+}
+
+const { post } = Astro.props as Props;
+---
+
+<article class="blog-card" aria-labelledby={`post-${post.slug}`}>
+  <header class="blog-card__header">
+    <h2 id={`post-${post.slug}`} class="blog-card__title">
+      <a href={`/blog/${post.slug}`} class="blog-card__link">
+        {post.data.title}
+      </a>
+    </h2>
+    <time class="blog-card__date" datetime={post.data.pubDate.toISOString()}>
+      {formatDate(post.data.pubDate)}
+    </time>
+  </header>
+
+  <p class="blog-card__description">{post.data.description}</p>
+
+  {
+    post.data.tags.length > 0 && (
+      <ul class="blog-card__tags" role="list" aria-label="Post tags">
+        {post.data.tags.map((tag) => (
+          <li>
+            <a href={`/blog?tag=${encodeURIComponent(tag)}`} class="tag">
+              {tag}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</article>
+
+<style>
+  .blog-card {
+    padding-block: var(--space-8);
+  }
+
+  .blog-card__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-3);
+  }
+
+  .blog-card__title {
+    font-size: var(--text-xl);
+    font-family: var(--font-display);
+  }
+
+  .blog-card__link {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .blog-card__date {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .blog-card__description {
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+    line-height: var(--leading-relaxed);
+    max-width: 62ch;
+    margin-bottom: var(--space-4);
+  }
+
+  .blog-card__tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+</style>

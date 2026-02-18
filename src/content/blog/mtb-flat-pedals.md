@@ -1,8 +1,8 @@
 ---
 title: "MTB flat pedals"
 description: "My experiences with and review of MTB flat pedals."
-pubDate: "Jul 6 2024"
-updatedDate: "Aug 5 2024"
+pubDate: "2024-07-06"
+updatedDate: "2024-08-05"
 tags: ["lists", "mtb", "review"]
 draft: false
 ---

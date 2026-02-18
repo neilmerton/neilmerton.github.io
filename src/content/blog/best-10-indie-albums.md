@@ -1,14 +1,14 @@
 ---
 title: "Best 10 Indie Albums"
 description: "These are the indie albums I regularly return to when I'm not sure what to listen to."
-pubDate: "Jun 29 2024"
-updatedDate: "Jul 6 2024"
+pubDate: "2024-06-29"
+updatedDate: "2024-07-06"
 tags: ["lists", "music", "review"]
 mainClass: "albums-list"
 draft: false
 ---
 
-[Some people](https://hicks.design/journal/hicks-design-best-15-albums) will have their go-to list of their favourite albums. As my first post on my blog (I'm not a stranger to maintaining a blog - I had one, back in the early naughties, that I regularly updated) I thought it apt to share what I can be guaranteed to tantalise my ears.
+[Some people](https://hicks.design/journal/hicks-design-best-15-albums) will have their go-to list of their favourite albums. As my first post on my blog (I'm not a stranger to maintaining a blog - I had one, back in the early naughties, Wordpress, that I regularly updated) I thought it apt to share what I can be guaranteed to tantalise my ears.
 
 I've purposely kept the list to less-known artists, with the hope that someone might stumble upon this page in the future and discover some new (to them) music from decades gone.
 

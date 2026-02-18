@@ -1,0 +1,272 @@
+---
+import ReadingListItem from "@components/ReadingListItem.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const allBooks = await getCollection("reading");
+
+// Sort: reading first, then completed (newest first), then want-to-read
+const books = allBooks.sort((a, b) => {
+  const order = { reading: 0, completed: 1, "want-to-read": 2 };
+  const statusDiff = order[a.data.status] - order[b.data.status];
+
+  if (statusDiff !== 0) {
+    return statusDiff;
+  }
+
+  const aDate = a.data.finishedDate ?? a.data.startedDate;
+  const bDate = b.data.finishedDate ?? b.data.startedDate;
+
+  if (aDate && bDate) {
+    return bDate.valueOf() - aDate.valueOf();
+  }
+
+  return 0;
+});
+
+// All unique tags
+const allTags = [...new Set(books.flatMap((b) => b.data.tags))].sort();
+
+// Group by status (always use all books)
+type BookEntry = (typeof books)[number];
+const grouped = books.reduce<Record<string, BookEntry[]>>((acc, book) => {
+  const key = book.data.status;
+
+  if (!acc[key]) {
+    acc[key] = [];
+  }
+
+  acc[key].push(book);
+
+  return acc;
+}, {});
+
+const statusLabels: Record<string, string> = {
+  reading: "Currently Reading",
+  completed: "Completed",
+  "want-to-read": "Want to Read",
+};
+---
+
+<Layout
+  title="Reading"
+  description="Books I'm reading, have read, and want to read — with thoughts and tags."
+>
+  <div class="container">
+    <header class="page-hero animate-in">
+      <span class="page-hero__eyebrow">Books</span>
+      <h1 class="page-hero__title">Reading</h1>
+      <p class="page-hero__subtitle">
+        A log of books I'm reading, have finished, and plan to pick up.
+        {
+          books.length > 0 && (
+            <span>Currently tracking {books.length} books.</span>
+          )
+        }
+      </p>
+    </header>
+
+    <!-- Tag filter -->
+    {
+      allTags.length > 0 && (
+        <nav
+          class="tag-filter animate-in animate-in--delay-1"
+          aria-label="Filter books by tag"
+        >
+          <ul class="tag-filter__list" role="list">
+            <li>
+              <a href="/reading" class="tag" id="tag-all">
+                All
+              </a>
+            </li>
+            {allTags.map((tag) => (
+              <li>
+                <a
+                  href={`/reading?tag=${encodeURIComponent(tag)}`}
+                  class="tag"
+                  data-tag={tag}
+                >
+                  {tag}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <!-- Grouped book sections -->
+    <div class="reading-sections animate-in animate-in--delay-2">
+      {
+        Object.entries(grouped).map(([status, statusBooks]) => (
+          <section
+            class="reading-section"
+            aria-labelledby={`status-${status}`}
+            data-status-section={status}
+          >
+            <h2 id={`status-${status}`} class="reading-section__title">
+              {statusLabels[status] ?? status}
+              <span
+                class="reading-section__count"
+                aria-label={`${statusBooks.length} books`}
+                data-count
+              >
+                {statusBooks.length}
+              </span>
+            </h2>
+
+            <ol class="book-list" role="list">
+              {statusBooks.map(async (book) => {
+                const { Content } = await book.render();
+                return (
+                  <li
+                    class="book-card"
+                    id={`book-${book.slug}`}
+                    data-tags={JSON.stringify(book.data.tags)}
+                  >
+                    <ReadingListItem book={book} Content={Content} />
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        ))
+      }
+    </div>
+
+    <p class="reading-empty" id="reading-empty" style="display: none;">
+      No books found for this tag.
+      <a href="/reading">See all books</a>.
+    </p>
+  </div>
+</Layout>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const activeTag = params.get("tag");
+
+  const allLink = document.getElementById("tag-all")!;
+  const emptyMsg = document.getElementById("reading-empty")!;
+
+  if (activeTag) {
+    // Update active state on tag links
+    allLink.classList.remove("tag--active");
+    allLink.removeAttribute("aria-current");
+
+    document.querySelectorAll<HTMLElement>("a[data-tag]").forEach((link) => {
+      const isActive = link.dataset.tag === activeTag;
+      link.classList.toggle("tag--active", isActive);
+      if (isActive) link.setAttribute("aria-current", "true");
+    });
+
+    // Filter books and hide empty sections
+    let totalVisible = 0;
+
+    document
+      .querySelectorAll<HTMLElement>("[data-status-section]")
+      .forEach((section) => {
+        const books = section.querySelectorAll<HTMLElement>("[data-tags]");
+        let sectionVisible = 0;
+
+        books.forEach((book) => {
+          const tags: string[] = JSON.parse(book.dataset.tags ?? "[]");
+          const matches = tags.includes(activeTag);
+          book.style.display = matches ? "" : "none";
+          if (matches) sectionVisible++;
+        });
+
+        // Hide the whole section if none of its books match
+        section.style.display = sectionVisible === 0 ? "none" : "";
+
+        // Update the count badge to reflect filtered results
+        const countEl = section.querySelector<HTMLElement>("[data-count]");
+        if (countEl) countEl.textContent = String(sectionVisible);
+
+        totalVisible += sectionVisible;
+      });
+
+    emptyMsg.style.display = totalVisible === 0 ? "" : "none";
+  } else {
+    allLink.classList.add("tag--active");
+    allLink.setAttribute("aria-current", "true");
+  }
+</script>
+
+<style>
+  .tag-filter {
+    margin-bottom: var(--space-10);
+  }
+
+  .tag-filter__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .tag--active {
+    background-color: var(--color-accent-bg);
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+      color: #ffffff !important;
+    }
+  }
+
+  .reading-sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-bottom: var(--space-24);
+  }
+
+  .reading-section__title {
+    align-items: center;
+    color: var(--color-text-muted);
+    display: flex;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    gap: var(--space-3);
+    letter-spacing: var(--tracking-wider);
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+  }
+
+  .reading-section__count {
+    align-items: center;
+    background-color: var(--color-bg-subtle);
+    border-radius: var(--radius-pill);
+    color: var(--color-text-subtle);
+    display: inline-flex;
+    font-size: var(--text-xs);
+    height: 22px;
+    justify-content: center;
+    width: 22px;
+  }
+
+  .book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .book-card {
+    border-bottom: 1px solid var(--color-border-light);
+    padding-block: var(--space-6);
+  }
+
+  .book-card:first-child {
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .reading-empty {
+    color: var(--color-text-muted);
+    padding-block: var(--space-12);
+  }
+</style>

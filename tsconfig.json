@@ -4,15 +4,10 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
-      "@constants/*": ["src/constants/*"],
-      "@content/*": ["src/content"],
       "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils": ["src/utils/index.ts"]
+      "@content/*": ["src/content/*"]
     }
-  },
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.astro"]
+  }
 }

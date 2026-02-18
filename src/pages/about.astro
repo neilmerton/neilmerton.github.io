@@ -1,0 +1,73 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { siteConfig } from "../data";
+---
+
+<Layout
+  title="About"
+  description={`About ${siteConfig.name} — ${siteConfig.description}`}
+>
+  <article class="container">
+    <header class="page-hero animate-in">
+      <span class="page-hero__eyebrow">Information</span>
+      <h1 class="page-hero__title">{siteConfig.name}</h1>
+      <p class="page-hero__subtitle">
+        Frontend developer. Accessibility advocate. Perpetual learner.
+      </p>
+    </header>
+
+    <div class="about-body prose animate-in animate-in--delay-1">
+      <p>
+        Hi — I'm {siteConfig.name}. I build web experiences that are fast,
+        accessible, and a pleasure to use. I've been working in frontend
+        development for over six years, and I still get excited when a layout
+        clicks together or an interaction feels just right.
+      </p>
+
+      <p>
+        I care a lot about the fundamentals: semantic HTML, progressive
+        enhancement, and CSS that works without a framework attached. I believe
+        the web is at its best when it's open and accessible to everyone,
+        regardless of their device, connection, or ability.
+      </p>
+
+      <h2>How I work</h2>
+      <p>
+        I work best at the intersection of engineering and design — translating
+        designs into living, breathing interfaces with attention to the nuances
+        that make software feel polished. I'm comfortable talking to designers
+        about typographic rhythm and to backend engineers about API contracts.
+      </p>
+      <p>
+        I prefer small, focused teams where I can have a real impact. I value
+        clear communication, considered code review, and a shared commitment to
+        quality.
+      </p>
+
+      <h2>Outside of work</h2>
+      <p>
+        When I'm not at a keyboard, you'll find me reading (see my
+        <a href="/reading">reading list</a>), hiking, or experimenting with
+        sourdough. I write occasionally about frontend development and the craft
+        of building for the web — you can find that on my <a href="/blog"
+          >blog</a
+        >.
+      </p>
+
+      <h2>Get in touch</h2>
+      <p>
+        I'm always happy to hear from other developers, potential collaborators,
+        or anyone with an interesting project. The best way to reach me is
+        <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>, or via <a
+          href="/contact">the contact page</a
+        >.
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .about-body {
+    padding-bottom: var(--space-24);
+  }
+</style>

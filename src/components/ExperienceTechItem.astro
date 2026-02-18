@@ -1,0 +1,61 @@
+---
+import type { TechItem } from "../types";
+
+interface Props {
+  tech: TechItem;
+}
+
+const { tech } = Astro.props;
+
+const proficiencyLabels: Record<string, string> = {
+  expert: "Expert",
+  proficient: "Proficient",
+  familiar: "Familiar",
+};
+---
+
+<li class={`tech-item tech-item--${tech.proficiency}`}>
+  <span class="tech-item__name">{tech.name}</span>
+  <span
+    class="tech-item__level"
+    aria-label={`Proficiency: ${proficiencyLabels[tech.proficiency]}`}
+  >
+    {proficiencyLabels[tech.proficiency]}
+  </span>
+</li>
+
+<style>
+  .tech-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-subtle);
+    border-left: 3px solid transparent;
+    transition: background-color var(--transition-fast);
+  }
+
+  .tech-item--expert {
+    border-left-color: var(--color-accent);
+  }
+  .tech-item--proficient {
+    border-left-color: var(--color-text-muted);
+  }
+  .tech-item--familiar {
+    border-left-color: var(--color-border);
+  }
+
+  .tech-item__name {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .tech-item__level {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+  }
+</style>

@@ -4,8 +4,7 @@
   "version": "2.0.0",
   "scripts": {
     "dev": "astro dev --open",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -14,7 +13,7 @@
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.17.1",
+    "astro": "^5.17.2",
     "sharp": "^0.34.5",
     "typescript": "^5.9.3"
   },
