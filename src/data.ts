@@ -62,14 +62,14 @@ export const techStack: TechItem[] = [
   { name: 'Svelte', category: 'framework', proficiency: 'familiar' },
   // Tools
   { name: 'Figma', category: 'tool', proficiency: 'expert' },
-  { name: 'Git', category: 'tool', proficiency: 'expert' },
+  { name: 'Git / GitHub', category: 'tool', proficiency: 'proficient' },
   { name: 'Playwright', category: 'tool', proficiency: 'familiar' },
   { name: 'Vite', category: 'tool', proficiency: 'proficient' },
   { name: 'Vitest', category: 'tool', proficiency: 'proficient' },
   // Platforms
   { name: 'AWS', category: 'platform', proficiency: 'familiar' },
   { name: 'Azure', category: 'platform', proficiency: 'familiar' },
-  { name: 'Cloudflare', category: 'platform', proficiency: 'familiar' },
+  { name: 'Sentry', category: 'platform', proficiency: 'proficient' },
   { name: 'Supabase', category: 'platform', proficiency: 'familiar' },
   { name: 'Vercel', category: 'platform', proficiency: 'proficient' },
 ];
@@ -90,12 +90,13 @@ export const roles: Role[] = [
     location: 'Remote',
     description: 'Lead frontend development for cutting-edge SaaS Energy Monitoring platform.',
     highlights: [
-      'Architected and maintained a design system in Figma, reducing UI inconsistencies by 70%.',
-      'Improved Lighthouse accessibility score from 62 to 98 site-wide.',
-      'Mentored 3 junior engineers through structured fortnightly 1-on-1s and code review.',
-      'Led migration from CRA to Vite, cutting CI build times by 4 minutes.',
+      'Architected and maintained a design system in Figma, extending PrimeVue components.',
+      'Frontend architecture including PWA, TanStack Query, i18n, and performance optimisations.',
+      'Unit testing with Vitest and end-to-end testing with Playwright.',
+      'Maintained Lighthouse accessibility score in the 90s site-wide.',
+      'Maintained CI/CD pipelines and error monitoring in Sentry.',
     ],
-    technologies: ['TypeScript', 'Vue.js', 'SCSS', 'Vite', 'Figma', 'PrimeVue', 'Highcharts'],
+    technologies: ['TypeScript', 'Vue.js', 'PWA', 'SCSS', 'Vite', 'Figma', 'PrimeVue', 'TanStack Query', 'Highcharts'],
   },
   {
     title: 'Lead Frontend Engineer',
@@ -106,9 +107,10 @@ export const roles: Role[] = [
     location: 'Remote',
     description: 'Led frontend development for SaaS HR platform, including features like performance management, employee engagement and time-off.',
     highlights: [
-      'Delivered 12+ client projects on time and under budget.',
-      'Introduced component-driven development with Storybook, adopted across all projects.',
+      'Delivered MVP of platform in 6 months, leading to successful seed funding round.',
+      'Migrated MVP from ASP.NET WebApp to modern frontend stack, including offline capabilities through Workbox.',
       'Reduced average page load time by 35% through image optimisation and code splitting.',
+      'Implemented interactive, context-aware help guides, improving user onboarding and reducing support tickets by 20%.',
     ],
     technologies: ['JavaScript', 'Vue.js', 'SCSS', 'Sketch', 'Vuetify', 'Chart.js'],
   },
@@ -121,10 +123,11 @@ export const roles: Role[] = [
     location: 'Wilmslow, UK',
     description: 'Managed innovation projects and led the development of new digital solutions, including off-shore collaborations.',
     highlights: [
-      'Converted static HTML/CSS templates into a reusable WordPress component library.',
+      'Led multiple innovation projects, driving digital transformation and process improvements.',
+      'Led UX design and frontend development for a new client portal, improving user experience and client satisfaction.',
       'Implemented design system (fractal.build) to standardise UI components across projects.',
     ],
-    technologies: ['Leadership', 'Design System', 'JavaScript', 'WordPress', 'PHP'],
+    technologies: ['Leadership', 'Design System', 'JavaScript', 'Angular'],
   },
 ];
 
