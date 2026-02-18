@@ -1,72 +1,135 @@
 ---
-import Layout from "@layouts/Page.astro";
-import { CONCEPTS_LIST } from "@constants/concepts";
-import { SKILLS_LIST } from "@constants/skills";
-import { TOOLS_LIST } from "@constants/tools";
+import ExperienceFooter from "@components/ExperienceFooter.astro";
+import ExperienceProficiencyLegend from "@components/ExperienceProficiencyLegend.astro";
+import ExperienceRoleItem from "@components/ExperienceRoleItem.astro";
+import ExperienceTechItem from "@components/ExperienceTechItem.astro";
+import Layout from "@layouts/Layout.astro";
+import { roles, techStack, professionalSummary } from "../data";
+import type { TechItem } from "../types";
 
-const PAGE_TITLE = "Experience";
-const SEO_TITLE = "Experience - Neil Merton";
-const SEO_DESCRIPTION =
-  "Multiple lists of software and hardware Neil Merton uses to build websites and web applications.";
+// Group tech items by category
+const groupedTech = techStack.reduce<Record<string, TechItem[]>>(
+  (acc, item) => {
+    const key = item.category;
+
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+
+    acc[key].push(item);
+
+    return acc;
+  },
+  {},
+);
+
+const categoryLabels: Record<string, string> = {
+  language: "Languages",
+  framework: "Frameworks & Libraries",
+  tool: "Tools",
+  platform: "Platforms",
+  other: "Other",
+};
 ---
 
 <Layout
-  pageTitle={PAGE_TITLE}
-  seoDescription={SEO_DESCRIPTION}
-  seoTitle={SEO_TITLE}
+  title="Experience"
+  description="Professional experience, technology stack and career history."
 >
-  <p>
-    Over the last 20 years I've primarily worked with <abbr
-      title="Business to Business">B2B</abbr
-    > companies, helping them provide performant web-based platforms and solving usability
-    challenges.
-  </p>
-  <p>
-    These companies have been startup <abbr title="Software as a Service"
-      >SaaS</abbr
-    > businesses, regulated <abbr title="Financial Technology">fintech</abbr>
-    disruptors and established health & safety service providers.
-  </p>
-  <p>
-    Most recently, I worked remotely for <a
-      href="https://www.enee.io"
-      target="_blank">enee.io</a
-    > as the Lead Frontend Developer. To date this has been the most rewarding role
-    of my career &mdash; I'm working with a great team of people, building a product
-    that is making a difference to people in countries where they don't have the luxury
-    of a stable grid.
-  </p>
-  <p>
-    If you're curious about my career history, you can find me on <a
-      href="https://www.linkedin.com/in/neilmerton/"
-      target="_blank">LinkedIn</a
-    >, my profile is public.
-  </p>
-  <h2>Concepts</h2>
-  <ul class="concepts-list">
-    {
-      CONCEPTS_LIST.map((item) =>
-        item.title ? (
-          <li>
-            <abbr title={item.title}>{item.label}</abbr>
-          </li>
-        ) : (
-          <li>{item.label}</li>
-        ),
-      )
-    }
-  </ul>
-  <h2>Skills</h2>
-  <ul class="skills-list">
-    {SKILLS_LIST.map((item) => <li>{item.label}</li>)}
-  </ul>
-  <h2>Tools</h2>
-  <ul class="tools-list">
-    {TOOLS_LIST.map((item) => <li>{item.label}</li>)}
-  </ul>
-  <p>
-    You can find more details around tools on my <a href="/about/uses"
-      >Uses page</a
-    >.
-  </p>
+  <div class="container">
+    <header class="page-hero animate-in">
+      <span class="page-hero__eyebrow">Career</span>
+      <h1 class="page-hero__title">Experience</h1>
+      <p class="page-hero__subtitle">{professionalSummary}</p>
+    </header>
+
+    <section
+      class="exp-section animate-in animate-in--delay-1"
+      aria-labelledby="tech-stack-heading"
+    >
+      <h2 id="tech-stack-heading" class="exp-section__title">
+        Technology Stack
+      </h2>
+
+      <div class="tech-groups">
+        {
+          Object.entries(groupedTech).map(([category, items]) => (
+            <div class="tech-group">
+              <h3 class="tech-group__title">
+                {categoryLabels[category] ?? category}
+              </h3>
+              <ul class="tech-list" role="list">
+                {items.map((tech) => (
+                  <ExperienceTechItem tech={tech} />
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <ExperienceProficiencyLegend />
+    </section>
+
+    <section class="exp-section" aria-labelledby="roles-heading">
+      <h2 id="roles-heading" class="exp-section__title">Work History</h2>
+
+      <ol class="roles" role="list">
+        {roles.map((role) => <ExperienceRoleItem role={role} />)}
+      </ol>
+
+      <ExperienceFooter />
+    </section>
+  </div>
 </Layout>
+
+<style>
+  .exp-section {
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .exp-section:last-child {
+    border-bottom: none;
+  }
+
+  .exp-section__title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-10);
+  }
+
+  .tech-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+  }
+
+  .tech-group__title {
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wider);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .roles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>

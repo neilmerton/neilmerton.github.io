@@ -1,7 +1,7 @@
 ---
 title: "VS Code Extensions"
 description: "A list of my favorite VS Code extensions that enhance productivity and development experience."
-pubDate: "Feb 14 2026"
+pubDate: "2026-02-14"
 tags: ["vscode", "extensions", "lists", "productivity", "web development"]
 mainClass: "vscode-extensions"
 draft: false

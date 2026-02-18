@@ -1,8 +1,8 @@
 ---
 title: "My take on TailwindCSS"
 description: "These are my thoughts and experiences with using TailwindCSS in my projects."
-pubDate: "Feb 11 2026"
-tags: ["tailwindcss", "css", "web development"]
+pubDate: "2026-02-11"
+tags: ["tailwindcss", "css", "web development", "opinion"]
 mainClass: "tailwindcss-review"
 draft: false
 ---

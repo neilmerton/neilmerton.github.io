@@ -1,0 +1,178 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, getEntry } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import { formatDate } from "src/utils";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+};
+
+type Props = {
+  post: Awaited<ReturnType<typeof getEntry<"blog", string>>>;
+};
+
+const { post } = Astro.props;
+
+if (!post) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <article
+    class="container"
+    itemscope
+    itemtype="https://schema.org/BlogPosting"
+  >
+    <header class="post-header animate-in">
+      <nav class="post-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">← Blog</a>
+      </nav>
+
+      <h1 class="post-header__title" itemprop="headline">
+        {post.data.title}
+      </h1>
+
+      <div class="post-header__meta">
+        <time
+          class="post-header__date"
+          datetime={post.data.pubDate.toISOString()}
+          itemprop="datePublished"
+        >
+          {formatDate(post.data.pubDate)}
+        </time>
+
+        {
+          post.data.updatedDate && (
+            <span class="post-header__updated">
+              Updated
+              <time
+                datetime={post.data.updatedDate.toISOString()}
+                itemprop="dateModified"
+              >
+                {formatDate(post.data.updatedDate)}
+              </time>
+            </span>
+          )
+        }
+      </div>
+
+      {
+        post.data.tags.length > 0 && (
+          <ul class="post-header__tags" role="list" aria-label="Post tags">
+            {post.data.tags.map((tag) => (
+              <li>
+                <a href={`/blog?tag=${encodeURIComponent(tag)}`} class="tag">
+                  {tag}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </header>
+
+    <div
+      class="post-body prose animate-in animate-in--delay-1"
+      itemprop="articleBody"
+    >
+      <Content />
+    </div>
+
+    <footer class="post-footer animate-in animate-in--delay-2">
+      <hr />
+      <a href="/blog" class="post-footer__back">← Back to all posts</a>
+    </footer>
+  </article>
+</Layout>
+
+<style>
+  .post-breadcrumb {
+    margin-bottom: var(--space-8);
+  }
+
+  .post-breadcrumb a {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .post-header {
+    border-bottom: 1px solid var(--color-border-light);
+    margin-bottom: var(--space-12);
+    padding-bottom: var(--space-10);
+    padding-top: var(--space-16);
+  }
+
+  .post-header__title {
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    margin-bottom: var(--space-5);
+    max-width: 22ch;
+  }
+
+  .post-header__meta {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-5);
+  }
+
+  .post-header__date,
+  .post-header__updated {
+    color: var(--color-text-subtle);
+    font-size: var(--text-sm);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .post-header__updated {
+    border-left: 1px solid var(--color-border-light);
+    padding-left: var(--space-4);
+  }
+
+  .post-header__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .post-body {
+    font-size: var(--text-md);
+    line-height: var(--leading-relaxed);
+    padding-bottom: var(--space-12);
+  }
+
+  .post-footer {
+    padding-bottom: var(--space-24);
+  }
+
+  .post-footer hr {
+    margin-bottom: var(--space-8);
+  }
+
+  .post-footer__back {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+</style>

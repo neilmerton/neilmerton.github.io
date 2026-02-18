@@ -1,0 +1,168 @@
+---
+import { formatDate } from "../utils";
+import type { Role } from "../types";
+interface Props {
+  role: Role;
+}
+
+const { role } = Astro.props;
+
+// Format ISO date string → "Mar 2021" or "Present"
+const formatDateEmployment = (dateStr?: string): string => {
+  if (!dateStr) return "Present";
+  const [year, month] = dateStr.split("-").map(Number);
+  const d = new Date(year, (month ?? 1) - 1, 1);
+  return formatDate(d, true);
+};
+---
+
+<li class="role">
+  <div class="role__header">
+    <div class="role__meta">
+      <h3 class="role__title">{role.title}</h3>
+      <p class="role__company">
+        {
+          role.companyUrl ? (
+            <a href={role.companyUrl} target="_blank" rel="noopener noreferrer">
+              {role.company}
+            </a>
+          ) : (
+            role.company
+          )
+        }
+        <span class="role__sep" aria-hidden="true"> · </span>
+        <span class="role__location">{role.location}</span>
+      </p>
+    </div>
+    <time
+      class="role__dates"
+      aria-label={`${formatDateEmployment(role.startDate)} to ${formatDateEmployment(role.endDate)}`}
+    >
+      <span>{formatDateEmployment(role.startDate)}</span>
+      <span aria-hidden="true"> - </span>
+      <span class={!role.endDate ? "role__dates--current" : ""}>
+        {formatDateEmployment(role.endDate)}
+      </span>
+    </time>
+  </div>
+
+  <p class="role__description">{role.description}</p>
+
+  {
+    role.highlights.length > 0 && (
+      <ul class="role__highlights" aria-label="Key highlights">
+        {role.highlights.map((h) => (
+          <li>{h}</li>
+        ))}
+      </ul>
+    )
+  }
+
+  {
+    role.technologies.length > 0 && (
+      <ul class="role__tech-tags" role="list" aria-label="Technologies used">
+        {role.technologies.map((t) => (
+          <li>
+            <span class="tag">{t}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</li>
+
+<style>
+  .role {
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .role:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .role__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-6);
+    margin-bottom: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .role__title {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-1);
+  }
+
+  .role__company {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .role__company a {
+    color: var(--color-accent);
+
+    &:hover {
+      color: var(--color-accent-hover);
+    }
+  }
+
+  .role__sep {
+    margin-inline: var(--space-2);
+    color: var(--color-border);
+  }
+
+  .role__location {
+    color: var(--color-text-subtle);
+  }
+
+  .role__dates {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .role__dates--current {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .role__description {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-5);
+    max-width: 65ch;
+    line-height: var(--leading-relaxed);
+  }
+
+  .role__highlights {
+    padding-left: var(--space-5);
+    margin-bottom: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .role__highlights li {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-relaxed);
+    max-width: 65ch;
+  }
+
+  .role__tech-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+</style>

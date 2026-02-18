@@ -1,36 +1,222 @@
 ---
-import Layout from "@layouts/Page.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "@constants/site";
-const titleExtended = `${SITE_TITLE} - Product Engineer, Cheshire, England`;
+import Layout from "@layouts/Layout.astro";
+import { getRandomSnippet, siteConfig } from "../data";
+import { getCollection } from "astro:content";
+import { formatDate } from "../utils";
+
+// Fetch latest blog posts for the home page preview
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const latestPosts = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const snippet = getRandomSnippet();
 ---
 
-<Layout seoDescription={SITE_DESCRIPTION} seoTitle={titleExtended}>
-  <h1>Hey there</h1>
-  <p>
-    I'm Neil Merton, a product engineer, keen <span class="subtle"
-      >(but considered)</span
-    > mountain biker and family man.
-  </p>
-  <p>
-    With over 25 years of experience in the web industry, I've had the privilege
-    of working on a wide range of projects, from small startups to large
-    enterprises. My passion lies in creating accessible, performant, and
-    user-friendly web applications that not only meet but exceed user
-    expectations. I believe in the power of collaboration and continuous
-    learning, always striving to stay at the forefront of web technologies and
-    best practices.
-  </p>
-  <p>
-    My most recent work has been for startups, where I've had the opportunity to
-    contribute to building innovative products from the ground up. I thrive in
-    fast-paced environments and enjoy the challenge of solving complex problems
-    while delivering high-quality solutions.
-  </p>
-  <p>
-    I help startups ship their products faster by providing expert product
-    engineering services, ensuring that their applications are not only visually
-    appealing but also robust, scalable, and maintainable. If you're looking for
-    a product engineer who can bring your vision to life, let's connect and see
-    how I can help your startup succeed.
-  </p>
+<Layout title={siteConfig.title} description={siteConfig.description}>
+  <section class="hero container animate-in">
+    <p class="hero__eyebrow">Frontend Developer</p>
+    <h1 class="hero__name">{siteConfig.name}</h1>
+    <p class="hero__tagline">{siteConfig.description}</p>
+    <div class="hero__actions">
+      <a href="/about" class="btn btn--primary">About me</a>
+      <a href="/experience" class="btn btn--secondary">Experience</a>
+    </div>
+  </section>
+
+  {
+    latestPosts.length > 0 && (
+      <section class="home-section container animate-in animate-in--delay-1">
+        <header class="home-section__header">
+          <h2 class="home-section__title">Recent Writing</h2>
+          <a href="/blog" class="home-section__more">
+            All posts →
+          </a>
+        </header>
+
+        <ol class="post-list" role="list">
+          {latestPosts.map((post) => (
+            <li class="post-list__item">
+              <article>
+                <time
+                  class="post-list__date"
+                  datetime={post.data.pubDate.toISOString()}
+                >
+                  {formatDate(post.data.pubDate)}
+                </time>
+                <a href={`/blog/${post.slug}`} class="post-list__link">
+                  {post.data.title}
+                </a>
+              </article>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+
+  <section class="home-section container animate-in animate-in--delay-1">
+    <header class="home-section__header">
+      <h2 class="home-section__title">Did you know?</h2>
+    </header>
+    <p>{snippet}</p>
+  </section>
 </Layout>
+
+<style>
+  /* ── Hero ───────────────────────────────────────────────────── */
+
+  .hero {
+    padding-top: clamp(var(--space-20), 12vw, var(--space-32));
+    padding-bottom: var(--space-24);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .hero__eyebrow {
+    color: var(--color-accent);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wider);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+  }
+
+  .hero__name {
+    color: var(--color-text);
+    font-size: clamp(var(--text-4xl), 8vw, 5rem);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero__tagline {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    max-width: 50ch;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-10);
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  /* ── Buttons ────────────────────────────────────────────────── */
+
+  .btn {
+    align-items: center;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: var(--tracking-wide);
+    padding: var(--space-3) var(--space-6);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color var(--transition-fast),
+      color var(--transition-fast),
+      border-color var(--transition-fast);
+  }
+
+  .btn--primary {
+    background-color: var(--color-accent-bg);
+    border: 2px solid var(--color-accent);
+    color: #ffffff;
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+      color: #ffffff;
+    }
+  }
+
+  .btn--secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-border);
+    color: var(--color-text);
+
+    &:hover {
+      border-color: var(--color-text-muted);
+      color: var(--color-text);
+    }
+  }
+
+  .home-section {
+    padding-block: var(--space-16);
+  }
+
+  .home-section + .home-section {
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .home-section__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .home-section__title {
+    font-size: var(--text-xl);
+    color: var(--color-text);
+  }
+
+  .home-section__more {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    letter-spacing: var(--tracking-wide);
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .post-list__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .post-list__item article {
+    display: flex;
+    gap: var(--space-6);
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  .post-list__date {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    min-width: 110px;
+  }
+
+  .post-list__link {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import { siteConfig } from "../data";
+
+// LinkedIn profile
+const linkedInUrl: string | undefined = siteConfig.socials.find(
+  (s) => s.platform === "linkedin",
+)?.url;
+---
+
+<footer>
+  <p>
+    Summarised to the last 10 years, highlighting key roles and technologies.
+  </p>
+  {
+    linkedInUrl && (
+      <p>
+        For a more detailed history, please visit my
+        <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+          LinkedIn profile
+        </a>
+        .
+      </p>
+    )
+  }
+</footer>
+
+<style>
+  footer {
+    margin-top: var(--space-12);
+
+    p {
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+  }
+</style>
