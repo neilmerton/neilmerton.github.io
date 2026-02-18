@@ -7,7 +7,7 @@ tags: ["vue.js", "tanstack query", "state management", "web development"]
 
 If you’ve spent any time building Vue applications, you know the drill. You create a component, define a few `refs` for `data`, `isLoading`, and `error`, and then write an `onMounted` hook to fetch your data. It works for a small app, but as your project grows, you find yourself rewriting that same logic over and over.
 
-Enter **TanStack Query** (formerly known as Vue Query). It isn’t just a "fetcher"—it’s a powerful asynchronous state manager that handles the "Server State" so you don’t have to.
+Enter **TanStack Query** (formerly known as Vue Query). It isn’t just a "fetcher", it’s a powerful asynchronous state manager that handles the "Server State" so you don’t have to.
 
 In this post, we’ll explore why TanStack Query has become the gold standard for Vue.js projects and how it can make your life as a developer significantly easier.
 
@@ -59,7 +59,7 @@ You get a reactive `data` object, a boolean `isLoading`, and an `error` object o
 
 The user experience (UX) benefit is massive. When a user navigates back to a page they've already visited, TanStack Query immediately shows the **cached data** from the previous visit.
 
-While the user is looking at that data, the library quietly refetches it in the background to see if anything changed. If it has, the UI updates seamlessly. This makes your app feel incredibly fast and responsive—like it’s working offline.
+While the user is looking at that data, the library quietly refetches it in the background to see if anything changed. If it has, the UI updates seamlessly. This makes your app feel incredibly fast and responsive - like it’s working offline.
 
 ## 3. Intelligent Mutations and Invalidation
 
