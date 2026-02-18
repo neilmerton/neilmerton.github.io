@@ -86,7 +86,7 @@ pnpm preview    # preview the production build locally
 
 ---
 
-## Personalising the Template
+## Personalising
 
 ### Site config, bio, and social links
 
@@ -98,6 +98,7 @@ Edit **`src/data.ts`**. This is the single source of truth for:
 - Tech stack (`techStack`)
 - Professional summary (`professionalSummary`)
 - Work history (`roles`)
+- Uses lists (`usesHardware`, `usesSoftware`)
 
 ### Colours and fonts
 
