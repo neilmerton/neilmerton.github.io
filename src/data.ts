@@ -74,8 +74,6 @@ export const techStack: TechItem[] = [
   { name: 'Vercel', category: 'platform', proficiency: 'proficient' },
 ];
 
-// ─── Work Experience ─────────────────────────────────────────────────────────
-
 export const professionalSummary = `
 I'm a frontend developer with over 10 years of experience building accessible, 
 performant web applications. I care deeply about the craft of frontend; from 
@@ -184,7 +182,7 @@ export const usesSoftware: UsesItemWithHref[] = [
   },
   {
     description:
-      "For creating mockups of websites and apps. I have started dabbling with PenPot recently.",
+      "For creating mockups of websites and apps. I have started dabbling with PenPot recently, but it's not quite there yet.",
     href: "https://figma.com/",
     title: "Figma",
   },
@@ -196,7 +194,7 @@ export const usesSoftware: UsesItemWithHref[] = [
   },
   {
     description:
-      "My chosen Spotlight alternative. I use this to launch apps and search for files.",
+      "My chosen Spotlight alternative. I use this to launch apps and search for files and perform various tasks efficiently.",
     href: "https://www.raycast.com/",
     title: "Raycast",
   },

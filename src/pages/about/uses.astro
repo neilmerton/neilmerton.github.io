@@ -24,16 +24,16 @@ import { siteConfig, usesHardware, usesSoftware } from "../../data";
     </header>
 
     <div class="about-body prose animate-in animate-in--delay-1">
-      <h2 id="software">Software</h2>
       <p>
-        This list could go on for a very long time, but I'll do my best to keep
-        it succinct.
+        These lists could go on for a very long time, but I'll do my best to
+        keep them succinct.
       </p>
+      <h2 id="software">Software</h2>
       <ul class="uses-list">
         {
           usesSoftware.map((item) => (
             <li class="uses-list__item">
-              <a href={item.href} target="_blank">
+              <a href={item.href} rel="nofollow" target="_blank">
                 <strong>{item.title}</strong>
                 <span>{item.description}</span>
               </a>
@@ -66,5 +66,51 @@ import { siteConfig, usesHardware, usesSoftware } from "../../data";
 <style>
   .about-body {
     padding-bottom: var(--space-24);
+  }
+
+  .uses-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    list-style: none;
+    margin: var(--space-4) 0 var(--space-6);
+    padding: 0;
+  }
+
+  .uses-list__item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+  }
+
+  .uses-list__item a {
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    .uses-list__item:hover {
+      border-color: var(--color-accent);
+    }
+  }
+
+  .uses-list__item a strong {
+    text-decoration: underline;
+  }
+
+  .uses-list__item a span {
+    color: var(--color-text-muted);
+  }
+
+  .uses-list__item strong {
+    display: block;
+    font-size: var(--text-lg);
+    margin-block-end: var(--space-1);
+  }
+
+  .uses-list__item span {
+    display: inline-block;
   }
 </style>
