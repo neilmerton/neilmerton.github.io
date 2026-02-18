@@ -1,7 +1,5 @@
 import type { SiteConfig, Role, TechItem, NavItem, UsesItem, UsesItemWithHref } from './types';
 
-// ─── Site-wide Configuration ─────────────────────────────────────────────────
-
 export const siteConfig: SiteConfig = {
   name: 'Neil Merton',
   title: 'Neil Merton — Frontend Developer',
