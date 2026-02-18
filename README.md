@@ -1,7 +1,6 @@
-# Portfolio Template — Astro
+# Neil Merton's Website
 
-A minimal, type-safe personal website template for frontend developers.  
-Built with [Astro](https://astro.build), plain CSS, and semantic HTML.
+A minimal, type-safe personal website, built with [Astro](https://astro.build), plain CSS, and semantic HTML.
 
 ---
 
