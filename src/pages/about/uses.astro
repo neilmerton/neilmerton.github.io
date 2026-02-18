@@ -1,0 +1,70 @@
+---
+import AboutNav from "@components/AboutNav.astro";
+import Layout from "@layouts/Layout.astro";
+import { siteConfig, usesHardware, usesSoftware } from "../../data";
+---
+
+<Layout
+  title="Uses / About"
+  description={`Learn more about the tools and software ${siteConfig.name} uses on a regular basis.`}
+>
+  <article class="container">
+    <header class="page-hero animate-in">
+      <AboutNav />
+      <span class="page-hero__eyebrow">Information</span>
+      <h1 class="page-hero__title">Uses</h1>
+      <p class="page-hero__subtitle">
+        Inspired by <a href="https://wesbos.com/" rel="nofollow" target="_blank"
+          >Wes Bos</a
+        > and <a href="https://uses.tech/" rel="nofollow" target="_blank"
+          >uses.tech</a
+        >, here is a list of some of the tech related things I use on a regular
+        basis.
+      </p>
+    </header>
+
+    <div class="about-body prose animate-in animate-in--delay-1">
+      <h2 id="software">Software</h2>
+      <p>
+        This list could go on for a very long time, but I'll do my best to keep
+        it succinct.
+      </p>
+      <ul class="uses-list">
+        {
+          usesSoftware.map((item) => (
+            <li class="uses-list__item">
+              <a href={item.href} target="_blank">
+                <strong>{item.title}</strong>
+                <span>{item.description}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <h2 id="hardware">Hardware</h2>
+      <ul class="uses-list">
+        {
+          usesHardware.map((item) => (
+            <li class="uses-list__item">
+              <strong>{item.title}</strong>
+              <span>{item.description}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p>
+        There's a few things I'd like to try in the future; including a standing
+        desk <span class="subtle">(to help with posture)</span> and improved lighting.
+      </p>
+      <footer>
+        <p><a href="/about">Back to About</a></p>
+      </footer>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .about-body {
+    padding-bottom: var(--space-24);
+  }
+</style>

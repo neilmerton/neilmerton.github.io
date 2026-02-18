@@ -1,5 +1,3 @@
-// ─── Technology Stack ────────────────────────────────────────────────────────
-
 export interface TechItem {
   name: string;
   category: 'language' | 'framework' | 'tool' | 'platform' | 'other';
@@ -7,7 +5,14 @@ export interface TechItem {
   iconUrl?: string;
 }
 
-// ─── Work Experience ─────────────────────────────────────────────────────────
+export interface UsesItem {
+  description: string;
+  title: string;
+}
+
+export interface UsesItemWithHref extends UsesItem {
+  href: string;
+}
 
 export interface Role {
   title: string;
@@ -20,8 +25,6 @@ export interface Role {
   highlights: string[];
   technologies: string[];
 }
-
-// ─── Contact / Social ────────────────────────────────────────────────────────
 
 export type SocialPlatform =
   | 'github'

@@ -1,6 +1,7 @@
 ---
+import AboutNav from "@components/AboutNav.astro";
 import Layout from "@layouts/Layout.astro";
-import { siteConfig } from "../data";
+import { siteConfig } from "../../data";
 ---
 
 <Layout
@@ -9,16 +10,16 @@ import { siteConfig } from "../data";
 >
   <article class="container">
     <header class="page-hero animate-in">
+      <AboutNav />
       <span class="page-hero__eyebrow">Information</span>
       <h1 class="page-hero__title">{siteConfig.name}</h1>
       <p class="page-hero__subtitle">
         Frontend developer. Accessibility advocate. Perpetual learner.
       </p>
     </header>
-
     <div class="about-body prose animate-in animate-in--delay-1">
       <p>
-        Hi — I'm {siteConfig.name}. I build web experiences that are fast,
+        Hi there, I'm {siteConfig.name}. I build web experiences that are fast,
         accessible, and a pleasure to use. I've been working in frontend
         development for over six years, and I still get excited when a layout
         clicks together or an interaction feels just right.

@@ -5,7 +5,9 @@ const currentPath = Astro.url.pathname;
 
 // Helper: is this nav item active?
 const isActive = (href: string): boolean => {
-  if (href === "/") return currentPath === "/";
+  if (href === "/") {
+    return currentPath === "/";
+  }
   return currentPath.startsWith(href);
 };
 ---
