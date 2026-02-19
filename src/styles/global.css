@@ -32,11 +32,6 @@
   --color-tag-bg: hsl(36, 22%, 91%);
   --color-tag-text: hsl(30, 6%, 33%);
 
-  /* Typography */
-  --font-display: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
-  --font-body: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  --font-mono: 'Cascadia Code', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
   --text-xs: 0.75rem;
   /* 12px */
   --text-sm: 0.875rem;
