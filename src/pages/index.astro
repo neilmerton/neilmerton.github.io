@@ -115,29 +115,6 @@ const latestPosts = allPosts
       border-color var(--transition-fast);
   }
 
-  .btn--primary {
-    background-color: var(--color-accent-bg);
-    border: 2px solid var(--color-accent);
-    color: #ffffff;
-
-    &:hover {
-      background-color: var(--color-accent-hover);
-      border-color: var(--color-accent-hover);
-      color: #ffffff;
-    }
-  }
-
-  .btn--secondary {
-    background-color: transparent;
-    border: 2px solid var(--color-border);
-    color: var(--color-text);
-
-    &:hover {
-      border-color: var(--color-text-muted);
-      color: var(--color-text);
-    }
-  }
-
   .home-section {
     padding-block: var(--space-16);
   }
@@ -193,17 +170,15 @@ const latestPosts = allPosts
 
   .post-list__item article {
     align-items: baseline;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-6);
+    display: grid;
+    grid-template-columns: 5.75rem minmax(0, 1fr);
+    gap: var(--space-2);
   }
 
   .post-list__date {
     color: var(--color-text-subtle);
-    flex-shrink: 0;
     font-size: var(--text-sm);
     font-variant-numeric: tabular-nums;
-    min-inline-size: 6rem;
   }
 
   .post-list__link {
@@ -211,6 +186,9 @@ const latestPosts = allPosts
     font-family: var(--font-display);
     font-size: var(--text-md);
     text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 
     &:hover {
       color: var(--color-accent);

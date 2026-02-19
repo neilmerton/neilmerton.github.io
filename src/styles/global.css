@@ -166,8 +166,6 @@ body {
     color var(--transition-slow);
 }
 
-/* ─── Typography Defaults ────────────────────────────────────── */
-
 h1,
 h2,
 h3,
@@ -344,6 +342,29 @@ td {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.btn--primary {
+  background-color: var(--color-accent-bg);
+  border: 2px solid var(--color-accent);
+  color: #ffffff;
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: #ffffff;
+  }
+}
+
+.btn--secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-border);
+  color: var(--color-text);
+
+  &:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+  }
 }
 
 .container {
