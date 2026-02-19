@@ -1,10 +1,13 @@
 import type { SiteConfig, Role, TechItem, NavItem, UsesItem, UsesItemWithHref } from './types';
 
+const baseUrl = 'https://neil.merton.dev';
+
 export const siteConfig: SiteConfig = {
   name: 'Neil Merton',
   title: 'Neil Merton / Frontend Developer',
   description: 'Frontend developer and product engineer specialising in accessible, performant web experiences.',
-  url: 'https://neil.merton.dev',
+  openGraphImage: `${baseUrl}/og-image-nm.png`,
+  url: baseUrl,
   email: 'neilmerton@gmail.com',
   fediverseHandle: '@neilmerton@mas.to',
   socials: [
