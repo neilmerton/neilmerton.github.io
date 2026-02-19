@@ -1,4 +1,9 @@
 {
-  "cSpell.words": ["neilmerton", "SVGOMG", "withastro"],
+  "cSpell.words": [
+    "neilmerton",
+    "shiki",
+    "SVGOMG",
+    "withastro"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
