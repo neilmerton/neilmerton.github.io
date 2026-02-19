@@ -63,6 +63,15 @@ const isActive = (href: string): boolean => {
     hidden
   >
     <ul class="site-mobile-nav__list" role="list">
+      <li>
+        <a
+          href="/"
+          class="site-mobile-nav__link"
+          aria-current={isActive("/") ? "page" : undefined}
+        >
+          Home
+        </a>
+      </li>
       {
         navItems.map((item) => (
           <li>
