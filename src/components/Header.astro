@@ -121,7 +121,7 @@ const isActive = (href: string): boolean => {
     backdrop-filter: blur(8px);
     background-color: var(--color-bg);
     background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);
-    border-bottom: 1px solid var(--color-border-light);
+    border-block-end: 1px solid var(--color-border-light);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -236,7 +236,7 @@ const isActive = (href: string): boolean => {
 
   .site-mobile-nav {
     animation: fadeDown 0.2s ease both;
-    border-top: 1px solid var(--color-border-light);
+    border-block-start: 1px solid var(--color-border-light);
     padding-block: var(--space-4);
   }
 

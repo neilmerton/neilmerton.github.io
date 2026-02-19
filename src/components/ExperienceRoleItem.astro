@@ -73,13 +73,13 @@ const formatDateEmployment = (dateStr?: string): string => {
 
 <style>
   .role {
-    padding-bottom: var(--space-12);
-    border-bottom: 1px solid var(--color-border-light);
+    padding-block-end: var(--space-12);
+    border-block-end: 1px solid var(--color-border-light);
   }
 
   .role:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+    border-block-end: none;
+    padding-block-end: 0;
   }
 
   .role__header {
@@ -87,14 +87,14 @@ const formatDateEmployment = (dateStr?: string): string => {
     align-items: flex-start;
     justify-content: space-between;
     gap: var(--space-6);
-    margin-bottom: var(--space-4);
+    margin-block-end: var(--space-4);
     flex-wrap: wrap;
   }
 
   .role__title {
     font-family: var(--font-display);
     font-size: var(--text-xl);
-    margin-bottom: var(--space-1);
+    margin-block-end: var(--space-1);
   }
 
   .role__company {
@@ -137,14 +137,14 @@ const formatDateEmployment = (dateStr?: string): string => {
 
   .role__description {
     color: var(--color-text-muted);
-    margin-bottom: var(--space-5);
+    margin-block-end: var(--space-5);
     max-width: 65ch;
     line-height: var(--leading-relaxed);
   }
 
   .role__highlights {
-    padding-left: var(--space-5);
-    margin-bottom: var(--space-5);
+    padding-inline-start: var(--space-5);
+    margin-block-end: var(--space-5);
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
