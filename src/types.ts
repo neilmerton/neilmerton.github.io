@@ -1,8 +1,11 @@
+type TechItemCategory = 'language' | 'framework' | 'tool' | 'platform' | 'other';
+type TechItemProficiency = 'expert' | 'proficient' | 'familiar';
+
 export interface TechItem {
-  name: string;
-  category: 'language' | 'framework' | 'tool' | 'platform' | 'other';
-  proficiency: 'expert' | 'proficient' | 'familiar';
+  category: TechItemCategory;
   iconUrl?: string;
+  name: string;
+  proficiency: TechItemProficiency;
 }
 
 export interface UsesItem {
@@ -15,15 +18,15 @@ export interface UsesItemWithHref extends UsesItem {
 }
 
 export interface Role {
-  title: string;
   company: string;
   companyUrl?: string;
-  startDate: string;       // ISO date string, e.g. "2021-03"
-  endDate?: string;        // undefined = current role
-  location: string;
   description: string;
+  endDate?: string;        // undefined = current role
   highlights: string[];
+  location: string;
+  startDate: string;       // ISO date string, e.g. "2021-03"
   technologies: string[];
+  title: string;
 }
 
 export type SocialPlatform =
@@ -42,27 +45,23 @@ export type SocialPlatform =
   | 'other';
 
 export interface SocialLink {
+  label: string;
   platform: SocialPlatform;
   url: string;
-  label: string;
 }
-
-// ─── Site Config ─────────────────────────────────────────────────────────────
 
 export interface SiteConfig {
-  name: string;
-  title: string;
   description: string;
-  fediverseHandle?: string; // e.g. "@neilmerton@mas.to"
-  url: string;
   email: string;
-  socials: SocialLink[];
+  fediverseHandle?: string; // e.g. "@neilmerton@mas.to"
+  name: string;
   openGraphImage?: string;
+  socials: SocialLink[];
+  title: string;
+  url: string;
 }
 
-// ─── Navigation ──────────────────────────────────────────────────────────────
-
 export interface NavItem {
-  label: string;
   href: string;
+  label: string;
 }
