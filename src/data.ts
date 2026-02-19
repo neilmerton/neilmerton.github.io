@@ -2,8 +2,8 @@ import type { SiteConfig, Role, TechItem, NavItem, UsesItem, UsesItemWithHref } 
 
 export const siteConfig: SiteConfig = {
   name: 'Neil Merton',
-  title: 'Neil Merton — Frontend Developer',
-  description: 'Frontend developer specialising in accessible, performant web experiences.',
+  title: 'Neil Merton / Frontend Developer',
+  description: 'Frontend developer and product engineer specialising in accessible, performant web experiences.',
   url: 'https://neil.merton.dev',
   email: 'neilmerton@gmail.com',
   fediverseHandle: '@neilmerton@mas.to',
@@ -73,10 +73,10 @@ export const techStack: TechItem[] = [
 ];
 
 export const professionalSummary = `
-I'm a frontend developer with over 10 years of experience building accessible, 
-performant web applications. I care deeply about the craft of frontend; from 
-semantic HTML and progressive enhancement to design systems and developer experience.
-I thrive at the intersection of engineering rigour and thoughtful design.
+I'm a frontend developer and product engineer with over 10 years experience building accessible, 
+performant web applications. I care deeply about the craft of frontend; from semantic HTML and 
+progressive enhancement to design systems and developer experience. I thrive at the intersection 
+of engineering rigour and thoughtful design.
 `.trim();
 
 export const roles: Role[] = [
