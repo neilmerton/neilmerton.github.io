@@ -8,7 +8,7 @@ export const siteConfig: SiteConfig = {
   description: 'Frontend developer and product engineer specialising in accessible, performant web experiences.',
   openGraphImage: `${baseUrl}/og-image-nm.png`,
   url: baseUrl,
-  email: 'neilmerton@gmail.com',
+  email: 'neil@merton.email',
   fediverseHandle: '@neilmerton@mas.to',
   socials: [
     {
