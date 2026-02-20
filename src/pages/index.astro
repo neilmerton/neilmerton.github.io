@@ -8,7 +8,7 @@ import { formatDate } from "../utils";
 // Fetch latest blog posts for the home page preview
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 const latestPosts = allPosts
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .sort((a, z) => z.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 ---
 
