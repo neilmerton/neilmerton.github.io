@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import type { GetStaticPaths } from "astro";
 import { formatDate } from "src/utils";
 
@@ -12,11 +12,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 };
 
-type Props = {
-  post: Awaited<ReturnType<typeof getEntry<"blog", string>>>;
-};
+interface Props {
+  post: CollectionEntry<"blog">;
+}
 
-const { post } = Astro.props;
+const { post } = Astro.props as Props;
 
 if (!post) {
   return Astro.redirect("/404");
