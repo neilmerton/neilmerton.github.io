@@ -160,6 +160,10 @@ const isActive = (href: string): boolean => {
     color: var(--color-accent);
   }
 
+  .site-nav {
+    display: none;
+  }
+
   .site-nav__list {
     align-items: center;
     display: flex;
@@ -200,7 +204,7 @@ const isActive = (href: string): boolean => {
     border: none;
     color: var(--color-text);
     cursor: pointer;
-    display: none;
+    display: flex;
     flex-direction: row;
     font-family: inherit;
     font-weight: 600;
@@ -294,13 +298,13 @@ const isActive = (href: string): boolean => {
     color: var(--color-accent);
   }
 
-  @media (max-width: 640px) {
+  @media screen and (width >= 50em) {
     .site-nav {
-      display: none;
+      display: block;
     }
 
     .site-header__menu-btn {
-      display: flex;
+      display: none;
     }
   }
 </style>
