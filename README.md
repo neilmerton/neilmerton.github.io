@@ -34,6 +34,7 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   └── SocialLinks.astro
+│   │   └── ...
 │   ├── content/
 │   │   ├── blog/                 ← Markdown blog posts
 │   │   ├── reading/              ← Markdown book entries
@@ -41,22 +42,23 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 │   ├── layouts/
 │   │   └── Layout.astro          ← Root HTML shell (SEO, meta, skip link)
 │   ├── pages/
-│   │   ├── index.astro           ← Home page
+│   │   ├── 404.astro
 │   │   ├── about/
 │   │   │   ├── index.astro
 │   │   │   ├── uses.astro
 │   │   │   └── colophon.astro
-│   │   ├── experience.astro
+│   │   ├── blog/
+│   │   │   ├── index.astro       ← Blog listing with tag filter
+│   │   │   └── [slug].astro      ← Individual post pages
 │   │   ├── contact.astro
-│   │   ├── reading.astro
-│   │   ├── 404.astro
-│   │   └── blog/
-│   │       ├── index.astro       ← Blog listing with tag filter
-│   │       └── [slug].astro      ← Individual post pages
+│   │   ├── experience.astro
+│   │   ├── index.astro           ← Home page
+│   │   └── reading.astro
 │   ├── styles/
 │   │   └── global.css            ← Design tokens, reset, base styles
 │   ├── data.ts                   ← Site config, roles, tech stack, navigation, uses lists
-│   └── types.ts                  ← TypeScript interfaces
+│   ├── types.ts                  ← TypeScript interfaces
+│   └── utils.ts                  ← reusable utility functions
 ├── astro.config.mjs
 ├── package.json
 └── tsconfig.json
