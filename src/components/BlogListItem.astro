@@ -1,8 +1,9 @@
 ---
-import { formatDate } from "../utils";
+import { formatDate, readingTime } from "../utils";
 
 interface Props {
   post: {
+    body: string;
     slug: string;
     data: {
       title: string;
@@ -14,6 +15,8 @@ interface Props {
 }
 
 const { post } = Astro.props as Props;
+
+const readingTimeResult = readingTime(post.body);
 ---
 
 <article class="blog-card" aria-labelledby={`post-${post.slug}`}>
@@ -29,6 +32,10 @@ const { post } = Astro.props as Props;
   </header>
 
   <p class="blog-card__description">{post.data.description}</p>
+
+  <p class="blog-card__reading-time">
+    {readingTimeResult}
+  </p>
 
   {
     post.data.tags.length > 0 && (
@@ -86,6 +93,12 @@ const { post } = Astro.props as Props;
     font-size: var(--text-md);
     line-height: var(--leading-relaxed);
     max-width: 62ch;
+    margin-block-end: var(--space-4);
+  }
+
+  .blog-card__reading-time {
+    color: var(--color-text-subtle);
+    font-size: var(--text-sm);
     margin-block-end: var(--space-4);
   }
 

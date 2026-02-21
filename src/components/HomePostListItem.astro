@@ -1,17 +1,20 @@
 ---
-import { formatDate } from "../utils";
+import { formatDate, readingTime } from "../utils";
 
 interface Props {
   post: {
     slug: string;
     data: {
-      title: string;
       pubDate: Date;
+      title: string;
     };
+    body: string;
   };
 }
 
 const { post } = Astro.props as Props;
+
+const readingTimeResult = readingTime(post.body);
 ---
 
 <li class="post-list__item">
@@ -22,6 +25,9 @@ const { post } = Astro.props as Props;
     <a href={`/blog/${post.slug}`} class="post-list__link">
       {post.data.title}
     </a>
+    <span class="post-list__reading-time">
+      {readingTimeResult}
+    </span>
   </article>
 </li>
 
@@ -41,10 +47,10 @@ const { post } = Astro.props as Props;
     align-items: baseline;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    column-gap: var(--space-2);
+    column-gap: var(--space-4);
 
     @container home-post-list (width >= 30rem) {
-      grid-template-columns: 6rem minmax(4rem, 1fr);
+      grid-template-columns: 6rem minmax(4rem, 1fr) auto;
     }
   }
 
@@ -68,5 +74,10 @@ const { post } = Astro.props as Props;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
+  }
+
+  .post-list__reading-time {
+    color: var(--color-text-subtle);
+    font-size: var(--text-sm);
   }
 </style>
