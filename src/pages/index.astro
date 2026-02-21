@@ -1,9 +1,9 @@
 ---
+import HomePostListItem from "@components/HomePostListItem.astro";
 import RandomSnippet from "@components/RandomSnippet.astro";
 import Layout from "@layouts/Layout.astro";
-import { getRandomSnippet, siteConfig } from "../data";
+import { siteConfig } from "../data";
 import { getCollection } from "astro:content";
-import { formatDate } from "../utils";
 
 // Fetch latest blog posts for the home page preview
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
@@ -35,19 +35,7 @@ const latestPosts = allPosts
 
         <ol class="post-list" role="list">
           {latestPosts.map((post) => (
-            <li class="post-list__item">
-              <article>
-                <time
-                  class="post-list__date"
-                  datetime={post.data.pubDate.toISOString()}
-                >
-                  {formatDate(post.data.pubDate)}
-                </time>
-                <a href={`/blog/${post.slug}`} class="post-list__link">
-                  {post.data.title}
-                </a>
-              </article>
-            </li>
+            <HomePostListItem post={post} />
           ))}
         </ol>
       </section>
@@ -98,23 +86,6 @@ const latestPosts = allPosts
     flex-wrap: wrap;
   }
 
-  .btn {
-    align-items: center;
-    border-radius: var(--radius-md);
-    display: inline-flex;
-    font-size: var(--text-sm);
-    font-weight: 600;
-    justify-content: center;
-    letter-spacing: var(--tracking-wide);
-    padding: var(--space-3) var(--space-6);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition:
-      background-color var(--transition-fast),
-      color var(--transition-fast),
-      border-color var(--transition-fast);
-  }
-
   .home-section {
     padding-block: var(--space-16);
   }
@@ -149,56 +120,12 @@ const latestPosts = allPosts
   }
 
   .post-list {
-    container: post-list / inline-size;
+    container: home-post-list / inline-size;
     display: flex;
     flex-direction: column;
     gap: 0;
     list-style: none;
     margin: 0;
     padding: 0;
-  }
-
-  .post-list__item {
-    border-block-end: 1px solid var(--color-border-light);
-    display: grid;
-    grid-template-columns: 1fr;
-    padding-block: var(--space-4);
-
-    &:last-child {
-      border-block-end: none;
-    }
-  }
-
-  .post-list__item article {
-    align-items: baseline;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    column-gap: var(--space-2);
-
-    @container post-list (width >= 30rem) {
-      grid-template-columns: 6rem minmax(4rem, 1fr);
-    }
-  }
-
-  .post-list__date {
-    color: var(--color-text-subtle);
-    font-size: var(--text-sm);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .post-list__link {
-    color: var(--color-text);
-    font-family: var(--font-display);
-    font-size: var(--text-md);
-    text-decoration: none;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-
-    &:hover {
-      color: var(--color-accent);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
   }
 </style>
