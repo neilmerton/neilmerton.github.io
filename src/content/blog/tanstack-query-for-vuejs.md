@@ -2,6 +2,7 @@
 title: "TanStack Query is a Must for Vue.js"
 description: "Discover how TanStack Query can revolutionize your Vue.js applications by managing server state efficiently, reducing boilerplate, and improving user experience."
 pubDate: "2025-09-10"
+updatedDate: "2026-02-21"
 tags: ["vue.js", "tanstack query", "state management", "web development"]
 ---
 
@@ -23,7 +24,7 @@ One of the biggest mistakes we make in Vue is treating API data like local state
 
 ## 1. Zero Boilerplate, Pure Declarative Logic
 
-In a standard Vue setup, a simple fetch looks like this:
+In a standard Vue 3 setup, using composition API, a simple fetch might look like this:
 
 ```javascript
 const data = ref(null);
