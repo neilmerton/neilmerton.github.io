@@ -1,7 +1,11 @@
 ---
-import { getRandomSnippet } from "../data";
-
-const snippet = getRandomSnippet();
+import { snippets } from "../data";
 ---
 
-<p>{snippet}</p>
+<p id="random-snippet"></p>
+<script define:vars={{ snippets }}>
+  const el = document.getElementById('random-snippet');
+  if (el && snippets.length > 0) {
+    el.textContent = snippets[Math.floor(Math.random() * snippets.length)];
+  }
+</script>
