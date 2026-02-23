@@ -132,7 +132,7 @@ export const roles: Role[] = [
   },
 ];
 
-const snippets: string[] = [
+export const snippets: string[] = [
   `Declarative programming allows you to describe what you want to happen, rather than the steps to make it happen.`,
   `JSX is a syntax extension for JavaScript, but browsers don't understand JSX out of the box, so you'll need a JavaScript compiler to transform your JSX code into regular JavaScript.`,
   `JavaScript's dynamic typing makes it easy to introduce runtime errors. TypeScript catches errors at compile time, preventing common mistakes before they even run in the browser.`,
