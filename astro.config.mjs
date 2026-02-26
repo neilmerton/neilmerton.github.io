@@ -4,7 +4,26 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: 'https://neil.merton.dev',
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap({
+    chunks: {
+      'blog': (item) => {
+        if (/blog/.test(item.url)) {
+          item.changefreq = 'weekly';
+          item.lastmod = new Date();
+          item.priority = 0.9;
+          return item;
+        }
+      },
+      'reading': (item) => {
+        if (/reading/.test(item.url)) {
+          item.changefreq = 'monthly';
+          item.lastmod = new Date();
+          item.priority = 0.7;
+          return item;
+        }
+      }
+    },
+  })],
   experimental: {
     fonts: [
       {
