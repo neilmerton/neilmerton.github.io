@@ -19,8 +19,8 @@ I'm still learning React myself, so this is a work in progress, but I hope it ca
 | **`v-else`** | `{condition ? <A /> : <B />}` | React uses ternary operators. |
 | **`v-for="item in items"`** | `{items.map(item => ...)}` | React treats the list as a JS array method. |
 | **`v-model="val"`** | `value={val}` + `onChange={...}` | React is "one-way"; you must manually update. |
-| **`v-bind:id="myId"`** | `id={myId}` | No colon needed; just use curly braces. |
-| **`v-on:click` / `@click**` | `onClick={handleClick}` | CamelCase is mandatory in React props. |
+| **`v-bind:id="myId"` / `:id="myId"`** | `id={myId}` | No colon needed; just use curly braces. |
+| **`v-on:click="handleClick"` / `@click="handleClick"`** | `onClick={handleClick}` | CamelCase is mandatory in React props. |
 | **`v-show="isVisible"`** | `style={{ display: isVisible ? 'block' : 'none' }}` | React doesn't have a built-in helper for this. |
 | **`v-html`** | `dangerouslySetInnerHTML={{ __html: data }}` | React makes it sound scary on purpose for security. |
 

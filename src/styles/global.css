@@ -289,7 +289,11 @@ ol {
 table {
   border-collapse: collapse;
   font-size: var(--text-sm);
+  display: block;
   width: 100%;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
 }
 
 th {
@@ -474,6 +478,10 @@ td {
 .prose ul,
 .prose ol {
   max-width: 65ch;
+}
+
+.table-wrapper {
+  overflow-x: auto;
 }
 
 @keyframes fadeDown {
