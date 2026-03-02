@@ -2,7 +2,7 @@
 description: "A collection of custom icons for enee.io. These icons are extended from the Lucide icon set, designed to be visually appealing and consistent with the brand's identity, providing a cohesive look across the digital platforms."
 cover: "./enee-icons/icons.png"
 status: "live"
-tags: ["Icons"]
+tags: ["Figma", "Icons", "SVG"]
 title: "enee.io Icons"
 ---
 
