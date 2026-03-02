@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  item: {
+    slug: string;
+    data: {
+      cover: any;
+      description: string;
+      status: "live" | "archived" | "upcoming";
+      tags: string[];
+      title: string;
+    };
+  };
+}
+
+const { item } = Astro.props as Props;
+---
+
+<li class="work-list__item">
+  <a href={`/work/${item.slug}`} class="work-list__link">
+    <Image
+      alt={`${item.data.title} screenshot`}
+      src={item.data.cover}
+      height={495}
+      quality="mid"
+      width={704}
+    />
+    <div class="work-list__meta">
+      <h3>{item.data.title}</h3>
+      <p class="text-xs">{item.data.description}</p>
+    </div>
+  </a>
+</li>
+
+<style>
+  .work-list__item {
+    border-block-end: 1px solid var(--color-border-light);
+    padding-block: var(--space-12);
+
+    &:last-child {
+      border-block-end: none;
+    }
+  }
+
+  .work-list__link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .work-list__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-block-start: var(--space-4);
+  }
+</style>

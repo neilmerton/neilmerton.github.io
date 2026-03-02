@@ -20,3 +20,19 @@ export function readingTime(text: string): string {
 
   return `${minutes} min read`;
 }
+
+export async function getWorkImages(slug: string): Promise<ImageMetadata[]> {
+  let images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/content/work/**/*.{jpeg,jpg,webp}"
+  );
+
+  images = Object.fromEntries(
+    Object.entries(images).filter(([key]) => key.includes(slug))
+  );
+
+  const resolvedImages = await Promise.all(
+    Object.values(images).map((image) => image().then((mod) => mod.default))
+  );
+
+  return resolvedImages;
+}

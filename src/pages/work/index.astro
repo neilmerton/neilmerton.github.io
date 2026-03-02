@@ -1,0 +1,51 @@
+---
+import WorkListItem from "@components/WorkListItem.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const workItems = await getCollection("work");
+---
+
+<Layout
+  title="Work"
+  description="A showcase of projects I've worked on, with descriptions and tags."
+>
+  <div class="container">
+    <header class="page-hero animate-in">
+      <span class="page-hero__eyebrow">Projects</span>
+      <h1 class="page-hero__title">Work</h1>
+      <p class="page-hero__subtitle">
+        A selection of projects I've worked on, with descriptions and tags.
+        {
+          workItems.length > 0 && (
+            <> Some are live, some are archived, and some are upcoming.</>
+          )
+        }
+      </p>
+    </header>
+
+    <div class="work-section animate-in animate-in--delay-2">
+      <h2 class="work-section__title">Examples</h2>
+      <ol class="work-list" role="list">
+        {workItems.map((item) => <WorkListItem item={item} />)}
+      </ol>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .work-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .work-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>

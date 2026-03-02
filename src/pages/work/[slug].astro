@@ -1,0 +1,161 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getWorkImages } from "../../utils";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const workItems = await getCollection("work");
+
+  const paths = Object.values(workItems).map((item) => {
+    return {
+      params: {
+        slug: item.slug,
+      },
+      props: {
+        item,
+      },
+    };
+  });
+
+  return paths;
+}
+
+interface Props {
+  item: CollectionEntry<"work">;
+}
+
+const { item } = Astro.props as Props;
+
+if (!item) {
+  return Astro.redirect("/404");
+}
+const images = await getWorkImages(item.slug);
+
+const { Content } = await item.render();
+---
+
+<Layout title={item.data.title} description={item.data.description}>
+  <article
+    class="container work-page"
+    itemscope
+    itemtype="https://schema.org/CreativeWork"
+  >
+    <header class="work-header animate-in">
+      <nav class="work-breadcrumb" aria-label="Breadcrumb">
+        <a href="/work">← All Work</a>
+      </nav>
+
+      <h1 class="work-header__title" itemprop="headline">{item.data.title}</h1>
+
+      <p class="work-header__description" itemprop="description">
+        {item.data.description}
+      </p>
+
+      {
+        item.data.tags.length > 0 && (
+          <ul class="work-header__tags" role="list" aria-label="Work tags">
+            {item.data.tags.map((tag) => (
+              <li>
+                <span class="tag">{tag}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </header>
+
+    <div class="work-images">
+      {
+        images.map((img) => (
+          <Image
+            alt={`${item.data.title} screenshot`}
+            src={img}
+            quality="mid"
+            width={1200}
+          />
+        ))
+      }
+    </div>
+
+    <div
+      class="work-body prose animate-in animate-in--delay-1"
+      itemprop="workBody"
+    >
+      <Content />
+    </div>
+
+    <footer class="work-footer animate-in animate-in--delay-2">
+      <hr />
+      <a href="/work" class="work-footer__back">← Back to all work</a>
+    </footer>
+  </article>
+</Layout>
+
+<style>
+  .work-breadcrumb {
+    margin-block-end: var(--space-8);
+  }
+
+  .work-breadcrumb a {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  .work-header {
+    border-block-end: 1px solid var(--color-border-light);
+    margin-block-end: var(--space-12);
+    padding-block-end: var(--space-10);
+    padding-block-start: var(--space-16);
+  }
+
+  .work-header__title {
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    margin-block-end: var(--space-5);
+    max-width: 22ch;
+  }
+
+  .work-header__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    margin: var(--space-5) 0;
+    padding: 0;
+  }
+
+  .work-images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    margin-block-end: var(--space-12);
+  }
+
+  .work-body {
+    font-size: var(--text-md);
+    line-height: var(--leading-relaxed);
+    padding-block-end: var(--space-12);
+  }
+
+  .work-footer hr {
+    margin-block-end: var(--space-8);
+  }
+
+  .work-footer__back {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+</style>
