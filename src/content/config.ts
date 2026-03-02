@@ -29,7 +29,20 @@ const readingCollection = defineCollection({
   }),
 });
 
+// Work collection schema
+const workCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    cover: image(),
+    description: z.string(),
+    status: z.enum(['live', 'archived', 'upcoming']),
+    tags: z.array(z.string()).default([]),
+    title: z.string(),
+  }),
+});
+
 export const collections = {
   blog: blogCollection,
   reading: readingCollection,
+  work: workCollection,
 };

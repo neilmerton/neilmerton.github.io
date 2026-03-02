@@ -37,6 +37,7 @@ export const siteConfig: SiteConfig = {
 export const navItems: NavItem[] = [
   { label: 'About', href: '/about' },
   { label: 'Experience', href: '/experience' },
+  { label: 'Work', href: '/work' },
   { label: 'Blog', href: '/blog' },
   { label: 'Reading', href: '/reading' },
   { label: 'Contact', href: '/contact' },
@@ -140,11 +141,6 @@ export const snippets: string[] = [
   `Make sure there is a visible focus style for interactive elements that are navigated to via keyboard input. This is crucial for accessibility, as it allows users who rely on keyboard navigation to see where they are on the page and interact with elements effectively.`,
   `Remove animations when the “reduce motion” setting is activated. This respects users' preferences and can help prevent motion sickness or discomfort for those sensitive to motion.`,
 ]
-
-export function getRandomSnippet(): string {
-  const randomIndex = Math.floor(Math.random() * snippets.length);
-  return snippets[randomIndex];
-}
 
 export const usesHardware: UsesItem[] = [
   {
