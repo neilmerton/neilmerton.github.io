@@ -20,6 +20,7 @@ const latestPosts = allPosts
     <div class="hero__actions">
       <a href="/about" class="btn btn--primary">About me</a>
       <a href="/experience" class="btn btn--secondary">Experience</a>
+      <a href="/work" class="btn btn--secondary">Portfolio</a>
     </div>
   </section>
 
@@ -83,7 +84,11 @@ const latestPosts = allPosts
   .hero__actions {
     display: flex;
     gap: var(--space-3);
-    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
   }
 
   .home-section {
