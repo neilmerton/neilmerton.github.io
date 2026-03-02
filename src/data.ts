@@ -141,11 +141,6 @@ export const snippets: string[] = [
   `Remove animations when the “reduce motion” setting is activated. This respects users' preferences and can help prevent motion sickness or discomfort for those sensitive to motion.`,
 ]
 
-export function getRandomSnippet(): string {
-  const randomIndex = Math.floor(Math.random() * snippets.length);
-  return snippets[randomIndex];
-}
-
 export const usesHardware: UsesItem[] = [
   {
     description: "I've been a Mac user for a long time now and I love it.",
