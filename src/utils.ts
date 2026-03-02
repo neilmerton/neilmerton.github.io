@@ -23,7 +23,7 @@ export function readingTime(text: string): string {
 
 export async function getWorkImages(slug: string): Promise<ImageMetadata[]> {
   let images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/content/work/**/*.{jpeg,jpg,webp}"
+    "/src/content/work/**/*.{jpeg,jpg,png,webp}"
   );
 
   images = Object.fromEntries(
