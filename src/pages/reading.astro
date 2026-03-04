@@ -14,8 +14,8 @@ const books = allBooks.sort((a, b) => {
     return statusDiff;
   }
 
-  const aDate = a.data.finishedDate ?? a.data.startedDate;
-  const bDate = b.data.finishedDate ?? b.data.startedDate;
+  const aDate = a.data.finishedDate;
+  const bDate = b.data.finishedDate;
 
   if (aDate && bDate) {
     return bDate.valueOf() - aDate.valueOf();
