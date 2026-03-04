@@ -1,6 +1,6 @@
 ---
 title: "null vs undefined in JavaScript"
-description: "A deep dive into the differences between null and undefined in JavaScript."
+description: "A quick overview into the differences between null and undefined in JavaScript."
 pubDate: "2026-03-04"
 tags: ["javascript", "programming", "typescript", "web development", "learning"]
 mainClass: "javascript-review"
