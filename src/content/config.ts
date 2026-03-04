@@ -18,7 +18,6 @@ const readingCollection = defineCollection({
   type: 'content',
   schema: z.object({
     author: z.string(),
-    coverImage: z.string().optional(),
     finishedDate: z.coerce.date().optional(),
     rating: z.number().min(1).max(5).optional(),
     status: z.enum(['reading', 'completed', 'want-to-read']).default('want-to-read'),
