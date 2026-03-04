@@ -1,6 +1,6 @@
 ---
 title: "Vue.js to React Cheat Sheet"
-description: "A comprehensive guide for Vue developers transitioning to React."
+description: "An introductory guide for Vue developers (like me) who are curious about transitioning to React."
 pubDate: "2026-02-26"
 tags: ["vue.js", 'react', "web development"]
 mainClass: "vue-to-react-cheat-sheet"
