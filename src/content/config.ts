@@ -21,7 +21,6 @@ const readingCollection = defineCollection({
     coverImage: z.string().optional(),
     finishedDate: z.coerce.date().optional(),
     rating: z.number().min(1).max(5).optional(),
-    startedDate: z.coerce.date().optional(),
     status: z.enum(['reading', 'completed', 'want-to-read']).default('want-to-read'),
     tags: z.array(z.string()).default([]),
     thoughts: z.string().optional(),

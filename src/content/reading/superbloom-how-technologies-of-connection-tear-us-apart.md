@@ -1,6 +1,5 @@
 ---
 finishedDate: 2025-11-28
-startedDate: 2025-09-01
 status: completed
 tags:
   - sociology
