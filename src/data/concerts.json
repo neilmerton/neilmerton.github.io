@@ -313,6 +313,16 @@
     "photo": ""
   },
   {
+    "id": 41,
+    "artist": "Death Cab for Cutie",
+    "date": "2019-01-25",
+    "location": "Albert Hall, Manchester, UK",
+    "photo": "",
+    "support": [
+      "The Beths"
+    ]
+  },
+  {
     "id": 43,
     "artist": "Dashboard Confessional",
     "date": "2019-11-11",
