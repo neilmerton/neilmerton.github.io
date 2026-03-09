@@ -272,5 +272,22 @@
     "location": "The Stage, Stoke-on-Trent, UK",
     "notes": "If memory serves, this was the a warm-up show for their upcoming tour, and the band had 'Taxi Driver' film playing in the background.",
     "photo": ""
+  },
+  {
+    "id": 36,
+    "artist": "The Joy Formidable",
+    "date": "2016-05-14",
+    "location": "Manchester Academy 3, Manchester, UK",
+    "photo": "",
+    "support": [
+      "Demob Happy"
+    ]
+  },
+  {
+    "id": 37,
+    "artist": "Anberlin",
+    "date": "2013-02-02",
+    "location": "Manchester Academy 3, Manchester, UK",
+    "photo": ""
   }
 ]
