@@ -106,6 +106,7 @@
     "artist": "Pixies",
     "date": "2024-03-12",
     "location": "Albert Hall, Manchester, UK",
+    "notes": "They played both 'Bossanova' and 'Trompe Le Monde' in their entirety, which was a real treat, and thoroughly enjoyable.",
     "photo": ""
   },
   {
@@ -308,20 +309,6 @@
     "id": 40,
     "artist": "Sebadoh",
     "date": "2019-10-05",
-    "location": "Manchester Academy 2, Manchester, UK",
-    "photo": ""
-  },
-  {
-    "id": 41,
-    "artist": "The Dandy Warhols",
-    "date": "2019-10-06",
-    "location": "Manchester Academy 2, Manchester, UK",
-    "photo": ""
-  },
-  {
-    "id": 42,
-    "artist": "The Dandy Warhols",
-    "date": "2019-10-07",
     "location": "Manchester Academy 2, Manchester, UK",
     "photo": ""
   },
