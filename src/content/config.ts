@@ -1,3 +1,4 @@
+import { file } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
 // Blog collection schema
@@ -10,6 +11,19 @@ const blogCollection = defineCollection({
     tags: z.array(z.string()).default([]),
     title: z.string(),
     updatedDate: z.coerce.date().optional(),
+  }),
+});
+
+// Concert collection schema
+const concertsCollection = defineCollection({
+  loader: file('src/data/concerts.json'),
+  schema: z.object({
+    artist: z.string(),
+    date: z.coerce.date(),
+    location: z.string(),
+    notes: z.string().optional(),
+    photo: z.string().optional(),
+    support: z.array(z.string()).default([]),
   }),
 });
 
@@ -41,6 +55,7 @@ const workCollection = defineCollection({
 
 export const collections = {
   blog: blogCollection,
+  concerts: concertsCollection,
   reading: readingCollection,
   work: workCollection,
 };
