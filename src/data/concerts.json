@@ -115,5 +115,162 @@
     "location": "Queens Hall, Leicester University, Leicester, UK",
     "notes": "Bumped into Daniel Ash and David J loitering by the sound desk. They were both really friendly and we had a chat about the show and their music.",
     "photo": ""
+  },
+  {
+    "id": 17,
+    "artist": "Belly",
+    "date": "1993-02-14",
+    "location": "L.U.S.U., Leicester University, Leicester, UK",
+    "photo": "",
+    "support": [
+      "The Cranberries"
+    ]
+  },
+  {
+    "id": 18,
+    "artist": "Molly Half Head",
+    "date": "1993-03-08",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 19,
+    "artist": "Tindersticks",
+    "date": "1993-03-23",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": "",
+    "support": [
+      "The Auteurs"
+    ]
+  },
+  {
+    "id": 20,
+    "artist": "Strangelove",
+    "date": "1993-05-06",
+    "location": "L.U.S.U., Leicester University, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 21,
+    "artist": "Moonshake",
+    "date": "1993-05-17",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 22,
+    "artist": "Dodgy",
+    "date": "1993-06-17",
+    "location": "The Charlotte, Leicester, UK",
+    "notes": "Managed to blag our way upstairs after the show and got to meet the band. We then took them into Leicester city centre and ended up at The Fan Club.",
+    "photo": ""
+  },
+  {
+    "id": 23,
+    "artist": "Catherine Wheel",
+    "date": "1993-09-25",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": "",
+    "support": [
+      "Sidi Bou Said"
+    ]
+  },
+  {
+    "id": 24,
+    "artist": "The Levellers",
+    "date": "1993-10-06",
+    "location": "Granby Halls, Leicester, UK",
+    "photo": "",
+    "support": [
+      "Chumbawamba"
+    ]
+  },
+  {
+    "id": 25,
+    "artist": "Radial Spangle",
+    "date": "1993-11-21",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": "",
+    "support": [
+      "Sundial",
+      "Idaho"
+    ]
+  },
+  {
+    "id": 26,
+    "artist": "The Wonder Stuff",
+    "date": "1994-03-23",
+    "location": "Granby Halls, Leicester, UK",
+    "photo": "",
+    "support": [
+      "Gigolo Aunts"
+    ]
+  },
+  {
+    "id": 27,
+    "artist": "dEUS",
+    "date": "1994-09-21",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 28,
+    "artist": "Kitchens of Distinction",
+    "date": "1994-09-30",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 29,
+    "artist": "Stilskin",
+    "date": "1994-10-01",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 30,
+    "artist": "Senseless Things",
+    "date": "1995-03-05",
+    "location": "L.U.S.U., Leicester University, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 31,
+    "artist": "Drugstore",
+    "date": "1995-04-07",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": "",
+    "support": [
+      "Delicatessen"
+    ]
+  },
+  {
+    "id": 32,
+    "artist": "Mansun",
+    "date": "1995-08-24",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 33,
+    "artist": "Longpigs",
+    "date": "1996-05-09",
+    "location": "The Charlotte, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 34,
+    "artist": "Catherine Wheel",
+    "date": "1995-09-20",
+    "location": "The Stage, Stoke-on-Trent, UK",
+    "photo": ""
+  },
+  {
+    "id": 35,
+    "artist": "Catherine Wheel",
+    "date": "1995-07-17",
+    "location": "The Stage, Stoke-on-Trent, UK",
+    "notes": "If memory serves, this was the a warm-up show for their upcoming tour, and the band had 'Taxi Driver' film playing in the background.",
+    "photo": ""
   }
 ]

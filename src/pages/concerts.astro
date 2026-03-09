@@ -27,15 +27,19 @@ const concertsByYear = allConcerts.reduce<Record<string, typeof allConcerts>>(
 
 <Layout
   title="Concerts"
-  description="A log of concerts I've attended, with details and photos."
+  description="A log of concerts I've attended, with details and some notes."
 >
   <div class="container">
     <header class="page-hero animate-in">
       <span class="page-hero__eyebrow">Music</span>
       <h1 class="page-hero__title">Concerts</h1>
       <p class="page-hero__subtitle">
-        A log of concerts I've attended, with details and photos.
-        {Object.keys(concertsByYear).length === 0 && " No concerts yet!"}
+        A log of concerts I've attended, with details and some notes.
+        {
+          allConcerts.length === 0
+            ? " No concerts yet!"
+            : ` ${allConcerts.length} concerts and counting!`
+        }
       </p>
     </header>
 
