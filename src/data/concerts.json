@@ -289,5 +289,55 @@
     "date": "2013-02-02",
     "location": "Manchester Academy 3, Manchester, UK",
     "photo": ""
+  },
+  {
+    "id": 38,
+    "artist": "Death Cab for Cutie",
+    "date": "2015-11-03",
+    "location": "Manchester Academy, Manchester, UK",
+    "photo": ""
+  },
+  {
+    "id": 39,
+    "artist": "Feeder",
+    "date": "2018-03-10",
+    "location": "Manchester Academy, Manchester, UK",
+    "photo": ""
+  },
+  {
+    "id": 40,
+    "artist": "Sebadoh",
+    "date": "2019-10-05",
+    "location": "Manchester Academy 2, Manchester, UK",
+    "photo": ""
+  },
+  {
+    "id": 41,
+    "artist": "The Dandy Warhols",
+    "date": "2019-10-06",
+    "location": "Manchester Academy 2, Manchester, UK",
+    "photo": ""
+  },
+  {
+    "id": 42,
+    "artist": "The Dandy Warhols",
+    "date": "2019-10-07",
+    "location": "Manchester Academy 2, Manchester, UK",
+    "photo": ""
+  },
+  {
+    "id": 43,
+    "artist": "Dashboard Confessional",
+    "date": "2019-11-11",
+    "location": "The Deaf Institute, Manchester, UK",
+    "notes": "This was just an acoustic show, with Chris Carrabba performing on his own. He was in great form and the setlist included a lot of fan favourites.",
+    "photo": ""
+  },
+  {
+    "id": 44,
+    "artist": "Feeder",
+    "date": "2019-11-16",
+    "location": "Albert Hall, Manchester, UK",
+    "photo": ""
   }
 ]
