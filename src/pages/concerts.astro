@@ -1,0 +1,99 @@
+---
+import ConcertListItem from "@components/ConcertListItem.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const allConcerts = await getCollection("concerts");
+
+// Group by year (newest year first, and concerts within each year sorted newest first)
+const concertsByYear = allConcerts.reduce<Record<string, typeof allConcerts>>(
+  (acc, concert) => {
+    const year = concert.data.date.getFullYear().toString();
+
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+
+    acc[year].push(concert);
+
+    // Sort concerts in this year by date (newest first)
+    acc[year].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+    return acc;
+  },
+  {},
+);
+---
+
+<Layout
+  title="Concerts"
+  description="A log of concerts I've attended, with details and photos."
+>
+  <div class="container">
+    <header class="page-hero animate-in">
+      <span class="page-hero__eyebrow">Music</span>
+      <h1 class="page-hero__title">Concerts</h1>
+      <p class="page-hero__subtitle">
+        A log of concerts I've attended, with details and photos.
+        {Object.keys(concertsByYear).length === 0 && " No concerts yet!"}
+      </p>
+    </header>
+
+    {
+      Object.entries(concertsByYear)
+        .sort(([yearA], [yearB]) => parseInt(yearB) - parseInt(yearA))
+        .map(([year, concerts]) => (
+          <section class="concert-year">
+            <h2 class="concert-year__title">
+              {year}
+              <span
+                class="concert-year__count"
+                aria-label={`${concerts.length} concerts in ${year}`}
+                data-count
+              >
+                {concerts.length}
+              </span>
+            </h2>
+            <div class="concert-list">
+              {concerts.map((concert) => (
+                <ConcertListItem concert={concert} />
+              ))}
+            </div>
+          </section>
+        ))
+    }
+  </div>
+</Layout>
+
+<style>
+  .concert-year {
+    margin-bottom: var(--space-12);
+  }
+
+  .concert-year__title {
+    align-items: center;
+    color: var(--color-text-muted);
+    display: flex;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    gap: var(--space-3);
+    margin-block-end: var(--space-6);
+  }
+
+  .concert-list {
+    display: grid;
+    gap: var(--space-8);
+  }
+
+  .concert-year__count {
+    align-items: center;
+    background-color: var(--color-bg-subtle);
+    border-radius: var(--radius-pill);
+    color: var(--color-text-subtle);
+    display: inline-flex;
+    font-size: var(--text-xs);
+    height: 22px;
+    justify-content: center;
+    width: 22px;
+  }
+</style>

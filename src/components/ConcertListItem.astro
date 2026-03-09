@@ -1,0 +1,51 @@
+---
+import { formatDate } from "../utils";
+
+interface Props {
+  concert: {
+    data: {
+      artist: string;
+      date: Date;
+      location: string;
+      notes?: string;
+      photo?: string;
+      support: string[];
+    };
+  };
+}
+
+const { concert } = Astro.props as Props;
+---
+
+<article class="concert-card animate-in">
+  {
+    concert.data.photo && (
+      <img
+        src={concert.data.photo}
+        alt={`${concert.data.artist} at ${concert.data.location} on ${concert.data.date.toLocaleDateString()}`}
+        class="concert-card__photo"
+      />
+    )
+  }
+  <div class="concert-card__content">
+    <h3 class="concert-card__artist">{concert.data.artist}</h3>
+    <p class="concert-card__details">
+      <time datetime={concert.data.date.toISOString()}>
+        {formatDate(concert.data.date)}
+      </time>{" "}
+      at {concert.data.location}
+    </p>
+    {
+      concert.data.support.length > 0 && (
+        <p class="concert-card__support">
+          Support: {concert.data.support.join(", ")}
+        </p>
+      )
+    }
+    {
+      concert.data.notes && (
+        <p class="concert-card__notes">{concert.data.notes}</p>
+      )
+    }
+  </div>
+</article>

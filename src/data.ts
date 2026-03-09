@@ -40,6 +40,7 @@ export const navItems: NavItem[] = [
   { label: 'Work', href: '/work' },
   { label: 'Blog', href: '/blog' },
   { label: 'Reading', href: '/reading' },
+  { label: 'Concerts', href: '/concerts' },
   { label: 'Contact', href: '/contact' },
 ];
 
