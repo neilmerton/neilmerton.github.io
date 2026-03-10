@@ -430,5 +430,23 @@
     "date": "2016-11-10",
     "location": "Manchester Academy, Manchester, UK",
     "photo": ""
+  },
+  {
+    "id": 54,
+    "artist": "Milltown Brothers",
+    "date": "1993-05-06",
+    "location": "De Montfort University, Leicester, UK",
+    "photo": ""
+  },
+  {
+    "id": 55,
+    "artist": "Ride",
+    "date": "1993-03-13",
+    "location": "Empress Ballroom, Blackpool, UK",
+    "notes": "The infamous 'Day Tripper' show, where both bands played a shared headline set. My brother and I got a coach from Leicester to Blackpool, and we were really excited to see both bands. The show was really good. We almost missed the coach back to Leicester, but we made it just in time.",
+    "photo": "",
+    "support": [
+      "The Charlatans"
+    ]
   }
 ]
