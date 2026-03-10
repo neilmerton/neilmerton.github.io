@@ -371,5 +371,36 @@
     "support": [
       "Barbarossa"
     ]
+  },
+  {
+    "id": 48,
+    "artist": "Underoath",
+    "date": "2017-05-01",
+    "location": "O2 Ritz, Manchester, UK",
+    "photo": "",
+    "support": [
+      "mewithoutYou"
+    ]
+  },
+  {
+    "id": 49,
+    "artist": "Fuzzy Sun",
+    "date": "2019-05-18",
+    "location": "Manchester Club Academy, Manchester, UK",
+    "photo": "",
+    "support": [
+      "Inhaler"
+    ]
+  },
+  {
+    "id": 50,
+    "artist": "Brand New",
+    "date": "2007-02-06",
+    "location": "Manchester Apollo, Manchester, UK",
+    "notes": "This was the first time I saw Brand New live, we actually went to see mewithoutYou as the support act. Got there too late to see mewithoutYou, and decided to stay to watch Brand New. They blew us away!",
+    "photo": "",
+    "support": [
+      "mewithoutYou"
+    ]
   }
 ]
