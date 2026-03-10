@@ -6,7 +6,7 @@ interface Props {
     data: {
       artist: string;
       date: Date;
-      location: string;
+      venue: string;
       notes?: string;
       photo?: string;
       support: string[];
@@ -22,7 +22,7 @@ const { concert } = Astro.props as Props;
     concert.data.photo && (
       <img
         src={concert.data.photo}
-        alt={`${concert.data.artist} at ${concert.data.location} on ${concert.data.date.toLocaleDateString()}`}
+        alt={`${concert.data.artist} at ${concert.data.venue} on ${concert.data.date.toLocaleDateString()}`}
         class="concert-card__photo"
       />
     )
@@ -33,7 +33,7 @@ const { concert } = Astro.props as Props;
       <time datetime={concert.data.date.toISOString()}>
         {formatDate(concert.data.date)}
       </time>{" "}
-      at {concert.data.location}
+      at {concert.data.venue}
     </p>
     {
       concert.data.support.length > 0 && (

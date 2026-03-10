@@ -20,7 +20,7 @@ const concertsCollection = defineCollection({
   schema: z.object({
     artist: z.string(),
     date: z.coerce.date(),
-    location: z.string(),
+    venue: z.string(),
     notes: z.string().optional(),
     photo: z.string().optional(),
     support: z.array(z.string()).default([]),

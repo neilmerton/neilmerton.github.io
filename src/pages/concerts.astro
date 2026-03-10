@@ -26,9 +26,12 @@ const concertsByYear = allConcerts.reduce<Record<string, typeof allConcerts>>(
 
 // Artists list including counts (including support acts), sorted by most times seen (excluding future dates), then alphabetically
 const artistCounts: Record<string, number> = {};
+// Venues list including counts (sorted by most visited, excluding future dates), then alphabetically
+const venueCounts: Record<string, number> = {};
 
 allConcerts.forEach((concert) => {
   const artists = [concert.data.artist, ...(concert.data.support || [])];
+  const venue = concert.data.venue;
 
   artists.forEach((artist) => {
     const haveBeenTo = concert.data.date <= new Date();
@@ -37,9 +40,14 @@ allConcerts.forEach((concert) => {
       artistCounts[artist] = 0;
     }
 
+    if (!venueCounts[venue] && haveBeenTo) {
+      venueCounts[venue] = 0;
+    }
+
     // Only count concerts that have already happened
     if (haveBeenTo) {
       artistCounts[artist]++;
+      venueCounts[venue]++;
     }
   });
 });
@@ -93,6 +101,38 @@ const artists = Object.entries(artistCounts)
     }
 
     {
+      Object.keys(venueCounts).length > 0 && (
+        <section class="concert-venues animate-in">
+          <h2 class="concert-venues__title">
+            Most Visited Venues
+            <span class="concert-venues__count">
+              {Object.keys(venueCounts).length}
+            </span>
+          </h2>
+          <ul class="concert-venues__list">
+            {Object.entries(venueCounts)
+              .map(([venue, count]) => ({ venue, count }))
+              .sort(
+                (a, b) => b.count - a.count || a.venue.localeCompare(b.venue),
+              )
+              .map(({ venue, count }) => (
+                <li class="concert-venues__item">
+                  {venue}
+                  <span
+                    class="concert-venues__count"
+                    aria-label={`Visited ${venue} ${count} times`}
+                    data-count
+                  >
+                    {count}
+                  </span>
+                </li>
+              ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
       Object.entries(concertsByYear)
         .sort(([yearA], [yearB]) => parseInt(yearB) - parseInt(yearA))
         .map(([year, concerts]) => (
@@ -119,11 +159,13 @@ const artists = Object.entries(artistCounts)
 </Layout>
 
 <style>
-  .concert-artists {
+  .concert-artists,
+  .concert-venues {
     margin-block-end: var(--space-12);
   }
 
-  .concert-artists__title {
+  .concert-artists__title,
+  .concert-venues__title {
     align-items: center;
     color: var(--color-text-muted);
     display: flex;
@@ -133,7 +175,8 @@ const artists = Object.entries(artistCounts)
     margin-block-end: var(--space-6);
   }
 
-  .concert-artists__list {
+  .concert-artists__list,
+  .concert-venues__list {
     column-gap: var(--space-6);
     display: flex;
     flex-wrap: wrap;
@@ -143,13 +186,15 @@ const artists = Object.entries(artistCounts)
     row-gap: var(--space-3);
   }
 
-  .concert-artists__item {
+  .concert-artists__item,
+  .concert-venues__item {
     align-items: center;
     display: flex;
     gap: var(--space-2);
   }
 
-  .concert-artists__count {
+  .concert-artists__count,
+  .concert-venues__count {
     align-items: center;
     background-color: var(--color-bg-subtle);
     border-radius: var(--radius-pill);

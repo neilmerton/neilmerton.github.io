@@ -3,14 +3,14 @@
     "id": 1,
     "artist": "Sunny Day Real Estate",
     "date": "2026-07-14",
-    "location": "New Century, Manchester, UK",
+    "venue": "New Century, Manchester, UK",
     "photo": ""
   },
   {
     "id": 2,
     "artist": "Chapterhouse",
     "date": "2026-04-25",
-    "location": "YES Basement, Manchester, UK",
+    "venue": "YES Basement, Manchester, UK",
     "photo": ""
   },
   {
@@ -21,21 +21,21 @@
       "Soul Blind"
     ],
     "date": "2026-01-17",
-    "location": "O2 Ritz, Manchester, UK",
+    "venue": "O2 Ritz, Manchester, UK",
     "photo": ""
   },
   {
     "id": 4,
     "artist": "Brand New",
     "date": "2025-11-15",
-    "location": "O2 Apollo, Manchester, UK",
+    "venue": "O2 Apollo, Manchester, UK",
     "photo": ""
   },
   {
     "id": 5,
     "artist": "Armor For Sleep",
     "date": "2025-09-15",
-    "location": "Gorilla, Manchester, UK",
+    "venue": "Gorilla, Manchester, UK",
     "notes": "They played 'What to Do When You Are Dead' in its entirety.",
     "photo": ""
   },
@@ -43,56 +43,56 @@
     "id": 6,
     "artist": "deathcrash",
     "date": "2025-06-18",
-    "location": "Future Yard, Birkenhead, UK",
+    "venue": "Future Yard, Birkenhead, UK",
     "photo": ""
   },
   {
     "id": 7,
     "artist": "METZ",
     "date": "2024-11-27",
-    "location": "Future Yard, Birkenhead, UK",
+    "venue": "Future Yard, Birkenhead, UK",
     "photo": ""
   },
   {
     "id": 8,
     "artist": "Jimmy Eat World",
     "date": "2024-11-14",
-    "location": "O2 Victoria Warehouse, Manchester, UK",
+    "venue": "O2 Victoria Warehouse, Manchester, UK",
     "photo": ""
   },
   {
     "id": 9,
     "artist": "Dinosaur Jr.",
     "date": "2022-10-14",
-    "location": "O2 Ritz, Manchester, UK",
+    "venue": "O2 Ritz, Manchester, UK",
     "photo": ""
   },
   {
     "id": 10,
     "artist": "The House of Love",
     "date": "2022-09-15",
-    "location": "O2 Academy 2, Liverpool, UK",
+    "venue": "O2 Academy 2, Liverpool, UK",
     "photo": ""
   },
   {
     "id": 11,
     "artist": "Jimmy Eat World",
     "date": "2022-07-06",
-    "location": "Manchester Academy, Manchester, UK",
+    "venue": "Manchester Academy, Manchester, UK",
     "photo": ""
   },
   {
     "id": 12,
     "artist": "Feeder",
     "date": "2022-04-29",
-    "location": "Manchester Academy, Manchester, UK",
+    "venue": "Manchester Academy, Manchester, UK",
     "photo": ""
   },
   {
     "id": 13,
     "artist": "New Model Army",
     "date": "2022-03-16",
-    "location": "The Live Rooms, Chester, UK",
+    "venue": "The Live Rooms, Chester, UK",
     "notes": "After the previous early exit of seeing the band, I was determined to see them in full again, so went on my own. Thankfully the beer didn't run out this time.",
     "photo": ""
   },
@@ -100,14 +100,14 @@
     "id": 14,
     "artist": "Feeder",
     "date": "2024-03-17",
-    "location": "O2 Academy 2, Liverpool, UK",
+    "venue": "O2 Academy 2, Liverpool, UK",
     "photo": ""
   },
   {
     "id": 15,
     "artist": "Pixies",
     "date": "2024-03-12",
-    "location": "Albert Hall, Manchester, UK",
+    "venue": "Albert Hall, Manchester, UK",
     "notes": "They played both 'Bossanova' and 'Trompe Le Monde' in their entirety, which was a real treat, and thoroughly enjoyable.",
     "photo": ""
   },
@@ -115,7 +115,7 @@
     "id": 16,
     "artist": "Spiritualized",
     "date": "1993-06-25",
-    "location": "Queens Hall, Leicester University, Leicester, UK",
+    "venue": "Queens Hall, Leicester University, Leicester, UK",
     "notes": "Bumped into Daniel Ash and David J loitering by the sound desk. They were both really friendly and we had a chat about the show and their music.",
     "photo": ""
   },
@@ -123,7 +123,7 @@
     "id": 17,
     "artist": "Belly",
     "date": "1993-02-14",
-    "location": "L.U.S.U., Leicester University, Leicester, UK",
+    "venue": "L.U.S.U., Leicester University, Leicester, UK",
     "photo": "",
     "support": [
       "The Cranberries"
@@ -133,14 +133,14 @@
     "id": 18,
     "artist": "Molly Half Head",
     "date": "1993-03-08",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": ""
   },
   {
     "id": 19,
     "artist": "Tindersticks",
     "date": "1993-03-23",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": "",
     "support": [
       "The Auteurs"
@@ -150,14 +150,14 @@
     "id": 21,
     "artist": "Moonshake",
     "date": "1993-05-17",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": ""
   },
   {
     "id": 22,
     "artist": "Dodgy",
     "date": "1993-06-17",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "notes": "Managed to blag our way upstairs after the show and got to meet the band. We then took them into Leicester city centre and ended up at The Fan Club.",
     "photo": ""
   },
@@ -165,7 +165,7 @@
     "id": 23,
     "artist": "Catherine Wheel",
     "date": "1993-09-25",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": "",
     "support": [
       "Sidi Bou Said"
@@ -175,7 +175,7 @@
     "id": 24,
     "artist": "The Levellers",
     "date": "1993-10-06",
-    "location": "Granby Halls, Leicester, UK",
+    "venue": "Granby Halls, Leicester, UK",
     "photo": "",
     "support": [
       "Chumbawamba"
@@ -185,7 +185,7 @@
     "id": 25,
     "artist": "Radial Spangle",
     "date": "1993-11-21",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": "",
     "support": [
       "Sundial",
@@ -196,7 +196,7 @@
     "id": 26,
     "artist": "The Wonder Stuff",
     "date": "1994-03-23",
-    "location": "Granby Halls, Leicester, UK",
+    "venue": "Granby Halls, Leicester, UK",
     "photo": "",
     "support": [
       "Gigolo Aunts"
@@ -206,35 +206,35 @@
     "id": 27,
     "artist": "dEUS",
     "date": "1994-09-21",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": ""
   },
   {
     "id": 28,
     "artist": "Kitchens of Distinction",
     "date": "1994-09-30",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": ""
   },
   {
     "id": 29,
     "artist": "Stilskin",
     "date": "1994-10-01",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": ""
   },
   {
     "id": 30,
     "artist": "Senseless Things",
     "date": "1995-03-05",
-    "location": "L.U.S.U., Leicester University, Leicester, UK",
+    "venue": "L.U.S.U., Leicester University, Leicester, UK",
     "photo": ""
   },
   {
     "id": 31,
     "artist": "Drugstore",
     "date": "1995-04-07",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": "",
     "support": [
       "Delicatessen"
@@ -244,28 +244,28 @@
     "id": 32,
     "artist": "Mansun",
     "date": "1995-08-24",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": ""
   },
   {
     "id": 33,
     "artist": "Longpigs",
     "date": "1996-05-09",
-    "location": "The Charlotte, Leicester, UK",
+    "venue": "The Charlotte, Leicester, UK",
     "photo": ""
   },
   {
     "id": 34,
     "artist": "Catherine Wheel",
     "date": "1995-09-20",
-    "location": "The Stage, Stoke-on-Trent, UK",
+    "venue": "The Stage, Stoke-on-Trent, UK",
     "photo": ""
   },
   {
     "id": 35,
     "artist": "Catherine Wheel",
     "date": "1995-07-17",
-    "location": "The Stage, Stoke-on-Trent, UK",
+    "venue": "The Stage, Stoke-on-Trent, UK",
     "notes": "If memory serves, this was the a warm-up show for their upcoming tour, and the band had 'Taxi Driver' film playing in the background.",
     "photo": ""
   },
@@ -273,7 +273,7 @@
     "id": 36,
     "artist": "The Joy Formidable",
     "date": "2016-05-14",
-    "location": "Manchester Academy 3, Manchester, UK",
+    "venue": "Manchester Academy 3, Manchester, UK",
     "photo": "",
     "support": [
       "Demob Happy"
@@ -283,7 +283,7 @@
     "id": 37,
     "artist": "Anberlin",
     "date": "2013-02-02",
-    "location": "Manchester Academy 3, Manchester, UK",
+    "venue": "Manchester Academy 3, Manchester, UK",
     "notes": "After a long hiatus, this was the first concert my brother and I attended together. Since then we've made up for lost time.",
     "photo": ""
   },
@@ -291,28 +291,28 @@
     "id": 38,
     "artist": "Death Cab for Cutie",
     "date": "2015-11-03",
-    "location": "Manchester Academy, Manchester, UK",
+    "venue": "Manchester Academy, Manchester, UK",
     "photo": ""
   },
   {
     "id": 39,
     "artist": "Feeder",
     "date": "2018-03-10",
-    "location": "Manchester Academy, Manchester, UK",
+    "venue": "Manchester Academy, Manchester, UK",
     "photo": ""
   },
   {
     "id": 40,
     "artist": "Sebadoh",
     "date": "2019-10-05",
-    "location": "Manchester Academy 2, Manchester, UK",
+    "venue": "Manchester Academy 2, Manchester, UK",
     "photo": ""
   },
   {
     "id": 41,
     "artist": "Death Cab for Cutie",
     "date": "2019-01-25",
-    "location": "Albert Hall, Manchester, UK",
+    "venue": "Albert Hall, Manchester, UK",
     "photo": "",
     "support": [
       "The Beths"
@@ -322,7 +322,7 @@
     "id": 42,
     "artist": "New Model Army",
     "date": "2019-11-19",
-    "location": "The Live Rooms, Chester, UK",
+    "venue": "The Live Rooms, Chester, UK",
     "notes": "My brother and I went to this show together, we left half way through the set because the venue was really overcrowded and ran out of beer. We ended up going to a pub instead and had a much better time.",
     "photo": ""
   },
@@ -330,7 +330,7 @@
     "id": 43,
     "artist": "Dashboard Confessional",
     "date": "2019-11-11",
-    "location": "The Deaf Institute, Manchester, UK",
+    "venue": "The Deaf Institute, Manchester, UK",
     "notes": "This was just an acoustic show, with Chris Carrabba performing on his own. He was in great form and the setlist included a lot of fan favourites.",
     "photo": ""
   },
@@ -338,21 +338,21 @@
     "id": 44,
     "artist": "Feeder",
     "date": "2019-11-16",
-    "location": "Albert Hall, Manchester, UK",
+    "venue": "Albert Hall, Manchester, UK",
     "photo": ""
   },
   {
     "id": 45,
     "artist": "Jimmy Eat World",
     "date": "2013-09-13",
-    "location": "Manchester Academy, Manchester, UK",
+    "venue": "Manchester Academy, Manchester, UK",
     "photo": ""
   },
   {
     "id": 46,
     "artist": "Bauhaus",
     "date": "1998-11-06",
-    "location": "Manchester Academy, Manchester, UK",
+    "venue": "Manchester Academy, Manchester, UK",
     "notes": "I travelled up from Leicester to see this show with my brother. It was a bit of a let down, and probably one of those where we should have left the band unseen live.",
     "photo": ""
   },
@@ -360,7 +360,7 @@
     "id": 47,
     "artist": "Low",
     "date": "2013-11-18",
-    "location": "Liverpool Cathedral, Liverpool, UK",
+    "venue": "Liverpool Cathedral, Liverpool, UK",
     "notes": "This was a really special show, the acoustics in the cathedral were amazing and it was a really intimate experience. I'll also never forget Barbarossa's support set, which was really beautiful and atmospheric.",
     "photo": "",
     "support": [
@@ -371,7 +371,7 @@
     "id": 48,
     "artist": "Underoath",
     "date": "2017-05-01",
-    "location": "O2 Ritz, Manchester, UK",
+    "venue": "O2 Ritz, Manchester, UK",
     "photo": "",
     "support": [
       "mewithoutYou"
@@ -381,7 +381,7 @@
     "id": 49,
     "artist": "Fuzzy Sun",
     "date": "2019-05-18",
-    "location": "Manchester Club Academy, Manchester, UK",
+    "venue": "Manchester Club Academy, Manchester, UK",
     "notes": "I can't remember why we went to this show. The surprise was Inhaler, who were unheard of at the time. They impressed us and a quick search reveals that there's a connection with U2, namely Bono's son is in the band.",
     "photo": "",
     "support": [
@@ -392,7 +392,7 @@
     "id": 50,
     "artist": "Brand New",
     "date": "2007-02-06",
-    "location": "Manchester Apollo, Manchester, UK",
+    "venue": "Manchester Apollo, Manchester, UK",
     "notes": "This was the first time I saw Brand New live, we actually went to see mewithoutYou as the support act. Got there too late to see mewithoutYou, and decided to stay to watch Brand New. They blew us away!",
     "photo": "",
     "support": [
@@ -403,7 +403,7 @@
     "id": 51,
     "artist": "Foo Fighters",
     "date": "1995-11-10",
-    "location": "Civic Hall, Wolverhampton, UK",
+    "venue": "Civic Hall, Wolverhampton, UK",
     "notes": "Being a big Nirvana fan, I was really excited to see Dave Grohl's new band. The show was really good, and it was interesting to see how they were still finding their sound at that point.",
     "photo": ""
   },
@@ -411,7 +411,7 @@
     "id": 52,
     "artist": "R.E.M.",
     "date": "1995-07-23",
-    "location": "Cardiff Arms Park, Cardiff, UK",
+    "venue": "Cardiff Arms Park, Cardiff, UK",
     "notes": "This was my first big open air concert. I haven't been to another since.",
     "photo": "",
     "support": [
@@ -424,21 +424,21 @@
     "id": 53,
     "artist": "Jimmy Eat World",
     "date": "2016-11-10",
-    "location": "Manchester Academy, Manchester, UK",
+    "venue": "Manchester Academy, Manchester, UK",
     "photo": ""
   },
   {
     "id": 54,
     "artist": "Milltown Brothers",
     "date": "1993-05-06",
-    "location": "De Montfort University, Leicester, UK",
+    "venue": "De Montfort University, Leicester, UK",
     "photo": ""
   },
   {
     "id": 55,
     "artist": "Ride",
     "date": "1993-03-13",
-    "location": "Empress Ballroom, Blackpool, UK",
+    "venue": "Empress Ballroom, Blackpool, UK",
     "notes": "The infamous 'Day Tripper' show, where both bands played a shared headline set. My brother and I got a coach from Leicester to Blackpool, and we were really excited to see both bands. The show was really good. We almost missed the coach back to Leicester, but we made it just in time.",
     "photo": "",
     "support": [
