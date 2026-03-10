@@ -39,6 +39,8 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 │   │   ├── blog/                 ← Markdown blog posts
 │   │   ├── reading/              ← Markdown book entries
 │   │   └── config.ts             ← Content collection schemas (Zod)
+│   ├── data/
+│   │   └── concerts.json         ← Concert data in JSON format
 │   ├── layouts/
 │   │   └── Layout.astro          ← Root HTML shell (SEO, meta, skip link)
 │   ├── pages/
@@ -50,10 +52,14 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 │   │   ├── blog/
 │   │   │   ├── index.astro       ← Blog listing with tag filter
 │   │   │   └── [slug].astro      ← Individual post pages
+│   │   ├── concerts.astro
 │   │   ├── contact.astro
 │   │   ├── experience.astro
 │   │   ├── index.astro           ← Home page
-│   │   └── reading.astro
+│   │   ├── reading.astro
+│   │   └── work/
+│   │       ├── index.astro       ← Work listing with tag filter
+│   │       └── [slug].astro      ← Individual work pages
 │   ├── styles/
 │   │   └── global.css            ← Design tokens, reset, base styles
 │   ├── data.ts                   ← Site config, roles, tech stack, navigation, uses lists
