@@ -423,5 +423,12 @@
       "Del Amitri",
       "The Cranberries"
     ]
+  },
+  {
+    "id": 53,
+    "artist": "Jimmy Eat World",
+    "date": "2016-11-10",
+    "location": "Manchester Academy, Manchester, UK",
+    "photo": ""
   }
 ]
