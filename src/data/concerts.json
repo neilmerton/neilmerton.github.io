@@ -289,6 +289,7 @@
     "artist": "Anberlin",
     "date": "2013-02-02",
     "location": "Manchester Academy 3, Manchester, UK",
+    "notes": "After a long hiatus, this was the first concert my brother and I attended together. Since then we've made up for lost time.",
     "photo": ""
   },
   {
@@ -327,7 +328,7 @@
     "artist": "New Model Army",
     "date": "2019-11-19",
     "location": "The Live Rooms, Chester, UK",
-    "notes": "My brother and I went to this show together, and we left half way through the set because the venue was really overcrowded and ran out of beer. We ended up going to a pub instead and had a much better time.",
+    "notes": "My brother and I went to this show together, we left half way through the set because the venue was really overcrowded and ran out of beer. We ended up going to a pub instead and had a much better time.",
     "photo": ""
   },
   {
@@ -350,7 +351,6 @@
     "artist": "Jimmy Eat World",
     "date": "2013-09-13",
     "location": "Manchester Academy, Manchester, UK",
-    "notes": "After a long hiatus, this was the first concert my brother and I attended together. Since then we've made up for lost time.",
     "photo": ""
   }
 ]
