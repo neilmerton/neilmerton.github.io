@@ -360,5 +360,16 @@
     "location": "Manchester Academy, Manchester, UK",
     "notes": "I travelled up from Leicester to see this show with my brother. It was a bit of a let down, and probably one of those where we should have left the band unseen live.",
     "photo": ""
+  },
+  {
+    "id": 47,
+    "artist": "Low",
+    "date": "2013-11-18",
+    "location": "Liverpool Cathedral, Liverpool, UK",
+    "notes": "This was a really special show, the acoustics in the cathedral were amazing and it was a really intimate experience. I'll also never forget Barbarossa's support set, which was really beautiful and atmospheric.",
+    "photo": "",
+    "support": [
+      "Barbarossa"
+    ]
   }
 ]
