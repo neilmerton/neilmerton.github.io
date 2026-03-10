@@ -402,5 +402,26 @@
     "support": [
       "mewithoutYou"
     ]
+  },
+  {
+    "id": 51,
+    "artist": "Foo Fighters",
+    "date": "1995-11-10",
+    "location": "Civic Hall, Wolverhampton, UK",
+    "notes": "Being a big Nirvana fan, I was really excited to see Dave Grohl's new band. The show was really good, and it was interesting to see how they were still finding their sound at that point.",
+    "photo": ""
+  },
+  {
+    "id": 52,
+    "artist": "R.E.M.",
+    "date": "1995-07-23",
+    "location": "Cardiff Arms Park, Cardiff, UK",
+    "notes": "This was my first big open air concert. I haven't been to another since.",
+    "photo": "",
+    "support": [
+      "Belly",
+      "Del Amitri",
+      "The Cranberries"
+    ]
   }
 ]
