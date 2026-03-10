@@ -451,5 +451,12 @@
     "support": [
       "The Charlatans"
     ]
+  },
+  {
+    "id": 56,
+    "artist": "Violent Femmes",
+    "date": "1997-10-29",
+    "venue": "O2 Forum Kentish Town, London, UK",
+    "photo": ""
   }
 ]
