@@ -458,5 +458,21 @@
     "date": "1997-10-29",
     "venue": "O2 Forum Kentish Town, London, UK",
     "photo": ""
+  },
+  {
+    "id": 57,
+    "artist": "Depeche Mode",
+    "date": "1998-09-30",
+    "venue": "Wembley Arena, London, UK",
+    "notes": "This was the first time I saw Depeche Mode live, and it was a let down. Way too much ego getting in the way of the music. I was really disappointed, and it's put me off seeing them live again.",
+    "photo": ""
+  },
+  {
+    "id": 58,
+    "artist": "The Sisters of Mercy",
+    "date": "2000-09-03",
+    "venue": "Rock City, Nottingham, UK",
+    "notes": "A terrible show, Andrew Eldritch seemed completely disinterested and refused to play any of the more popular songs.",
+    "photo": ""
   }
 ]
