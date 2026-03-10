@@ -23,6 +23,30 @@ const concertsByYear = allConcerts.reduce<Record<string, typeof allConcerts>>(
   },
   {},
 );
+
+// Artists list including counts (including support acts), sorted by most times seen (excluding future dates), then alphabetically
+const artistCounts: Record<string, number> = {};
+
+allConcerts.forEach((concert) => {
+  const artists = [concert.data.artist, ...(concert.data.support || [])];
+
+  artists.forEach((artist) => {
+    const haveBeenTo = concert.data.date <= new Date();
+
+    if (!artistCounts[artist] && haveBeenTo) {
+      artistCounts[artist] = 0;
+    }
+
+    // Only count concerts that have already happened
+    if (haveBeenTo) {
+      artistCounts[artist]++;
+    }
+  });
+});
+
+const artists = Object.entries(artistCounts)
+  .map(([artist, count]) => ({ artist, count }))
+  .sort((a, b) => b.count - a.count || a.artist.localeCompare(b.artist));
 ---
 
 <Layout
@@ -42,6 +66,31 @@ const concertsByYear = allConcerts.reduce<Record<string, typeof allConcerts>>(
         }
       </p>
     </header>
+
+    {
+      artists.length > 0 && (
+        <section class="concert-artists">
+          <h2 class="concert-artists__title">
+            Most Seen Artists
+            <span class="concert-artists__count">{artists.length}</span>
+          </h2>
+          <ul class="concert-artists__list">
+            {artists.map(({ artist, count }) => (
+              <li class="concert-artists__item">
+                {artist}
+                <span
+                  class="concert-artists__count"
+                  aria-label={`Seen ${artist} ${count} times`}
+                  data-count
+                >
+                  {count}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
     {
       Object.entries(concertsByYear)
@@ -70,6 +119,48 @@ const concertsByYear = allConcerts.reduce<Record<string, typeof allConcerts>>(
 </Layout>
 
 <style>
+  .concert-artists {
+    margin-block-end: var(--space-12);
+  }
+
+  .concert-artists__title {
+    align-items: center;
+    color: var(--color-text-muted);
+    display: flex;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    gap: var(--space-3);
+    margin-block-end: var(--space-6);
+  }
+
+  .concert-artists__list {
+    column-gap: var(--space-6);
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    row-gap: var(--space-3);
+  }
+
+  .concert-artists__item {
+    align-items: center;
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .concert-artists__count {
+    align-items: center;
+    background-color: var(--color-bg-subtle);
+    border-radius: var(--radius-pill);
+    color: var(--color-text-subtle);
+    display: inline-flex;
+    font-size: var(--text-xs);
+    height: 22px;
+    justify-content: center;
+    width: 22px;
+  }
+
   .concert-year {
     margin-bottom: var(--space-12);
   }
