@@ -141,6 +141,7 @@ export const snippets: string[] = [
   `In JavaScript, repeating the same calculation multiple times inside a loop can degrade performance. If a value is constant across loop iterations, compute it outside the loop instead.`,
   `Make sure there is a visible focus style for interactive elements that are navigated to via keyboard input. This is crucial for accessibility, as it allows users who rely on keyboard navigation to see where they are on the page and interact with elements effectively.`,
   `Remove animations when the “reduce motion” setting is activated. This respects users' preferences and can help prevent motion sickness or discomfort for those sensitive to motion.`,
+  `React is a library, Next.js is a framework. React provides the building blocks for building user interfaces, while Next.js offers a complete solution for building server-rendered React applications with features like routing, data fetching, and server-side rendering.`,
 ]
 
 export const usesHardware: UsesItem[] = [
