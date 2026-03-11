@@ -2,6 +2,7 @@
 title: "Vue.js to React Cheat Sheet"
 description: "An introductory guide for Vue developers (like me) who are curious about transitioning to React."
 pubDate: "2026-02-26"
+updatedDate: "2026-03-11"
 tags: ["vue.js", 'react', "web development"]
 mainClass: "vue-to-react-cheat-sheet"
 draft: false
@@ -100,6 +101,32 @@ useEffect(() => {
 ```
 
 Vue does have a `watchEffect` that runs on every render, but it’s less common in React. You can achieve similar behavior with `useEffect` without a dependency array, but be careful of infinite loops!
+
+## 5. Slots vs. Children
+
+Vue’s `slots` are a powerful way to pass content into components. In React, you use `props.children` for a similar effect.
+
+**Vue:**
+
+```html
+<template>
+  <div>
+    <slot></slot>
+  </div>
+</template>
+```
+
+**React:**
+
+```jsx
+interface MyComponentProps {
+  children: ReactNode;
+}
+
+const MyComponent = ({ children }: MyComponentProps) => {
+  return <div>{children}</div>;
+};
+```
 
 ## The "Hidden" Gotcha: Style Scoping
 
