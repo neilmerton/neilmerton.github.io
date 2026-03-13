@@ -2,7 +2,7 @@
 title: "Vue.js to React Cheat Sheet"
 description: "An introductory guide for Vue developers (like me) who are curious about transitioning to React."
 pubDate: "2026-02-26"
-updatedDate: "2026-03-11"
+updatedDate: "2026-03-13"
 tags: ["vue.js", 'react', "web development"]
 mainClass: "vue-to-react-cheat-sheet"
 draft: false
@@ -127,6 +127,48 @@ const MyComponent = ({ children }: MyComponentProps) => {
   return <div>{children}</div>;
 };
 ```
+
+## 6. Composables vs. Custom Hooks
+
+In Vue, composables are functions that encapsulate reusable logic. In React, custom hooks serve a similar purpose.
+
+**Vue:**
+
+```javascript
+import { ref, onMounted } from 'vue';
+
+export function useUser() {
+  const user = ref(null);
+
+  onMounted(() => {
+    fetchUser().then((data) => {
+      user.value = data;
+    });
+  });
+
+  return { user };
+}
+```
+
+**React:**
+
+```javascript
+import { useState, useEffect } from 'react';
+
+export function useUser() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetchUser().then((data) => {
+      setUser(data);
+    });
+  }, []);
+
+  return { user };
+}
+```
+
+**Note:** you should rarely fetch data in Vue.js `onMounted`, but I wanted to keep the example simple. In React, you would typically fetch data in a `useEffect` hook. 
 
 ## The "Hidden" Gotcha: Style Scoping
 
