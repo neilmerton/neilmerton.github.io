@@ -97,6 +97,8 @@
   --container-width: 100dvw;
   --container-width-wide: var(--container-width);
   --content-padding: 2rem;
+
+  --progress-bar-height: 4px;
 }
 
 @media screen and (width >=48em) {
@@ -523,5 +525,27 @@ td {
 
   .animate-in--delay-3 {
     animation-delay: 0.3s;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  body:has(.post-breadcrumb) .site-header::after {
+    height: var(--progress-bar-height);
+    inset-block-end: 0;
+    margin-block-end: calc(var(--progress-bar-height) * -1);
+    position: absolute;
+    scale: 0 1;
+    transform-origin: left;
+    width: 100%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+    content: "";
+    animation: progress-grow linear both;
+    animation-timeline: scroll(root);
+  }
+
+  @keyframes progress-grow {
+    to {
+      scale: 1 1;
+    }
   }
 }
