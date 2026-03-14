@@ -290,12 +290,12 @@ ol {
 
 table {
   border-collapse: collapse;
-  font-size: var(--text-sm);
   display: block;
-  width: 100%;
-  width: max-content;
+  font-size: var(--text-sm);
   max-width: 100%;
   overflow: auto;
+  width: 100%;
+  width: max-content;
 }
 
 th {
