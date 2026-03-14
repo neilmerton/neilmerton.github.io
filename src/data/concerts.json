@@ -474,5 +474,15 @@
     "venue": "Rock City, Nottingham, UK",
     "notes": "A terrible show, Andrew Eldritch seemed completely disinterested and refused to play any of the more popular songs.",
     "photo": ""
+  },
+  {
+    "id": 59,
+    "artist": "Drugstore",
+    "date": "1999-06-14",
+    "venue": "The Charlotte, Leicester, UK",
+    "photo": "",
+    "support": [
+      "Glitterbox"
+    ]
   }
 ]
