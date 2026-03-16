@@ -38,6 +38,12 @@ In Vue, the template handles the logic. In React, the logic is "inline" JavaScri
 <div v-else>Please log in.</div>
 ```
 
+Or a shorter version:
+
+```html
+<div>{{ isLoggedIn ? "Welcome back!" : "Please log in." }}</div>
+```
+
 **React:**
 
 ```jsx
@@ -46,6 +52,12 @@ In Vue, the template handles the logic. In React, the logic is "inline" JavaScri
 ) : (
   <div>Please log in.</div>
 )}
+```
+
+Here's the shorter version in React:
+
+```jsx
+<div>{isLoggedIn ? "Welcome back!" : "Please log in."}</div>
 ```
 
 ### 2. List Rendering (`v-for`)
