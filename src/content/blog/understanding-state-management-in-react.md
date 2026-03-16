@@ -44,9 +44,13 @@ const { data, isLoading } = useQuery({
 });
 ```
 
+You can learn more about React Query by visiting the [official website](https://www.tanstack.com/query).
+
 #### **SWR**
 Built by Vercel and I've not investigated it much, but will explore more in the future. It's lighter than React Query and follows a "stale-while-revalidate" strategy.
 *   **Best for:** Smaller apps or teams who prefer a minimalistic API.
+
+Curious about SWR? Check out the [SWR documentation](https://swr.vercel.app/).
 
 ## 2. Client State: UI and Interaction
 
@@ -79,6 +83,8 @@ const useStore = create((set) => ({
   toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
 }));
 ```
+
+Eager to explore how Zustand compares to other libraries? Visit the [Zustand Comparison page](https://zustand.docs.pmnd.rs/learn/getting-started/comparison) for great insights.
 
 #### **Redux Toolkit**
 The modern, official way to use Redux. It reduces boilerplate significantly compared to old Redux.
