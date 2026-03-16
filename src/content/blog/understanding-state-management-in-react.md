@@ -1,6 +1,6 @@
 ---
 title: "Understanding State Management in React: Server vs. Client"
-description: "A introductory guide to understanding state management in React by distinguishing between server and client state, and choosing the right tools for each."
+description: "An introductory guide to understanding state management in React by distinguishing between server and client state, and choosing the right tools for each."
 pubDate: "2026-03-16"
 tags: ["react", "tanstack query", "state management", "web development"]
 ---
