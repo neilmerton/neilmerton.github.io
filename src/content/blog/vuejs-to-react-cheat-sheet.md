@@ -38,12 +38,6 @@ In Vue, the template handles the logic. In React, the logic is "inline" JavaScri
 <div v-else>Please log in.</div>
 ```
 
-Or a shorter version:
-
-```html
-<div>{{ isLoggedIn ? "Welcome back!" : "Please log in." }}</div>
-```
-
 **React:**
 
 ```jsx
@@ -54,7 +48,15 @@ Or a shorter version:
 )}
 ```
 
-Here's the shorter version in React:
+Or a shorter version:
+
+**Vue:**
+
+```html
+<div>{{ isLoggedIn ? "Welcome back!" : "Please log in." }}</div>
+```
+
+**React:**
 
 ```jsx
 <div>{isLoggedIn ? "Welcome back!" : "Please log in."}</div>
