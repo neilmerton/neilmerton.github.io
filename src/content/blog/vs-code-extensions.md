@@ -2,6 +2,7 @@
 title: "VS Code Extensions"
 description: "A list of my favorite VS Code extensions that enhance productivity and development experience."
 pubDate: "2026-02-14"
+updatedDate: "2026-03-16"
 tags: ["vscode", "extensions", "lists", "productivity", "web development"]
 mainClass: "vscode-extensions"
 draft: false
@@ -11,6 +12,7 @@ Visual Studio Code (VS Code) is a powerful and versatile code editor that has be
 
 * **Better SVG** - Provides better support for working with SVG files in VS Code. It offers features like syntax highlighting, auto-completion, and a live preview of the SVG, making it easier to work with vector graphics directly within the editor.
 * **Code Spell Checker** - Helps catch spelling errors in your code, comments, and strings. It supports multiple languages and can be customized to include specific dictionaries or ignore certain words, making it a great tool for improving the quality of your code.
+* **CSS Variable Autocomplete** - Provides auto-completion for CSS variables, making it easier to work with custom properties in your stylesheets. It can help you quickly find and use CSS variables defined in your project, improving your workflow when working with CSS.
 * **Error Lens** - Highlights errors and warnings directly in the editor, making it easier to spot and fix issues in your code.
 * **File Nesting Updater** - Helps organize your files by automatically nesting related files together, improving project structure and navigation.
 * **Pretty TypeScript Errors** - Provides more readable and user-friendly error messages for TypeScript, making it easier to understand and fix issues.
