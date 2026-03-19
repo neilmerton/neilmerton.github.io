@@ -5,7 +5,7 @@ const baseUrl = 'https://neil.merton.dev';
 export const siteConfig: SiteConfig = {
   name: 'Neil Merton',
   title: 'Neil Merton / Frontend Developer',
-  description: 'Frontend developer and product engineer specialising in accessible, performant web experiences.',
+  description: 'Neil Merton is a Frontend Developer and Product Engineer specialising in accessible, performant web experiences.',
   openGraphImage: `${baseUrl}/og-image-nm.png`,
   url: baseUrl,
   email: 'neil@merton.email',
