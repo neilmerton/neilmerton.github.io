@@ -1,6 +1,7 @@
 ---
 description: "Brochure-type website for a local decorator. Built with Astro and classic CSS, it features a clean and modern design that highlights the key services available, areas covered, and quotation request. The website is fully responsive and optimized for both desktop and mobile devices."
 cover: "./tsds/desktop.webp"
+link: "https://the-singing-decorators-son.netlify.app/"
 status: "live"
 tags: ["Astro", "Classic CSS"]
 title: "The Singing Decorator's Son"

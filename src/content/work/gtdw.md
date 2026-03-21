@@ -1,6 +1,7 @@
 ---
 description: "Brochure-type website for a local dog walker called Glenn. Built with Astro and classic CSS, it features a clean and modern design that highlights the key services available, areas covered, and testimonials from satisfied clients. The website is fully responsive and optimized for both desktop and mobile devices."
 cover: "./gtdw/desktop.webp"
+link: "https://glenn-the-dog-walker.netlify.app/"
 status: "live"
 tags: ["Astro", "Classic CSS"]
 title: "Glenn The Dog Walker"

@@ -66,6 +66,18 @@ const { Content } = await item.render();
       }
     </header>
 
+    {
+      item.data.link && (
+        <section class="work-link animate-in animate-in--delay-1">
+          <p>
+            <a href={item.data.link} target="_blank" rel="noopener noreferrer">
+              Visit website →
+            </a>
+          </p>
+        </section>
+      )
+    }
+
     <div class="work-images">
       {
         images.map((img) => (
@@ -129,6 +141,12 @@ const { Content } = await item.render();
     list-style: none;
     margin: var(--space-5) 0;
     padding: 0;
+  }
+
+  .work-link {
+    border-block-end: 1px solid var(--color-border-light);
+    margin-block-end: var(--space-12);
+    padding-block-end: var(--space-10);
   }
 
   .work-images {
