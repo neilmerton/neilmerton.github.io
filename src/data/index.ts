@@ -94,12 +94,13 @@ export const roles: Role[] = [
     description: 'Lead frontend development for cutting-edge SaaS Energy Monitoring platform.',
     highlights: [
       'Architected and maintained a design system in Figma, extending PrimeVue components.',
-      'Frontend architecture including PWA, TanStack Query, i18n, and performance optimisations.',
+      'Frontend architecture including Pinia, PWA, TanStack Query, i18n, and performance optimisations.',
       'Unit testing with Vitest and end-to-end testing with Playwright.',
       'Maintained Lighthouse accessibility score in the 90s site-wide.',
+      'Maintained code consistency and quality through linting (ESLint and Husky), and code reviews (GitHub Copilot Review).',
       'Maintained CI/CD pipelines and error monitoring in Sentry.',
     ],
-    technologies: ['TypeScript', 'Vue.js', 'PWA', 'SCSS', 'Vite', 'Figma', 'PrimeVue', 'TanStack Query', 'Highcharts'],
+    technologies: ['TypeScript', 'Vue.js', 'Pinia', 'PWA', 'SCSS', 'Vitest', 'Playwright', 'Figma', 'PrimeVue', 'TanStack Query', 'Highcharts'],
   },
   {
     title: 'Lead Frontend Engineer',
