@@ -1,9 +1,9 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getWorkImages } from "../../utils";
+import { getWorkImages } from "@utils/index";
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const workItems = await getCollection("work");
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   const paths = Object.values(workItems).map((item) => {
     return {
       params: {
-        slug: item.slug,
+        slug: item.id,
       },
       props: {
         item,
@@ -31,9 +31,9 @@ const { item } = Astro.props as Props;
 if (!item) {
   return Astro.redirect("/404");
 }
-const images = await getWorkImages(item.slug);
+const images = await getWorkImages(item.id);
 
-const { Content } = await item.render();
+const { Content } = await render(item);
 ---
 
 <Layout title={item.data.title} description={item.data.description}>

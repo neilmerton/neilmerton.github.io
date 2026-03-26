@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 interface Props {
   item: {
-    slug: string;
+    id: string;
     data: {
       cover: any;
       description: string;
@@ -18,7 +18,7 @@ const { item } = Astro.props as Props;
 ---
 
 <li class="work-list__item">
-  <a href={`/work/${item.slug}`} class="work-list__link">
+  <a href={`/work/${item.id}`} class="work-list__link">
     <Image
       alt={`${item.data.title} screenshot`}
       src={item.data.cover}

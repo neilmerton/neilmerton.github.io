@@ -1,9 +1,9 @@
 ---
-import { formatDate } from "../utils";
+import { formatDate } from "@utils/index";
 
 interface Props {
   book: {
-    slug: string;
+    id: string;
     data: {
       title: string;
       author: string;
@@ -23,10 +23,10 @@ function renderStars(rating: number): string {
 }
 ---
 
-<article aria-labelledby={`book-title-${book.slug}`}>
+<article aria-labelledby={`book-title-${book.id}`}>
   <header class="book-card__header">
     <div class="book-card__info">
-      <h3 id={`book-title-${book.slug}`} class="book-card__title">
+      <h3 id={`book-title-${book.id}`} class="book-card__title">
         {book.data.title}
       </h3>
       <p class="book-card__author">by {book.data.author}</p>

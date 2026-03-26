@@ -21,13 +21,13 @@ export function readingTime(text: string): string {
   return `${minutes} min read`;
 }
 
-export async function getWorkImages(slug: string): Promise<ImageMetadata[]> {
+export async function getWorkImages(id: string): Promise<ImageMetadata[]> {
   let images = import.meta.glob<{ default: ImageMetadata }>(
     "/src/content/work/**/*.{jpeg,jpg,png,webp}"
   );
 
   images = Object.fromEntries(
-    Object.entries(images).filter(([key]) => key.includes(slug))
+    Object.entries(images).filter(([key]) => key.includes(id))
   );
 
   const resolvedImages = await Promise.all(
@@ -35,4 +35,12 @@ export async function getWorkImages(slug: string): Promise<ImageMetadata[]> {
   );
 
   return resolvedImages;
+}
+
+export function isPublished<T extends { data: { draft?: boolean; }; }>({ data }: T): boolean {
+  return data.draft !== true;
+}
+
+export function sortByDateDesc<T extends { data: { pubDate: string | Date; }; }>(a: T, b: T): number {
+  return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
 }

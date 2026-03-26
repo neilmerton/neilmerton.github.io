@@ -1,4 +1,4 @@
-import type { SiteConfig, Role, TechItem, NavItem, UsesItem, UsesItemWithHref } from '../types';
+import type { SiteConfig, Role, TechItem, NavItem, UsesItem, UsesItemWithHref } from '../interfaces';
 
 const baseUrl = 'https://neil.merton.dev';
 

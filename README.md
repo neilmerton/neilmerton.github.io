@@ -64,7 +64,8 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 │   │   └── global.css            ← Design tokens, reset, base styles
 │   ├── data.ts                   ← Site config, roles, tech stack, navigation, uses lists
 │   ├── types.ts                  ← TypeScript interfaces
-│   └── utils.ts                  ← reusable utility functions
+│   └── utils/
+│       └── index.ts              ← reusable utility functions
 ├── astro.config.mjs
 ├── package.json
 └── tsconfig.json

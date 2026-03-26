@@ -1,7 +1,7 @@
 ---
 import ReadingListItem from "@components/ReadingListItem.astro";
 import Layout from "@layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 const allBooks = await getCollection("reading");
 
@@ -117,11 +117,11 @@ const statusLabels: Record<string, string> = {
 
             <ol class="book-list" role="list">
               {statusBooks.map(async (book) => {
-                const { Content } = await book.render();
+                const { Content } = await render(book);
                 return (
                   <li
                     class="book-card"
-                    id={`book-${book.slug}`}
+                    id={`book-${book.id}`}
                     data-tags={JSON.stringify(book.data.tags)}
                   >
                     <ReadingListItem book={book} Content={Content} />

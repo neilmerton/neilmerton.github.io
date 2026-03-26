@@ -1,15 +1,16 @@
 ---
 import HomePostListItem from "@components/HomePostListItem.astro";
 import RandomSnippet from "@components/RandomSnippet.astro";
+import { siteConfig } from "@data/index";
 import Layout from "@layouts/Layout.astro";
-import { siteConfig } from "../data";
+import { isPublished, sortByDateDesc } from "@utils/index";
 import { getCollection } from "astro:content";
 
 // Fetch latest blog posts for the home page preview
-const allPosts = await getCollection("blog", ({ data }) => !data.draft);
-const latestPosts = allPosts
-  .sort((a, z) => z.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+const allPosts = (await getCollection("blog", isPublished)).sort(
+  sortByDateDesc,
+);
+const latestPosts = allPosts.slice(0, 3);
 ---
 
 <Layout title={siteConfig.title} description={siteConfig.description}>

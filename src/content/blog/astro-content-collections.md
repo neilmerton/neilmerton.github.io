@@ -49,7 +49,9 @@ Each entry has a `render()` method that returns a `Content` component:
 
 ```astro
 ---
-const { Content } = await post.render();
+import { render } from 'astro:content';
+
+const { Content } = await render(post);
 ---
 
 <article>

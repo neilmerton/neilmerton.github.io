@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
+import { siteConfig } from "@data/index";
 import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
-import { siteConfig } from "../data";
 
 export async function GET(context: APIContext) {
   const posts = await getCollection("blog");
@@ -16,7 +16,7 @@ export async function GET(context: APIContext) {
     site: context.site.origin,
     items: posts.map((post) => ({
       ...post.data,
-      link: `/blog/${post.slug}/`,
+      link: `/blog/${post.id}/`,
     })).sort((a, b) => (a.pubDate < b.pubDate ? 1 : -1)),
   });
 }

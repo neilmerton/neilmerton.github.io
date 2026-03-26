@@ -5,7 +5,7 @@ import ExperienceRoleItem from "@components/ExperienceRoleItem.astro";
 import ExperienceTechItem from "@components/ExperienceTechItem.astro";
 import Layout from "@layouts/Layout.astro";
 import { roles, techStack, professionalSummary } from "../data";
-import type { TechItem } from "../types";
+import type { TechItem } from "../interfaces";
 
 // Group tech items by category
 const groupedTech = techStack.reduce<Record<string, TechItem[]>>(

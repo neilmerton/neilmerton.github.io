@@ -1,9 +1,10 @@
-import { file } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { file, glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+import { defineCollection } from 'astro:content';
 
 // Blog collection schema
 const blogCollection = defineCollection({
-  type: 'content',
+  loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     description: z.string(),
     draft: z.boolean().default(false),
@@ -16,7 +17,7 @@ const blogCollection = defineCollection({
 
 // Concert collection schema
 const concertsCollection = defineCollection({
-  loader: file('src/data/concerts.json'),
+  loader: file('./src/data/concerts.json'),
   schema: z.object({
     artist: z.string(),
     date: z.coerce.date(),
@@ -29,7 +30,7 @@ const concertsCollection = defineCollection({
 
 // Reading collection schema
 const readingCollection = defineCollection({
-  type: 'content',
+  loader: glob({ base: './src/content/reading', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     author: z.string(),
     finishedDate: z.coerce.date().optional(),
@@ -43,7 +44,7 @@ const readingCollection = defineCollection({
 
 // Work collection schema
 const workCollection = defineCollection({
-  type: 'content',
+  loader: glob({ base: './src/content/work', pattern: '**/*.{md,mdx}' }),
   schema: ({ image }) => z.object({
     cover: image(),
     description: z.string(),

@@ -1,10 +1,10 @@
 ---
-import { formatDate, readingTime } from "../utils";
+import { formatDate, readingTime } from "@utils/index";
 
 interface Props {
   post: {
     body: string;
-    slug: string;
+    id: string;
     data: {
       title: string;
       pubDate: Date;
@@ -19,10 +19,10 @@ const { post } = Astro.props as Props;
 const readingTimeResult = readingTime(post.body);
 ---
 
-<article class="blog-card" aria-labelledby={`post-${post.slug}`}>
+<article class="blog-card" aria-labelledby={`post-${post.id}`}>
   <header class="blog-card__header">
-    <h2 id={`post-${post.slug}`} class="blog-card__title">
-      <a href={`/blog/${post.slug}`} class="blog-card__link">
+    <h2 id={`post-${post.id}`} class="blog-card__title">
+      <a href={`/blog/${post.id}`} class="blog-card__link">
         {post.data.title}
       </a>
     </h2>

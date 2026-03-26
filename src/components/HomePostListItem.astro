@@ -1,20 +1,20 @@
 ---
-import { formatDate, readingTime } from "../utils";
+import { formatDate, readingTime } from "@utils/index";
 
 interface Props {
   post: {
-    slug: string;
+    id: string;
     data: {
       pubDate: Date;
       title: string;
     };
-    body: string;
+    body?: string;
   };
 }
 
 const { post } = Astro.props as Props;
 
-const readingTimeResult = readingTime(post.body);
+const readingTimeResult = post.body ? readingTime(post.body) : "";
 ---
 
 <li class="post-list__item">
@@ -22,7 +22,7 @@ const readingTimeResult = readingTime(post.body);
     <time class="post-list__date" datetime={post.data.pubDate.toISOString()}>
       {formatDate(post.data.pubDate)}
     </time>
-    <a href={`/blog/${post.slug}`} class="post-list__link">
+    <a href={`/blog/${post.id}`} class="post-list__link">
       {post.data.title}
     </a>
     <span class="post-list__reading-time">

@@ -1,28 +1,23 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
-import type { GetStaticPaths } from "astro";
-import { formatDate } from "src/utils";
+import { formatDate, isPublished } from "@utils/index";
+import { getCollection, render } from "astro:content";
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", isPublished);
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
-};
-
-interface Props {
-  post: CollectionEntry<"blog">;
 }
 
-const { post } = Astro.props as Props;
+const { post } = Astro.props;
 
 if (!post) {
   return Astro.redirect("/404");
 }
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <Layout title={post.data.title} description={post.data.description}>

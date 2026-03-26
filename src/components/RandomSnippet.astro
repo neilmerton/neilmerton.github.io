@@ -1,10 +1,10 @@
 ---
-import { snippets } from "../data";
+import { snippets } from "@data/index";
 ---
 
 <p id="random-snippet"></p>
 <script define:vars={{ snippets }}>
-  const el = document.getElementById('random-snippet');
+  const el = document.getElementById("random-snippet");
   if (el && snippets.length > 0) {
     el.textContent = snippets[Math.floor(Math.random() * snippets.length)];
   }
