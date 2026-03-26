@@ -25,7 +25,7 @@
   --color-text-subtle: hsl(30, 6%, 59%);
 
   --color-accent: hsl(15, 63%, 46%);
-  /* warm terracotta */
+  --color-accent-bg: hsl(15, 50%, 43%);
   --color-accent-hover: hsl(16, 69%, 39%);
   --color-accent-tint: hsl(19, 50%, 94%);
 

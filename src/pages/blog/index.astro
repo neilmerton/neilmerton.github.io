@@ -1,5 +1,6 @@
 ---
 import BlogListItem from "@components/BlogListItem.astro";
+import Pagination from "@components/Pagination.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -73,6 +74,8 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
       }
     </ol>
 
+    <Pagination />
+
     <p class="blog-empty" id="blog-empty" style="display: none;">
       No posts found for this tag.
       <a href="/blog">View all posts</a>.
@@ -81,15 +84,21 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
 </Layout>
 
 <script>
+  const POSTS_PER_PAGE = 5;
   const params = new URLSearchParams(window.location.search);
   const activeTag = params.get("tag");
+  const currentPage = parseInt(params.get("page") ?? "1", 10) || 1;
 
   const allLink = document.getElementById("tag-all")!;
   const emptyMsg = document.getElementById("blog-empty")!;
   const posts = document.querySelectorAll<HTMLElement>(".blog-list__item");
+  const pagination = document.getElementById("blog-pagination")!;
+  const paginationList = document.getElementById("pagination-list")!;
+  const paginationPrev = document.getElementById("pagination-prev") as HTMLAnchorElement;
+  const paginationNext = document.getElementById("pagination-next") as HTMLAnchorElement;
 
+  // 1. Determine active tags
   if (activeTag) {
-    // Update active state on tag links
     allLink.classList.remove("tag--active");
     allLink.removeAttribute("aria-current");
 
@@ -100,25 +109,91 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
         link.setAttribute("aria-current", "true");
       }
     });
-
-    // Filter posts
-    let visibleCount = 0;
-    posts.forEach((post) => {
-      const tags: string[] = JSON.parse(post.dataset.tags ?? "[]");
-      const matches = tags.includes(activeTag);
-      post.style.display = matches ? "" : "none";
-
-      if (matches) {
-        visibleCount++;
-      }
-    });
-
-    // Show empty message if no posts match
-    emptyMsg.style.display = visibleCount === 0 ? "" : "none";
   } else {
-    // No tag selected — "All" is active
     allLink.classList.add("tag--active");
     allLink.setAttribute("aria-current", "true");
+  }
+
+  // 2. Filter posts by tag
+  const matchedPosts: HTMLElement[] = [];
+  posts.forEach((post) => {
+    if (!activeTag) {
+      matchedPosts.push(post);
+    } else {
+      const tags: string[] = JSON.parse(post.dataset.tags ?? "[]");
+      if (tags.includes(activeTag)) {
+        matchedPosts.push(post);
+      }
+    }
+  });
+
+  // 3. Paginate
+  const totalPosts = matchedPosts.length;
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
+  const validPage = Math.max(1, Math.min(currentPage, Math.max(1, totalPages)));
+  
+  const startIndex = (validPage - 1) * POSTS_PER_PAGE;
+  const endIndex = startIndex + POSTS_PER_PAGE;
+
+  // Hide all posts first, then show only the active page's posts
+  posts.forEach(post => {
+    post.style.display = "none";
+  });
+
+  for (let i = startIndex; i < Math.min(endIndex, totalPosts); i++) {
+    matchedPosts[i].style.display = "";
+  }
+
+  // 4. Update UI Messages & Pagination
+  emptyMsg.style.display = totalPosts === 0 ? "" : "none";
+
+  if (totalPages > 1) {
+    pagination.style.display = "";
+    
+    // Build Base URL
+    const buildUrl = (pageNumber: number) => {
+      const urlParams = new URLSearchParams();
+      if (activeTag) urlParams.set("tag", activeTag);
+      if (pageNumber > 1) urlParams.set("page", pageNumber.toString());
+      return "/blog" + (urlParams.toString() ? "?" + urlParams.toString() : "");
+    };
+
+    // Update Prev
+    if (validPage > 1) {
+      paginationPrev.href = buildUrl(validPage - 1);
+      paginationPrev.removeAttribute("aria-disabled");
+    } else {
+      paginationPrev.removeAttribute("href");
+      paginationPrev.setAttribute("aria-disabled", "true");
+    }
+
+    // Update Next
+    if (validPage < totalPages) {
+      paginationNext.href = buildUrl(validPage + 1);
+      paginationNext.removeAttribute("aria-disabled");
+    } else {
+      paginationNext.removeAttribute("href");
+      paginationNext.setAttribute("aria-disabled", "true");
+    }
+
+    // Build Page Numbers
+    paginationList.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = buildUrl(i);
+      a.textContent = i.toString();
+      a.className = "pagination__page";
+      if (i === validPage) {
+        a.classList.add("pagination__page--active");
+        a.setAttribute("aria-current", "page");
+      }
+      a.setAttribute("aria-label", `Page ${i}`);
+      li.appendChild(a);
+      paginationList.appendChild(li);
+    }
+  } else {
+    pagination.style.display = "none";
   }
 </script>
 
