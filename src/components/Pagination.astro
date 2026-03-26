@@ -1,22 +1,70 @@
 ---
+export interface Props {
+  page: any;
+  baseUrl?: string;
+}
+
+const { page, baseUrl = "/blog" } = Astro.props;
+
+const totalPages = page.lastPage;
+const validPage = page.currentPage;
+
+const buildUrl = (pageNum: number) => {
+  if (pageNum === 1) return baseUrl;
+  return `${baseUrl}/${pageNum}`;
+};
 ---
 
-<nav class="pagination animate-in animate-in--delay-3" aria-label="Pagination" id="blog-pagination" style="display: none;">
-  <a href="#" class="pagination__prev" id="pagination-prev" aria-label="Previous page">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-    Previous
-  </a>
-  <ul class="pagination__list" id="pagination-list" role="list">
-    <!-- Page numbers injected here by JS -->
+<nav class="pagination animate-in animate-in--delay-3" aria-label="Pagination">
+  {page.url.prev ? (
+    <a href={page.url.prev} class="pagination__prev" aria-label="Previous page">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Previous
+    </a>
+  ) : (
+    <span class="pagination__prev" aria-disabled="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Previous
+    </span>
+  )}
+
+  <ul class="pagination__list" role="list">
+    {Array.from({ length: totalPages }).map((_, i) => {
+      const pageNum = i + 1;
+      return (
+        <li>
+          <a
+            href={buildUrl(pageNum)}
+            class={`pagination__page ${pageNum === validPage ? "pagination__page--active" : ""}`}
+            aria-current={pageNum === validPage ? "page" : undefined}
+            aria-label={`Page ${pageNum}`}
+          >
+            {pageNum}
+          </a>
+        </li>
+      );
+    })}
   </ul>
-  <a href="#" class="pagination__next" id="pagination-next" aria-label="Next page">
-    Next
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-  </a>
+
+  {page.url.next ? (
+    <a href={page.url.next} class="pagination__next" aria-label="Next page">
+      Next
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </a>
+  ) : (
+    <span class="pagination__next" aria-disabled="true">
+      Next
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </span>
+  )}
 </nav>
 
 <style>

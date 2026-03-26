@@ -41,6 +41,18 @@ export function isPublished<T extends { data: { draft?: boolean; }; }>({ data }:
   return data.draft !== true;
 }
 
-export function sortByDateDesc<T extends { data: { pubDate: string | Date; }; }>(a: T, b: T): number {
-  return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+export function sortByDateDesc<T extends { data: { pubDate: Date; }; }>(a: T, b: T): number {
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+}
+
+export function slugify(text: string): string {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
 }

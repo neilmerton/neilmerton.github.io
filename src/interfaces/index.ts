@@ -59,6 +59,8 @@ export interface SiteConfig {
   socials: SocialLink[];
   title: string;
   url: string;
+  blogIntro: string;
+  blogPageSize: number;
 }
 
 export interface NavItem {

@@ -1,0 +1,117 @@
+---
+import BlogListItem from "@components/BlogListItem.astro";
+import Pagination from "@components/Pagination.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { siteConfig } from "@data/index";
+import { slugify } from "@utils/index";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import BlogHeader from "@components/BlogHeader.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = allPosts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  return paginate(posts, { pageSize: siteConfig.blogPageSize });
+}) satisfies GetStaticPaths;
+
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
+
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
+---
+
+<Layout
+  title="Blog"
+  description="Writing on frontend development, accessibility, CSS, TypeScript and the craft of building for the web."
+>
+  <div class="container">
+    <BlogHeader />
+
+    {
+      allTags.length > 0 && (
+        <nav
+          class="tag-filter animate-in animate-in--delay-1"
+          aria-label="Filter posts by tag"
+        >
+          <ul class="tag-filter__list" role="list">
+            <li>
+              <a href="/blog" class="tag tag--active" aria-current="true">
+                All
+              </a>
+            </li>
+            {allTags.map((tag) => (
+              <li>
+                <a href={`/blog/tag/${slugify(tag)}`} class="tag">
+                  {tag}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <ol class="blog-list animate-in animate-in--delay-2" role="list">
+      {
+        page.data.map((post) => (
+          <li class="blog-list__item">
+            <BlogListItem post={post} />
+          </li>
+        ))
+      }
+    </ol>
+
+    {page.lastPage > 1 && <Pagination page={page} />}
+
+    {page.data.length === 0 && <p class="blog-empty">No posts found.</p>}
+  </div>
+</Layout>
+
+<style>
+  .tag-filter {
+    margin-block-end: var(--space-10);
+  }
+
+  .tag-filter__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tag--active {
+    background-color: var(--color-accent-bg);
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+      color: #ffffff !important;
+    }
+  }
+
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .blog-list__item:not(:last-child) {
+    border-block-end: 1px solid var(--color-border-light);
+  }
+
+  .blog-empty {
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+    padding-block: var(--space-12);
+  }
+</style>

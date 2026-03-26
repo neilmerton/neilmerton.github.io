@@ -32,6 +32,8 @@ export const siteConfig: SiteConfig = {
       label: 'CodePen',
     },
   ],
+  blogIntro: `Thoughts on frontend development, accessibility, and the craft of building for the web. There's also the occasional diversion into mountain biking and music.`,
+  blogPageSize: 5,
 };
 
 export const navItems: NavItem[] = [

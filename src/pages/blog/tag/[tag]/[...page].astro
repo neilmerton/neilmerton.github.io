@@ -1,0 +1,142 @@
+---
+import BlogHeader from "@components/BlogHeader.astro";
+import BlogListItem from "@components/BlogListItem.astro";
+import Pagination from "@components/Pagination.astro";
+import { siteConfig } from "@data/index";
+import Layout from "@layouts/Layout.astro";
+import { slugify, sortByDateDesc } from "@utils/index";
+import type { GetStaticPaths, Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = allPosts.sort(sortByDateDesc);
+
+  const allTags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
+
+  return allTags.flatMap((tag) => {
+    const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+    return paginate(filteredPosts, {
+      params: { tag: slugify(tag) },
+      props: { originalTag: tag },
+      pageSize: siteConfig.blogPageSize,
+    });
+  });
+}) satisfies GetStaticPaths;
+
+const { page, originalTag } = Astro.props as {
+  page: Page<CollectionEntry<"blog">>;
+  originalTag: string;
+};
+const { tag } = Astro.params;
+
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
+---
+
+<Layout
+  title={`Blog - ${originalTag}`}
+  description={`Posts tagged with ${originalTag}.`}
+>
+  <div class="container">
+    <BlogHeader />
+
+    {
+      allTags.length > 0 && (
+        <nav
+          class="tag-filter animate-in animate-in--delay-1"
+          aria-label="Filter posts by tag"
+        >
+          <ul class="tag-filter__list" role="list">
+            <li>
+              <a href="/blog" class="tag">
+                All
+              </a>
+            </li>
+            {allTags.map((t) => (
+              <li>
+                <a
+                  href={`/blog/tag/${slugify(t)}`}
+                  class={`tag ${slugify(t) === tag ? "tag--active" : ""}`}
+                  aria-current={slugify(t) === tag ? "page" : undefined}
+                >
+                  {t}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <ol class="blog-list animate-in animate-in--delay-2" role="list">
+      {
+        page.data.map((post) => (
+          <li class="blog-list__item">
+            <BlogListItem post={post} />
+          </li>
+        ))
+      }
+    </ol>
+
+    {
+      page.lastPage > 1 && (
+        <Pagination page={page} baseUrl={`/blog/tag/${tag}`} />
+      )
+    }
+
+    {
+      page.data.length === 0 && (
+        <p class="blog-empty">
+          No posts found for this tag.
+          <a href="/blog">View all posts</a>.
+        </p>
+      )
+    }
+  </div>
+</Layout>
+
+<style>
+  .tag-filter {
+    margin-block-end: var(--space-10);
+  }
+
+  .tag-filter__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tag--active {
+    background-color: var(--color-accent-bg);
+    color: #ffffff !important;
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+      color: #ffffff !important;
+    }
+  }
+
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .blog-list__item:not(:last-child) {
+    border-block-end: 1px solid var(--color-border-light);
+  }
+
+  .blog-empty {
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+    padding-block: var(--space-12);
+  }
+</style>

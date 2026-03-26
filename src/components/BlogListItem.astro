@@ -1,9 +1,9 @@
 ---
-import { formatDate, readingTime } from "@utils/index";
+import { formatDate, readingTime, slugify } from "@utils/index";
 
 interface Props {
   post: {
-    body: string;
+    body?: string;
     id: string;
     data: {
       title: string;
@@ -16,7 +16,7 @@ interface Props {
 
 const { post } = Astro.props as Props;
 
-const readingTimeResult = readingTime(post.body);
+const readingTimeResult = readingTime(post.body || "");
 ---
 
 <article class="blog-card" aria-labelledby={`post-${post.id}`}>
@@ -42,7 +42,7 @@ const readingTimeResult = readingTime(post.body);
       <ul class="blog-card__tags" role="list" aria-label="Post tags">
         {post.data.tags.map((tag) => (
           <li>
-            <a href={`/blog?tag=${encodeURIComponent(tag)}`} class="tag">
+            <a href={`/blog/tag/${slugify(tag)}`} class="tag">
               {tag}
             </a>
           </li>

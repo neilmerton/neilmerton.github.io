@@ -1,7 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { formatDate, isPublished } from "@utils/index";
+import { formatDate, isPublished, slugify } from "@utils/index";
 import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", isPublished);
@@ -9,6 +10,10 @@ export async function getStaticPaths() {
     params: { slug: post.id },
     props: { post },
   }));
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
@@ -64,7 +69,7 @@ const { Content } = await render(post);
           <ul class="post-header__tags" role="list" aria-label="Post tags">
             {post.data.tags.map((tag) => (
               <li>
-                <a href={`/blog?tag=${encodeURIComponent(tag)}`} class="tag">
+                <a href={`/blog/tag/${slugify(tag)}`} class="tag">
                   {tag}
                 </a>
               </li>
