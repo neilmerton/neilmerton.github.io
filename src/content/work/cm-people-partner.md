@@ -1,6 +1,7 @@
 ---
-description: "Brochure-type website for CM People Partner. Built with Astro and Tailwind CSS, it features a clean and modern design that highlights the key services available. The website is fully responsive and optimized for both desktop and mobile devices."
+description: "Brochure-type website for CM People Partner (my amazing wife). Built with Astro and Tailwind CSS, it features a clean and modern design that highlights the key services available. The website is fully responsive and optimized for both desktop and mobile devices."
 cover: "./cm-people-partner/desktop.webp"
+date: "2024-09-04"
 link: "https://www.clairemerton.co.uk/"
 status: "live"
 tags: ["Astro", "Tailwind CSS", "Alpine.js"]

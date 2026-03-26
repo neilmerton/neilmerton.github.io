@@ -23,14 +23,14 @@ const { item } = Astro.props as Props;
       alt={`${item.data.title} screenshot`}
       src={item.data.cover}
       height={495}
-      quality="mid"
+      quality="high"
       width={704}
     />
-    <div class="work-list__meta">
-      <h3>{item.data.title}</h3>
-      <p class="text-xs">{item.data.description}</p>
-    </div>
   </a>
+  <div class="work-list__meta">
+    <h3>{item.data.title}</h3>
+    <p class="text-xs">{item.data.description}</p>
+  </div>
 </li>
 
 <style>

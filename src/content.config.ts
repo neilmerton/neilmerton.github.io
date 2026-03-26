@@ -48,7 +48,8 @@ const workCollection = defineCollection({
   schema: ({ image }) => z.object({
     cover: image(),
     description: z.string(),
-    link: z.string().url().optional(),
+    date: z.coerce.date(),
+    link: z.url().optional(),
     status: z.enum(['live', 'archived', 'upcoming']),
     tags: z.array(z.string()).default([]),
     title: z.string(),

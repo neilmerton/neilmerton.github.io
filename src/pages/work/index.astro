@@ -4,6 +4,10 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const workItems = await getCollection("work");
+
+const sortedWorkItems = workItems.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 ---
 
 <Layout
@@ -25,9 +29,8 @@ const workItems = await getCollection("work");
     </header>
 
     <div class="work-section animate-in animate-in--delay-2">
-      <h2 class="work-section__title">Examples</h2>
       <ol class="work-list" role="list">
-        {workItems.map((item) => <WorkListItem item={item} />)}
+        {sortedWorkItems.map((item) => <WorkListItem item={item} />)}
       </ol>
     </div>
   </div>
