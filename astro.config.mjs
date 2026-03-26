@@ -50,4 +50,7 @@ export default defineConfig({
       wrap: false,
     },
   },
+  redirects: {
+    "/reading": "/about/reading"
+  }
 });
