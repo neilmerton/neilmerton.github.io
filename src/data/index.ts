@@ -41,13 +41,13 @@ export const navItems: NavItem[] = [
   { label: 'Experience', href: '/experience' },
   { label: 'Work', href: '/work' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Reading', href: '/reading' },
   { label: 'Concerts', href: '/concerts' },
   { label: 'Contact', href: '/contact' },
 ];
 
 export const navItemsAbout: NavItem[] = [
   { label: 'Overview', href: '/about' },
+  { label: 'Reading', href: '/about/reading' },
   { label: 'Uses', href: '/about/uses' },
   { label: 'Colophon', href: '/about/colophon' },
 ];
