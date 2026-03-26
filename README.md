@@ -23,56 +23,6 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 
 ---
 
-## Project Structure
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   └── SocialLinks.astro
-│   │   └── ...
-│   ├── content/
-│   │   ├── blog/                 ← Markdown blog posts
-│   │   ├── reading/              ← Markdown book entries
-│   │   └── config.ts             ← Content collection schemas (Zod)
-│   ├── data/
-│   │   └── concerts.json         ← Concert data in JSON format
-│   ├── layouts/
-│   │   └── Layout.astro          ← Root HTML shell (SEO, meta, skip link)
-│   ├── pages/
-│   │   ├── 404.astro
-│   │   ├── about/
-│   │   │   ├── index.astro
-│   │   │   ├── uses.astro
-│   │   │   └── colophon.astro
-│   │   ├── blog/
-│   │   │   ├── index.astro       ← Blog listing with tag filter
-│   │   │   └── [slug].astro      ← Individual post pages
-│   │   ├── concerts.astro
-│   │   ├── contact.astro
-│   │   ├── experience.astro
-│   │   ├── index.astro           ← Home page
-│   │   ├── reading.astro
-│   │   └── work/
-│   │       ├── index.astro       ← Work listing with tag filter
-│   │       └── [slug].astro      ← Individual work pages
-│   ├── styles/
-│   │   └── global.css            ← Design tokens, reset, base styles
-│   ├── data.ts                   ← Site config, roles, tech stack, navigation, uses lists
-│   ├── types.ts                  ← TypeScript interfaces
-│   └── utils/
-│       └── index.ts              ← reusable utility functions
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
----
-
 ## Getting Started
 
 ### 1. Install dependencies
