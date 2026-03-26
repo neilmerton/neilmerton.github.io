@@ -17,4 +17,4 @@ title: "Glenn The Dog Walker"
 ## Technologies Used
 - Astro: A modern static site generator that allows for fast and efficient website development.
 - Standard CSS: Only CSS used for styling the website, providing a solid foundation for design and layout without the need for additional frameworks.
-- No JavaScript frameworks were used, keeping the website lightweight and focused on content.
+- No JavaScript deployed, keeping the website lightweight and focused on content.
