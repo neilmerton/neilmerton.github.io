@@ -29,7 +29,7 @@ export interface Role {
   title: string;
 }
 
-export type SocialPlatform =
+type SocialPlatform =
   | 'github'
   | 'linkedin'
   | 'twitter'
