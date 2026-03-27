@@ -164,17 +164,20 @@ const buildUrl = (pageNum: number) => {
   }
 
   :global(.pagination__page) {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    min-width: 2.5rem;
-    height: 2.5rem;
-    padding: 0 var(--space-2);
+    border: 1px solid var(--color-accent);
     border-radius: calc(var(--radius-md) * 0.75);
     color: var(--color-text);
-    text-decoration: none;
+    display: inline-flex;
     font-weight: 500;
-    transition: all 0.2s ease;
+    height: 2.5rem;
+    justify-content: center;
+    min-width: 2.5rem;
+    padding: 0 var(--space-2);
+    text-decoration: none;
+    transition:
+      color var(--transition-fast),
+      background-color var(--transition-fast);
   }
 
   :global(.pagination__page:hover) {
@@ -184,7 +187,7 @@ const buildUrl = (pageNum: number) => {
 
   :global(.pagination__page--active) {
     background-color: var(--color-accent-bg);
-    color: #ffffff !important;
+    color: var(--color-accent-text);
   }
 
   :global(.pagination__page--active:hover) {
