@@ -114,11 +114,11 @@ const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
 
   .tag--active {
     background-color: var(--color-accent-bg);
-    color: #ffffff !important;
+    color: var(--color-accent-text);
 
     &:hover {
       background-color: var(--color-accent-hover);
-      color: #ffffff !important;
+      color: var(--color-accent-text);
     }
   }
 
