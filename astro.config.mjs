@@ -51,6 +51,8 @@ export default defineConfig({
     },
   },
   redirects: {
-    "/reading": "/about/reading"
+    "/reading": "/about/reading",
+    "/work": "/portfolio",
+    "/work/[slug]": "/portfolio/[slug]"
   }
 });
