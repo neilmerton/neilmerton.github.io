@@ -1,4 +1,5 @@
 ---
+import PageHero from "@components/PageHero.astro";
 import SocialLinks from "@components/SocialLinks.astro";
 import { siteConfig } from "@data/index";
 import Layout from "@layouts/Layout.astro";
@@ -6,16 +7,13 @@ import Layout from "@layouts/Layout.astro";
 
 <Layout title="Contact" description={`Get in touch with ${siteConfig.name}.`}>
   <div class="container">
-    <header class="page-hero animate-in">
-      <span class="page-hero__eyebrow">Contact</span>
-      <h1 class="page-hero__title">Get in touch</h1>
-      <p class="page-hero__subtitle">
-        Have a project in mind, a question, or just want to say hi? I'd love to
-        hear from you.
-      </p>
-    </header>
+    <PageHero
+      description="Have a project in mind, a question, or just want to say hi? I'd love to hear from you."
+      leading="Contact"
+      title="Get in touch"
+    />
 
-    <div class="contact-body animate-in animate-in--delay-1">
+    <div class="contact-body">
       <section class="contact-section" aria-labelledby="email-heading">
         <h2 id="email-heading" class="contact-section__title">Email</h2>
         <p class="contact-section__body">

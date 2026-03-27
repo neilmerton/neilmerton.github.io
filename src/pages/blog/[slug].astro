@@ -31,7 +31,7 @@ const { Content } = await render(post);
     itemscope
     itemtype="https://schema.org/BlogPosting"
   >
-    <header class="post-header animate-in">
+    <header class="post-header">
       <nav class="post-breadcrumb" aria-label="Breadcrumb">
         <a href="/blog">← Blog</a>
       </nav>
@@ -79,14 +79,11 @@ const { Content } = await render(post);
       }
     </header>
 
-    <div
-      class="post-body prose animate-in animate-in--delay-1"
-      itemprop="articleBody"
-    >
+    <div class="post-body prose" itemprop="articleBody">
       <Content />
     </div>
 
-    <footer class="post-footer animate-in animate-in--delay-2">
+    <footer class="post-footer">
       <hr />
       <a href="/blog" class="post-footer__back">← Back to all posts</a>
     </footer>

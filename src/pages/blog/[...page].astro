@@ -1,13 +1,13 @@
 ---
 import BlogListItem from "@components/BlogListItem.astro";
+import PageHero from "@components/PageHero.astro";
 import Pagination from "@components/Pagination.astro";
-import Layout from "@layouts/Layout.astro";
-import { getCollection } from "astro:content";
 import { siteConfig } from "@data/index";
+import Layout from "@layouts/Layout.astro";
 import { slugify } from "@utils/index";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
-import BlogHeader from "@components/BlogHeader.astro";
+import { getCollection } from "astro:content";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allPosts = await getCollection("blog", ({ data }) => !data.draft);
@@ -30,14 +30,15 @@ const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
   description="Writing on frontend development, accessibility, CSS, TypeScript and the craft of building for the web."
 >
   <div class="container">
-    <BlogHeader />
+    <PageHero
+      description="Thoughts on frontend development, accessibility, and the craft of building for the web. There's also the occasional diversion into mountain biking and music."
+      leading="Writing"
+      title="Blog"
+    />
 
     {
       allTags.length > 0 && (
-        <nav
-          class="tag-filter animate-in animate-in--delay-1"
-          aria-label="Filter posts by tag"
-        >
+        <nav class="tag-filter" aria-label="Filter posts by tag">
           <ul class="tag-filter__list" role="list">
             <li>
               <a href="/blog" class="tag tag--active" aria-current="true">
@@ -56,7 +57,7 @@ const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
       )
     }
 
-    <ol class="blog-list animate-in animate-in--delay-2" role="list">
+    <ol class="blog-list" role="list">
       {
         page.data.map((post) => (
           <li class="blog-list__item">

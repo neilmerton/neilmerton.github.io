@@ -6,6 +6,7 @@ import ExperienceTechItem from "@components/ExperienceTechItem.astro";
 import Layout from "@layouts/Layout.astro";
 import { roles, techStack, professionalSummary } from "../data";
 import type { TechItem } from "../interfaces";
+import PageHero from "@components/PageHero.astro";
 
 // Group tech items by category
 const groupedTech = techStack.reduce<Record<string, TechItem[]>>(
@@ -37,16 +38,13 @@ const categoryLabels: Record<string, string> = {
   description="Professional experience, technology stack and career history."
 >
   <div class="container">
-    <header class="page-hero animate-in">
-      <span class="page-hero__eyebrow">Career</span>
-      <h1 class="page-hero__title">Experience</h1>
-      <p class="page-hero__subtitle">{professionalSummary}</p>
-    </header>
+    <PageHero
+      description={professionalSummary}
+      leading="Career"
+      title="Experience"
+    />
 
-    <section
-      class="exp-section animate-in animate-in--delay-1"
-      aria-labelledby="tech-stack-heading"
-    >
+    <section class="exp-section" aria-labelledby="tech-stack-heading">
       <h2 id="tech-stack-heading" class="exp-section__title">
         Technology Stack
       </h2>

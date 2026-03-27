@@ -1,4 +1,5 @@
 ---
+import PageHero from "@components/PageHero.astro";
 import PortfolioListItem from "@components/PortfolioListItem.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -15,20 +16,13 @@ const sortedPortfolioItems = portfolioItems.sort(
   description="A showcase of projects I've worked on, with descriptions and tags."
 >
   <div class="container">
-    <header class="page-hero animate-in">
-      <span class="page-hero__eyebrow">Projects</span>
-      <h1 class="page-hero__title">Portfolio</h1>
-      <p class="page-hero__subtitle">
-        A selection of projects I've worked on, with descriptions and tags.
-        {
-          portfolioItems.length > 0 && (
-            <> Some are live, some are archived, and some are upcoming.</>
-          )
-        }
-      </p>
-    </header>
+    <PageHero
+      description="A selection of projects I've worked on, with descriptions and tags. Some are live, some are archived, and some are upcoming."
+      leading="Examples"
+      title="Portfolio"
+    />
 
-    <div class="portfolio-section animate-in animate-in--delay-2">
+    <div class="portfolio-section">
       <ol class="portfolio-list" role="list">
         {sortedPortfolioItems.map((item) => <PortfolioListItem item={item} />)}
       </ol>

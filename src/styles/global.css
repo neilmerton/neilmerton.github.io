@@ -499,36 +499,6 @@ td {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-  .animate-in {
-    animation: fadeIn 0.5s ease both;
-  }
-
-  .animate-in--delay-1 {
-    animation-delay: 0.1s;
-  }
-
-  .animate-in--delay-2 {
-    animation-delay: 0.2s;
-  }
-
-  .animate-in--delay-3 {
-    animation-delay: 0.3s;
-  }
-}
-
 @supports (animation-timeline: scroll()) {
   body:has(.post-breadcrumb) .site-header::after {
     height: var(--progress-bar-height);

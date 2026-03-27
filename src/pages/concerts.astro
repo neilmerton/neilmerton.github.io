@@ -1,6 +1,7 @@
 ---
 import ConcertListItem from "@components/ConcertListItem.astro";
 import Note from "@components/Note.astro";
+import PageHero from "@components/PageHero.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -56,6 +57,8 @@ allConcerts.forEach((concert) => {
 const artists = Object.entries(artistCounts)
   .map(([artist, count]) => ({ artist, count }))
   .sort((a, b) => b.count - a.count || a.artist.localeCompare(b.artist));
+
+const pageDescription = `A log of concerts I've attended, with details and some notes. ${allConcerts.length} concerts and counting!`;
 ---
 
 <Layout
@@ -63,29 +66,19 @@ const artists = Object.entries(artistCounts)
   description="A log of concerts I've attended, with details and some notes."
 >
   <div class="container">
-    <header class="page-hero animate-in">
-      <span class="page-hero__eyebrow">Music</span>
-      <h1 class="page-hero__title">Concerts</h1>
-      <p class="page-hero__subtitle">
-        A log of concerts I've attended, with details and some notes.
-        {
-          allConcerts.length === 0
-            ? " No concerts yet!"
-            : ` ${allConcerts.length} concerts and counting!`
-        }
+    <PageHero description={pageDescription} leading="Music" title="Concerts" />
+
+    <Note>
+      <p>
+        This page is a work in progress! I'm still adding past concerts, of
+        which there are many to find the details for. I'd also like to add more
+        features in the future like filtering, more stats, and photos.
       </p>
-      <Note>
-        <p>
-          This page is a work in progress! I'm still adding past concerts, of
-          which there are many to find the details for. I'd also like to add
-          more features in the future like filtering, more stats, and photos.
-        </p>
-      </Note>
-    </header>
+    </Note>
 
     {
       artists.length > 0 && (
-        <section class="concert-artists animate-in">
+        <section class="concert-artists">
           <h2 class="concert-artists__title">
             Most Seen Artists
             <span class="concert-artists__count">{artists.length}</span>
@@ -110,7 +103,7 @@ const artists = Object.entries(artistCounts)
 
     {
       Object.keys(venueCounts).length > 0 && (
-        <section class="concert-venues animate-in">
+        <section class="concert-venues">
           <h2 class="concert-venues__title">
             Most Visited Venues
             <span class="concert-venues__count">

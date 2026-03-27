@@ -1,5 +1,6 @@
 ---
 import AboutNav from "@components/AboutNav.astro";
+import PageHero from "@components/PageHero.astro";
 import ReadingListItem from "@components/ReadingListItem.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
@@ -47,34 +48,28 @@ const statusLabels: Record<string, string> = {
   completed: "Completed",
   "want-to-read": "Want to Read",
 };
+
+const heroDescription = `A log of books I'm reading, have finished, and plan to pick up.${books.length > 0 ? ` Currently tracking ${books.length} books.` : ""}`;
 ---
 
 <Layout
-  title="Reading"
-  description="Books I'm reading, have read, and want to read — with thoughts and tags."
+  title="Reading / About"
+  description="Books I'm reading, have read, and want to read, with thoughts and tags."
 >
   <div class="container">
-    <header class="page-hero animate-in">
-      <AboutNav />
-      <span class="page-hero__eyebrow">Information</span>
-      <h1 class="page-hero__title">Reading</h1>
-      <p class="page-hero__subtitle">
-        A log of books I'm reading, have finished, and plan to pick up.
-        {
-          books.length > 0 && (
-            <span>Currently tracking {books.length} books.</span>
-          )
-        }
-      </p>
-    </header>
+    <PageHero
+      description={heroDescription}
+      leading="Information"
+      title="Reading"
+    >
+      <Fragment slot="nav">
+        <AboutNav />
+      </Fragment>
+    </PageHero>
 
-    <!-- Tag filter -->
     {
       allTags.length > 0 && (
-        <nav
-          class="tag-filter animate-in animate-in--delay-1"
-          aria-label="Filter books by tag"
-        >
+        <nav class="tag-filter" aria-label="Filter books by tag">
           <ul class="tag-filter__list" role="list">
             <li>
               <a href="/reading" class="tag" id="tag-all">
@@ -98,7 +93,7 @@ const statusLabels: Record<string, string> = {
     }
 
     <!-- Grouped book sections -->
-    <div class="reading-sections animate-in animate-in--delay-2">
+    <div class="reading-sections">
       {
         Object.entries(grouped).map(([status, statusBooks]) => (
           <section

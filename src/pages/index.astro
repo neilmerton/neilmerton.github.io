@@ -1,5 +1,6 @@
 ---
 import HomePostListItem from "@components/HomePostListItem.astro";
+import PageHero from "@components/PageHero.astro";
 import RandomSnippet from "@components/RandomSnippet.astro";
 import { siteConfig } from "@data/index";
 import Layout from "@layouts/Layout.astro";
@@ -14,20 +15,22 @@ const latestPosts = allPosts.slice(0, 3);
 ---
 
 <Layout title={siteConfig.title} description={siteConfig.description}>
-  <section class="hero container animate-in">
-    <p class="hero__eyebrow">Frontend Developer</p>
-    <h1 class="hero__name">{siteConfig.name}</h1>
-    <p class="hero__tagline">{siteConfig.description}</p>
-    <div class="hero__actions">
+  <PageHero
+    container
+    description={siteConfig.description}
+    leading="Frontend Developer"
+    title={siteConfig.name}
+  >
+    <Fragment slot="actions">
       <a href="/about" class="btn btn--primary">About me</a>
       <a href="/experience" class="btn btn--secondary">Experience</a>
       <a href="/portfolio" class="btn btn--secondary">Portfolio</a>
-    </div>
-  </section>
+    </Fragment>
+  </PageHero>
 
   {
     latestPosts.length > 0 && (
-      <section class="home-section container animate-in animate-in--delay-1">
+      <section class="home-section container">
         <header class="home-section__header">
           <h2 class="home-section__title">Recent Writing</h2>
           <a href="/blog" class="home-section__more">
@@ -44,7 +47,7 @@ const latestPosts = allPosts.slice(0, 3);
     )
   }
 
-  <section class="home-section container animate-in animate-in--delay-1">
+  <section class="home-section container">
     <header class="home-section__header">
       <h2 class="home-section__title">Did you know?</h2>
     </header>
@@ -53,45 +56,6 @@ const latestPosts = allPosts.slice(0, 3);
 </Layout>
 
 <style>
-  .hero {
-    border-block-end: 1px solid var(--color-border-light);
-    padding-block-end: var(--space-24);
-    padding-block-start: clamp(var(--space-20), 12vw, var(--space-32));
-  }
-
-  .hero__eyebrow {
-    color: var(--color-accent);
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
-    letter-spacing: var(--tracking-wider);
-    margin-block-end: var(--space-4);
-    text-transform: uppercase;
-  }
-
-  .hero__name {
-    color: var(--color-text);
-    font-size: clamp(var(--text-4xl), 8vw, 5rem);
-    margin-block-end: var(--space-6);
-  }
-
-  .hero__tagline {
-    color: var(--color-text-muted);
-    font-size: var(--text-lg);
-    line-height: var(--leading-relaxed);
-    max-width: 50ch;
-    margin-block-end: var(--space-10);
-  }
-
-  .hero__actions {
-    display: flex;
-    gap: var(--space-3);
-    flex-direction: column;
-
-    @media (min-width: 640px) {
-      flex-direction: row;
-    }
-  }
-
   .home-section {
     padding-block: var(--space-16);
   }

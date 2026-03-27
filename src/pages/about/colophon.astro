@@ -1,25 +1,25 @@
 ---
 import AboutNav from "@components/AboutNav.astro";
+import PageHero from "@components/PageHero.astro";
 import { siteConfig } from "@data/index";
 import Layout from "@layouts/Layout.astro";
+
+const pageDescription = `Learn more about how ${siteConfig.name} built this website and the approach to its development and deployment.`;
 ---
 
-<Layout
-  title="Colophon / About"
-  description={`Learn more about how ${siteConfig.name} built this website and the approach to its development and deployment.`}
->
+<Layout title="Colophon / About" description={pageDescription}>
   <article class="container">
-    <header class="page-hero animate-in">
-      <AboutNav />
-      <span class="page-hero__eyebrow">Information</span>
-      <h1 class="page-hero__title">Colophon</h1>
-      <p class="page-hero__subtitle">
-        Learn more about how {siteConfig.name} built this website and the approach
-        to its development and deployment.
-      </p>
-    </header>
+    <PageHero
+      description={pageDescription}
+      leading="Information"
+      title="Colophon"
+    >
+      <Fragment slot="nav">
+        <AboutNav />
+      </Fragment>
+    </PageHero>
 
-    <div class="about-body prose animate-in animate-in--delay-1">
+    <div class="about-body prose">
       <p>
         This website is built using <a
           href="https://astro.build"

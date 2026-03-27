@@ -42,7 +42,7 @@ const { Content } = await render(item);
     itemscope
     itemtype="https://schema.org/CreativeWork"
   >
-    <header class="portfolio-header animate-in">
+    <header class="portfolio-header">
       <nav class="portfolio-breadcrumb" aria-label="Breadcrumb">
         <a href="/portfolio">← Portfolio</a>
       </nav>
@@ -74,7 +74,7 @@ const { Content } = await render(item);
 
     {
       item.data.link && (
-        <section class="portfolio-link animate-in animate-in--delay-1">
+        <section class="portfolio-link">
           <p>
             <a href={item.data.link} target="_blank" rel="noopener noreferrer">
               Visit website →
@@ -97,14 +97,11 @@ const { Content } = await render(item);
       }
     </div>
 
-    <div
-      class="portfolio-body prose animate-in animate-in--delay-1"
-      itemprop="workBody"
-    >
+    <div class="portfolio-body prose" itemprop="workBody">
       <Content />
     </div>
 
-    <footer class="portfolio-footer animate-in animate-in--delay-2">
+    <footer class="portfolio-footer">
       <hr />
       <a href="/portfolio" class="portfolio-footer__back">← Back to portfolio</a
       >
