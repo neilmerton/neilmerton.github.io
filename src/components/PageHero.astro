@@ -9,20 +9,20 @@ interface Props {
 const { container, description, leading, title } = Astro.props as Props;
 ---
 
-<section class:list={["hero", { container }]}>
+<section class:list={["page-hero", { container }]}>
   {
     Astro.slots.has("nav") && (
-      <div class="hero__nav">
+      <div class="page-hero__nav">
         <slot name="nav" />
       </div>
     )
   }
-  <p class="hero__eyebrow">{leading}</p>
-  <h1 class="hero__name">{title}</h1>
-  <p class="hero__tagline">{description}</p>
+  <p class="page-hero__eyebrow">{leading}</p>
+  <h1 class="page-hero__name">{title}</h1>
+  <p class="page-hero__tagline">{description}</p>
   {
     Astro.slots.has("actions") && (
-      <div class="hero__actions">
+      <div class="page-hero__actions">
         <slot name="actions" />
       </div>
     )
@@ -30,7 +30,7 @@ const { container, description, leading, title } = Astro.props as Props;
 </section>
 
 <style>
-  .hero {
+  .page-hero {
     border-block-end: 1px solid var(--color-border-light);
     margin-block-end: var(--space-10);
     padding-block: var(--space-12) var(--space-10);
@@ -41,7 +41,7 @@ const { container, description, leading, title } = Astro.props as Props;
     }
   }
 
-  .hero__eyebrow {
+  .page-hero__eyebrow {
     color: var(--color-accent);
     font-family: var(--font-body);
     font-size: var(--text-xs);
@@ -50,20 +50,20 @@ const { container, description, leading, title } = Astro.props as Props;
     text-transform: uppercase;
   }
 
-  .hero__name {
+  .page-hero__name {
     color: var(--color-text);
     font-size: clamp(var(--text-4xl), 8vw, 5rem);
     margin-block-end: var(--space-6);
   }
 
-  .hero__tagline {
+  .page-hero__tagline {
     color: var(--color-text-muted);
     font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
     max-width: 50ch;
   }
 
-  .hero__actions {
+  .page-hero__actions {
     display: flex;
     gap: var(--space-3);
     flex-direction: column;
