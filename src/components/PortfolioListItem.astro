@@ -28,7 +28,7 @@ const { item } = Astro.props as Props;
     />
   </a>
   <div class="portfolio-list__meta">
-    <h3>{item.data.title}</h3>
+    <h2>{item.data.title}</h2>
     <p class="text-xs">{item.data.description}</p>
   </div>
 </li>
@@ -52,6 +52,6 @@ const { item } = Astro.props as Props;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-    margin-block-start: var(--space-4);
+    margin-block-start: var(--space-6);
   }
 </style>

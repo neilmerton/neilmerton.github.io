@@ -20,14 +20,15 @@
   --color-border: hsl(37, 14%, 82%);
   --color-border-light: hsl(36, 18%, 89%);
 
-  --color-text: hsl(36, 11%, 9%);
-  --color-text-muted: hsl(27, 5%, 40%);
-  --color-text-subtle: hsl(30, 6%, 59%);
+  --color-text: hsl(36, 11%, 10%);
+  --color-text-muted: hsl(36, 10%, 30%);
+  --color-text-subtle: hsl(36, 9%, 40%);
 
-  --color-accent: hsl(15, 63%, 46%);
+  --color-accent: hsl(15, 63%, 40%);
   --color-accent-bg: hsl(15, 50%, 43%);
   --color-accent-hover: hsl(16, 69%, 39%);
   --color-accent-tint: hsl(19, 50%, 94%);
+  --color-accent-text: hsl(15, 50%, 95%);
 
   --color-tag-bg: hsl(36, 22%, 91%);
   --color-tag-text: hsl(30, 6%, 33%);
@@ -377,12 +378,12 @@ td {
 .btn--primary {
   background-color: var(--color-accent-bg);
   border: 2px solid var(--color-accent);
-  color: var(--color-text);
+  color: var(--color-accent-text);
 
   &:hover {
     background-color: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
-    color: var(--color-text);
+    color: var(--color-accent-text);
   }
 }
 
