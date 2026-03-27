@@ -1,10 +1,19 @@
 import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
+import sitemap, { ChangeFreqEnum } from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 
 export default defineConfig({
   site: 'https://neil.merton.dev',
-  integrations: [mdx(), sitemap()],
+  trailingSlash: 'never',
+  integrations: [mdx(), sitemap({
+    serialize(item) {
+      if (/blog/.test(item.url)) {
+        item.changefreq = ChangeFreqEnum.WEEKLY;
+      }
+
+      return item;
+    },
+  })],
   fonts: [
     {
       provider: fontProviders.bunny(),
