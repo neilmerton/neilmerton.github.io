@@ -17,6 +17,6 @@ export async function GET(context: APIContext) {
     items: posts.map((post) => ({
       ...post.data,
       link: `/blog/${post.id}/`,
-    })).sort((a, b) => (a.pubDate < b.pubDate ? 1 : -1)),
+    })).sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()),
   });
 }

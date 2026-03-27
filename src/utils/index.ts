@@ -21,9 +21,9 @@ export function readingTime(text: string): string {
   return `${minutes} min read`;
 }
 
-export async function getWorkImages(id: string): Promise<ImageMetadata[]> {
+export async function getPortfolioImages(id: string): Promise<ImageMetadata[]> {
   let images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/content/work/**/*.{jpeg,jpg,png,webp}"
+    "/src/content/portfolio/**/*.{jpeg,jpg,png,webp}"
   );
 
   images = Object.fromEntries(

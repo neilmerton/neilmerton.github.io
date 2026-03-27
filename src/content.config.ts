@@ -28,6 +28,20 @@ const concertsCollection = defineCollection({
   }),
 });
 
+// Portfolio collection schema
+const portfolioCollection = defineCollection({
+  loader: glob({ base: './src/content/portfolio', pattern: '**/*.{md,mdx}' }),
+  schema: ({ image }) => z.object({
+    cover: image(),
+    description: z.string(),
+    date: z.coerce.date(),
+    link: z.url().optional(),
+    status: z.enum(['live', 'archived', 'upcoming']),
+    tags: z.array(z.string()).default([]),
+    title: z.string(),
+  }),
+});
+
 // Reading collection schema
 const readingCollection = defineCollection({
   loader: glob({ base: './src/content/reading', pattern: '**/*.{md,mdx}' }),
@@ -42,23 +56,9 @@ const readingCollection = defineCollection({
   }),
 });
 
-// Work collection schema
-const workCollection = defineCollection({
-  loader: glob({ base: './src/content/work', pattern: '**/*.{md,mdx}' }),
-  schema: ({ image }) => z.object({
-    cover: image(),
-    description: z.string(),
-    date: z.coerce.date(),
-    link: z.url().optional(),
-    status: z.enum(['live', 'archived', 'upcoming']),
-    tags: z.array(z.string()).default([]),
-    title: z.string(),
-  }),
-});
-
 export const collections = {
   blog: blogCollection,
   concerts: concertsCollection,
+  portfolio: portfolioCollection,
   reading: readingCollection,
-  work: workCollection,
 };

@@ -1,49 +1,49 @@
 ---
-import WorkListItem from "@components/WorkListItem.astro";
+import PortfolioListItem from "@components/PortfolioListItem.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const workItems = await getCollection("work");
+const portfolioItems = await getCollection("portfolio");
 
-const sortedWorkItems = workItems.sort(
+const sortedPortfolioItems = portfolioItems.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
 <Layout
-  title="Work"
+  title="Portfolio"
   description="A showcase of projects I've worked on, with descriptions and tags."
 >
   <div class="container">
     <header class="page-hero animate-in">
       <span class="page-hero__eyebrow">Projects</span>
-      <h1 class="page-hero__title">Work</h1>
+      <h1 class="page-hero__title">Portfolio</h1>
       <p class="page-hero__subtitle">
         A selection of projects I've worked on, with descriptions and tags.
         {
-          workItems.length > 0 && (
+          portfolioItems.length > 0 && (
             <> Some are live, some are archived, and some are upcoming.</>
           )
         }
       </p>
     </header>
 
-    <div class="work-section animate-in animate-in--delay-2">
-      <ol class="work-list" role="list">
-        {sortedWorkItems.map((item) => <WorkListItem item={item} />)}
+    <div class="portfolio-section animate-in animate-in--delay-2">
+      <ol class="portfolio-list" role="list">
+        {sortedPortfolioItems.map((item) => <PortfolioListItem item={item} />)}
       </ol>
     </div>
   </div>
 </Layout>
 
 <style>
-  .work-section {
+  .portfolio-section {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
   }
 
-  .work-list {
+  .portfolio-list {
     display: flex;
     flex-direction: column;
     gap: 0;

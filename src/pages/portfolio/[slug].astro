@@ -1,14 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { getWorkImages } from "@utils/index";
+import { getPortfolioImages } from "@utils/index";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const workItems = await getCollection("work");
+  const portfolioItems = await getCollection("portfolio");
 
-  const paths = Object.values(workItems).map((item) => {
+  const paths = Object.values(portfolioItems).map((item) => {
     return {
       params: {
         slug: item.id,
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  item: CollectionEntry<"work">;
+  item: CollectionEntry<"portfolio">;
 }
 
 const { item } = Astro.props as Props;
@@ -31,31 +31,37 @@ const { item } = Astro.props as Props;
 if (!item) {
   return Astro.redirect("/404");
 }
-const images = await getWorkImages(item.id);
+const images = await getPortfolioImages(item.id);
 
 const { Content } = await render(item);
 ---
 
 <Layout title={item.data.title} description={item.data.description}>
   <article
-    class="container work-page"
+    class="container portfolio-page"
     itemscope
     itemtype="https://schema.org/CreativeWork"
   >
-    <header class="work-header animate-in">
-      <nav class="work-breadcrumb" aria-label="Breadcrumb">
-        <a href="/work">← All Work</a>
+    <header class="portfolio-header animate-in">
+      <nav class="portfolio-breadcrumb" aria-label="Breadcrumb">
+        <a href="/portfolio">← Portfolio</a>
       </nav>
 
-      <h1 class="work-header__title" itemprop="headline">{item.data.title}</h1>
+      <h1 class="portfolio-header__title" itemprop="headline">
+        {item.data.title}
+      </h1>
 
-      <p class="work-header__description" itemprop="description">
+      <p class="portfolio-header__description" itemprop="description">
         {item.data.description}
       </p>
 
       {
         item.data.tags.length > 0 && (
-          <ul class="work-header__tags" role="list" aria-label="Work tags">
+          <ul
+            class="portfolio-header__tags"
+            role="list"
+            aria-label="Portfolio tags"
+          >
             {item.data.tags.map((tag) => (
               <li>
                 <span class="tag">{tag}</span>
@@ -68,7 +74,7 @@ const { Content } = await render(item);
 
     {
       item.data.link && (
-        <section class="work-link animate-in animate-in--delay-1">
+        <section class="portfolio-link animate-in animate-in--delay-1">
           <p>
             <a href={item.data.link} target="_blank" rel="noopener noreferrer">
               Visit website →
@@ -78,7 +84,7 @@ const { Content } = await render(item);
       )
     }
 
-    <div class="work-images">
+    <div class="portfolio-images">
       {
         images.map((img) => (
           <Image
@@ -92,25 +98,26 @@ const { Content } = await render(item);
     </div>
 
     <div
-      class="work-body prose animate-in animate-in--delay-1"
+      class="portfolio-body prose animate-in animate-in--delay-1"
       itemprop="workBody"
     >
       <Content />
     </div>
 
-    <footer class="work-footer animate-in animate-in--delay-2">
+    <footer class="portfolio-footer animate-in animate-in--delay-2">
       <hr />
-      <a href="/work" class="work-footer__back">← Back to all work</a>
+      <a href="/portfolio" class="portfolio-footer__back">← Back to portfolio</a
+      >
     </footer>
   </article>
 </Layout>
 
 <style>
-  .work-breadcrumb {
+  .portfolio-breadcrumb {
     margin-block-end: var(--space-8);
   }
 
-  .work-breadcrumb a {
+  .portfolio-breadcrumb a {
     color: var(--color-text-muted);
     font-size: var(--text-sm);
     letter-spacing: var(--tracking-wide);
@@ -121,20 +128,20 @@ const { Content } = await render(item);
     }
   }
 
-  .work-header {
+  .portfolio-header {
     border-block-end: 1px solid var(--color-border-light);
     margin-block-end: var(--space-12);
     padding-block-end: var(--space-10);
     padding-block-start: var(--space-16);
   }
 
-  .work-header__title {
+  .portfolio-header__title {
     font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
     margin-block-end: var(--space-5);
     max-width: 22ch;
   }
 
-  .work-header__tags {
+  .portfolio-header__tags {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
@@ -143,30 +150,30 @@ const { Content } = await render(item);
     padding: 0;
   }
 
-  .work-link {
+  .portfolio-link {
     border-block-end: 1px solid var(--color-border-light);
     margin-block-end: var(--space-12);
     padding-block-end: var(--space-10);
   }
 
-  .work-images {
+  .portfolio-images {
     display: flex;
     flex-direction: column;
     gap: var(--space-8);
     margin-block-end: var(--space-12);
   }
 
-  .work-body {
+  .portfolio-body {
     font-size: var(--text-md);
     line-height: var(--leading-relaxed);
     padding-block-end: var(--space-12);
   }
 
-  .work-footer hr {
+  .portfolio-footer hr {
     margin-block-end: var(--space-8);
   }
 
-  .work-footer__back {
+  .portfolio-footer__back {
     color: var(--color-text-muted);
     font-size: var(--text-sm);
     letter-spacing: var(--tracking-wide);
