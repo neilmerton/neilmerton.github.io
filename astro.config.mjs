@@ -7,8 +7,19 @@ export default defineConfig({
   trailingSlash: 'never',
   integrations: [mdx(), sitemap({
     serialize(item) {
+      if (/about/.test(item.url)) {
+        item.changefreq = ChangeFreqEnum.MONTHLY;
+        item.priority = 0.7;
+      }
+
       if (/blog/.test(item.url)) {
         item.changefreq = ChangeFreqEnum.WEEKLY;
+        item.priority = 0.8;
+      }
+
+      if (/portfolio/.test(item.url)) {
+        item.changefreq = ChangeFreqEnum.MONTHLY;
+        item.priority = 0.7;
       }
 
       return item;
