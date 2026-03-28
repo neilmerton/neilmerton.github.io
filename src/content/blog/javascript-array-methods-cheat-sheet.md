@@ -2,7 +2,7 @@
 title: "JavaScript Array Manipulation Cheat Sheet (ES2024+)"
 description: "My overview of the more common JavaScript array methods, including use-cases and examples."
 pubDate: "2026-03-28"
-tags: ["javascript", "web development"]
+tags: ["javascript", "programming", "learning", "web development"]
 ---
 
 I've compiled a useful list of the various array methods in JavaScript, mainly for my personal reference.
