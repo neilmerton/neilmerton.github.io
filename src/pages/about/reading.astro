@@ -72,14 +72,14 @@ const heroDescription = `A log of books I'm reading, have finished, and plan to 
         <nav class="tag-filter" aria-label="Filter books by tag">
           <ul class="tag-filter__list" role="list">
             <li>
-              <a href="/reading" class="tag" id="tag-all">
+              <a href="/about/reading" class="tag" id="tag-all">
                 All
               </a>
             </li>
             {allTags.map((tag) => (
               <li>
                 <a
-                  href={`/reading?tag=${encodeURIComponent(tag)}`}
+                  href={`/about/reading?tag=${encodeURIComponent(tag)}`}
                   class="tag"
                   data-tag={tag}
                 >
