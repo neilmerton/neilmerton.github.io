@@ -92,6 +92,7 @@ export const roles: Role[] = [
     company: 'enee.io',
     companyUrl: 'https://enee.io',
     startDate: '2023-03',
+    endDate: '2026-03',
     location: 'Remote',
     description: 'Lead frontend development for cutting-edge SaaS Energy Monitoring platform.',
     highlights: [
