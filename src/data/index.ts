@@ -94,7 +94,7 @@ export const roles: Role[] = [
     startDate: '2023-03',
     endDate: '2026-03',
     location: 'Remote',
-    description: 'Lead frontend development for cutting-edge SaaS Energy Monitoring platform.',
+    description: 'Led frontend development for high-data and analytics heavy SaaS Energy Monitoring platform.',
     highlights: [
       'Architected and maintained a design system in Figma, extending PrimeVue components.',
       'Frontend architecture including Pinia, PWA, TanStack Query, i18n, and performance optimisations.',
