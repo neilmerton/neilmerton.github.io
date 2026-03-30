@@ -8,8 +8,13 @@ import { getCollection, render } from "astro:content";
 const allBooks = await getCollection("reading");
 
 // Sort: reading first, then completed (newest first), then want-to-read
-const books = allBooks.sort((a, b) => {
-  const order = { reading: 0, completed: 1, "want-to-read": 2 };
+const books = allBooks.toSorted((a, b) => {
+  const order = {
+    reading: 0,
+    completed: 1,
+    "want-to-read": 2,
+    "did-not-finish": 3,
+  };
   const statusDiff = order[a.data.status] - order[b.data.status];
 
   if (statusDiff !== 0) {
@@ -46,6 +51,7 @@ const grouped = books.reduce<Record<string, BookEntry[]>>((acc, book) => {
 const statusLabels: Record<string, string> = {
   reading: "Currently Reading",
   completed: "Completed",
+  "did-not-finish": "Didn't Finish",
   "want-to-read": "Want to Read",
 };
 
@@ -121,7 +127,11 @@ const heroDescription = `A log of books I'm reading, have finished, and plan to 
                     id={`book-${book.id}`}
                     data-tags={JSON.stringify(book.data.tags)}
                   >
-                    <ReadingListItem book={book} Content={Content} />
+                    <ReadingListItem
+                      book={book}
+                      Content={Content}
+                      bookStatus={status}
+                    />
                   </li>
                 );
               })}
@@ -254,7 +264,7 @@ const heroDescription = `A log of books I'm reading, have finished, and plan to 
 
   .book-card {
     border-block-end: 1px solid var(--color-border-light);
-    padding-block: var(--space-6);
+    padding-block: var(--space-8);
   }
 
   .book-card:first-child {

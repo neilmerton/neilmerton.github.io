@@ -49,7 +49,7 @@ const readingCollection = defineCollection({
     author: z.string(),
     finishedDate: z.coerce.date().optional(),
     rating: z.number().min(1).max(5).optional(),
-    status: z.enum(['reading', 'completed', 'want-to-read']).default('want-to-read'),
+    status: z.enum(['reading', 'completed', 'did-not-finish', 'want-to-read']).default('want-to-read'),
     tags: z.array(z.string()).default([]),
     thoughts: z.string().optional(),
     title: z.string(),

@@ -13,14 +13,18 @@ interface Props {
       finishedDate?: Date;
     };
   };
+  bookStatus: string;
   Content: any; // For inline markdown content
 }
 
-const { book, Content } = Astro.props as Props;
+const { book, bookStatus, Content } = Astro.props as Props;
 
 function renderStars(rating: number): string {
   return "★".repeat(rating) + "☆".repeat(5 - rating);
 }
+
+const statusLabel =
+  bookStatus === "did-not-finish" ? "Stopped reading" : "Finished";
 ---
 
 <article aria-labelledby={`book-title-${book.id}`}>
@@ -62,7 +66,10 @@ function renderStars(rating: number): string {
         <ul class="book-card__tags" role="list" aria-label="Tags">
           {book.data.tags.map((tag) => (
             <li>
-              <a href={`/reading?tag=${encodeURIComponent(tag)}`} class="tag">
+              <a
+                href={`/about/reading?tag=${encodeURIComponent(tag)}`}
+                class="tag"
+              >
                 {tag}
               </a>
             </li>
@@ -77,7 +84,8 @@ function renderStars(rating: number): string {
           class="book-card__date"
           datetime={book.data.finishedDate.toISOString()}
         >
-          Finished {formatDate(book.data.finishedDate, true)}
+          {statusLabel}
+          {formatDate(book.data.finishedDate, true)}
         </time>
       )
     }
