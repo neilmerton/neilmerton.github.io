@@ -456,6 +456,10 @@ td {
   max-width: 65ch;
 }
 
+.prose li+li {
+  margin-block-start: var(--space-6);
+}
+
 .table-wrapper {
   overflow-x: auto;
 }
