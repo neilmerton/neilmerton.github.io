@@ -36,6 +36,7 @@ const portfolioCollection = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     link: z.url().optional(),
+    linkLabel: z.string().optional(),
     status: z.enum(['live', 'archived', 'upcoming']),
     tags: z.array(z.string()).default([]),
     title: z.string(),
