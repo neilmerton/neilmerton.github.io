@@ -19,7 +19,7 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 - **`prefers-reduced-motion`** support for animations
 - **Open Graph / Twitter Card** meta tags
 - **Markdown blog posts** with tag filtering
-- **Reading list** with status grouping (reading / completed / want-to-read) and tag filtering
+- **Reading list** with status grouping (reading / completed / did-not-finish / want-to-read) and tag filtering
 
 ---
 
@@ -143,7 +143,7 @@ Optional longer notes in the markdown body.
 |----------------|-----------------------------------------|----------|----------------------------------|
 | `title`        | `string`                                | ✅       | Book title                       |
 | `author`       | `string`                                | ✅       | Author name                      |
-| `status`       | `'reading' \| 'completed' \| 'want-to-read'` | ✅ | Reading status (controls grouping) |
+| `status`       | `'reading' \| 'completed' \| 'did-not-finish' \| 'want-to-read'` | ✅ | Reading status (controls grouping) |
 | `finishedDate` | `date`                                  | —        | Date finished (`YYYY-MM-DD`)     |
 | `startedDate`  | `date`                                  | —        | Date started                     |
 | `rating`       | `1–5`                                   | —        | Star rating                      |
