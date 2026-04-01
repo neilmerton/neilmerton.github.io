@@ -1,9 +1,10 @@
 ---
 description: "A custom Vue.js component that displays site energy flow data using SVG elements."
+codePenEmbedHeight: 520
+codePenEmbedLabel: "Energy flow component"
+codePenEmbedPen: "pvELQYQ"
 cover: "./enee-site-energy-flow/site-energy-flow.webp"
 date: "2026-04-01"
-link: "https://codepen.io/neilmerton/pen/pvELQYQ"
-linkLabel: "View POC"
 status: "live"
 tags: ["Vue.js", "CSS", "HTML", "SVG"]
 title: "enee.io Site Energy Flow"

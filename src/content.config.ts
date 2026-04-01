@@ -32,6 +32,9 @@ const concertsCollection = defineCollection({
 const portfolioCollection = defineCollection({
   loader: glob({ base: './src/content/portfolio', pattern: '**/*.{md,mdx}' }),
   schema: ({ image }) => z.object({
+    codePenEmbedHeight: z.number().optional(),
+    codePenEmbedLabel: z.string().optional(),
+    codePenEmbedPen: z.string().optional(),
     cover: image(),
     description: z.string(),
     date: z.coerce.date(),

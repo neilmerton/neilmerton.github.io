@@ -86,18 +86,34 @@ const { Content } = await render(item);
       )
     }
 
-    <div class="portfolio-images">
-      {
-        images.map((img) => (
-          <Image
-            alt={`${item.data.title} screenshot`}
-            src={img}
-            quality="high"
-            width={704}
-          />
-        ))
-      }
-    </div>
+    {
+      (item.data.codePenEmbedLabel && item.data.codePenEmbedPen) && (
+        <p class="codepen" data-height={item.data.codePenEmbedHeight ?? '400'} data-pen-title={item.data.codePenEmbedLabel} data-slug-hash={item.data.codePenEmbedPen} data-user="neilmerton" style={`height: ${item.data.codePenEmbedHeight ?? 400}px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;`}>
+          <span>See the Pen <a href={`https://codepen.io/neilmerton/pen/${item.data.codePenEmbedPen}`}>
+          {item.data.codePenEmbedLabel}</a> by Neil Merton (<a href="https://codepen.io/neilmerton">@neilmerton</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async is:inline src="https://public.codepenassets.com/embed/index.js"></script>
+      )
+    }
+
+    {
+      (!item.data.codePenEmbedPen) && (
+        <div class="portfolio-images">
+          {
+            images.map((img) => (
+              <Image
+                alt={`${item.data.title} screenshot`}
+                src={img}
+                quality="high"
+                width={704}
+              />
+            ))
+          }
+        </div>
+      )
+    }
+
 
     <div class="portfolio-body prose" itemprop="workBody">
       <Content />
