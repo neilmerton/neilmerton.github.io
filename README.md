@@ -10,7 +10,7 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 ## Features
 
 - **6 pages**: About (3 sub-pages), Experience, Portfolio, Blog, Concerts, Contact
-- **Type-safe content collections** for Blog and Reading (via Zod schemas)
+- **Type-safe content collections** via Zod schemas
 - **Type-safe site data** — all config, roles, and tech stack in `src/data.ts`
 - **Light / dark theme** from `prefers-color-scheme` — no JS required
 - **Plain CSS** with CSS custom properties (no Tailwind or other utility frameworks)
