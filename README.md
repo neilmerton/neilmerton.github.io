@@ -10,7 +10,7 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 ## Features
 
 - **6 pages**: About (3 sub-pages), Experience, Portfolio, Blog, Concerts, Contact
-- **Type-safe content collections** for Blog and Reading (via Zod schemas)
+- **Type-safe content collections** via Zod schemas
 - **Type-safe site data** — all config, roles, and tech stack in `src/data.ts`
 - **Light / dark theme** from `prefers-color-scheme` — no JS required
 - **Plain CSS** with CSS custom properties (no Tailwind or other utility frameworks)
@@ -19,7 +19,7 @@ A minimal, type-safe personal website, built with [Astro](https://astro.build), 
 - **`prefers-reduced-motion`** support for animations
 - **Open Graph / Twitter Card** meta tags
 - **Markdown blog posts** with tag filtering
-- **Reading list** with status grouping (reading / completed / want-to-read) and tag filtering
+- **Reading list** with status grouping (reading / completed / did-not-finish / want-to-read) and tag filtering
 
 ---
 
@@ -143,7 +143,7 @@ Optional longer notes in the markdown body.
 |----------------|-----------------------------------------|----------|----------------------------------|
 | `title`        | `string`                                | ✅       | Book title                       |
 | `author`       | `string`                                | ✅       | Author name                      |
-| `status`       | `'reading' \| 'completed' \| 'want-to-read'` | ✅ | Reading status (controls grouping) |
+| `status`       | `'reading' \| 'completed' \| 'did-not-finish' \| 'want-to-read'` | ✅ | Reading status (controls grouping) |
 | `finishedDate` | `date`                                  | —        | Date finished (`YYYY-MM-DD`)     |
 | `startedDate`  | `date`                                  | —        | Date started                     |
 | `rating`       | `1–5`                                   | —        | Star rating                      |
