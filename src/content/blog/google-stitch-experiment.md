@@ -67,13 +67,12 @@ Below are the three options it proposed.
 ![v3 design from Stitch](../../assets/images/stitch-screen-v3.webp)
 
 #### Likes
-- Absolutely nothing. It's just horrible.
+- Grouping the "Recent activity" items with a date header could make sense, the list will never be more than 10 items, however it *might* reduce repetitive dates being displayed.
 
 #### Dislikes
 - The main navigation is hideous. The items aren't aligned centrally.
 - Again additional icon suggestions aren't needed.
 - The "Contacts due soon" carousel is awful. If there's more than 3 recruiters I need to contact I want to see the data without having to interact with the UI.
-- Introducing a date header to the "Recent activity" section doesn't make sense, as the date used doesn't match any dates displayed.
 
 ## Conclusion
 
