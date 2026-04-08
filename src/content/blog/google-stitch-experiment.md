@@ -78,3 +78,5 @@ Below are the three options it proposed.
 ## Conclusion
 
 I'm not sold. Sure, it came back with some alternative methods to display content. But the quality is lacking, in a big way. The user experience isn't carefully considered. And even proposing "glassmorphism" is just horrid.
+
+As with any AI tool, context is king. With more specific prompts it may have produced tailored designs, but for this particular experiment I wanted to remain vague. However, I'm not convinced including further context would resolve many of the design inconsistencies I've mentioned.
