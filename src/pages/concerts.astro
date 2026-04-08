@@ -1,6 +1,5 @@
 ---
 import ConcertListItem from "@components/ConcertListItem.astro";
-import Note from "@components/Note.astro";
 import PageHero from "@components/PageHero.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -67,14 +66,6 @@ const pageDescription = `A log of concerts I've attended, with details and some 
 >
   <div class="container">
     <PageHero description={pageDescription} leading="Music" title="Concerts" />
-
-    <Note>
-      <p>
-        This page is a work in progress! I'm still adding past concerts, of
-        which there are many to find the details for. I'd also like to add more
-        features in the future like filtering, more stats, and photos.
-      </p>
-    </Note>
 
     {
       artists.length > 0 && (
