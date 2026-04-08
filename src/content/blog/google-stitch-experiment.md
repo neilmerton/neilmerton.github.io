@@ -59,6 +59,7 @@ Below are the three options it proposed.
 - Using a donut chart for the "Vacancies by status" as it will add additional payload resource to generate it, and isn't worth the data it would require.
 - Checkboxes (I think?) in "Contacts due soon" items, is it proposing these become todo items?
 - The orphaned `)` in the priority chips, in "Contacts due soon", is bazar! And nowhere is there a status set for contacts. Maybe I could use the `next_contact_date` to compare to the current date to determine the dynamic priority chip? But this isn't required.
+- Inconsistent gap spacing (horizontal and vertical) between the main contact cards.
 
 ### Version v3
 
