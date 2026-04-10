@@ -1,6 +1,6 @@
 ---
 title: "Next.js PWA Manifest Gotcha"
-description: "How to fix using Next.js PWA with protected routes."
+description: "How to fix syntax error using Next.js PWA with protected routes."
 pubDate: "2026-04-10"
 tags: ["next.js", "web development", "pwa"]
 ---
