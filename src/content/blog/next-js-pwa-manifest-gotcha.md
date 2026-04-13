@@ -7,7 +7,7 @@ tags: ["next.js", "web development", "pwa"]
 
 As part of my learning Next.js I've created a fairly simple web app that has protected routes and uses `manifest.ts` for App Router to generate a dynamic manifest file.
 
-The gotcha I came across is because there are protected routes for the web app (a user my login to access main functionality) the browser was unable to load the manifest file, instead I was getting the following error in the browser console:
+The gotcha I came across is because there are protected routes for the web app (a user must login to access main functionality) the browser was unable to load the manifest file, instead I was getting the following error in the browser console:
 
 ```
 Manifest: Line: 1, column: 1, Syntax error.
