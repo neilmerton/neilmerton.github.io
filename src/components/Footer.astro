@@ -1,11 +1,13 @@
 ---
 import { siteConfig } from "@data/index";
 import SocialLinks from "./SocialLinks.astro";
+import RecentTracks from "./RecentTracks.astro";
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
+  <RecentTracks />
   <div class="container container--wide site-footer__inner">
     <div class="site-footer__left">
       <p class="site-footer__name">{siteConfig.name}</p>

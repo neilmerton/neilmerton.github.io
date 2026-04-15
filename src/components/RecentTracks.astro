@@ -1,0 +1,82 @@
+---
+// RecentTracks.astro
+---
+
+<div id="lastfm-container" class="lastfm-widget container container--wide">
+  <p>Recent Listens</p>
+  <ul id="track-list">
+    <li class="loading">Loading tracks...</li>
+  </ul>
+</div>
+
+<script>
+  // Define types for the Last.fm response
+  interface Track {
+    name: string;
+    artist: { "#text": string };
+    url: string;
+    image: { "#text": string; size: string }[];
+    "@attr"?: { nowplaying: string };
+  }
+
+  async function updateTracks() {
+    const listElement = document.getElementById("track-list");
+    if (!listElement) return;
+
+    try {
+      const response = await fetch("/api/recent-tracks");
+      const data = await response.json();
+      const tracks: Track[] = data.recenttracks.track;
+
+      listElement.innerHTML = tracks
+        .map((track) => {
+          return `
+            <li>
+              <a href="${track.url}" target="_blank" rel="noopener noreferrer">
+                <img alt="${track.name} by ${track.artist["#text"]}" src="${track.image[0]["#text"]}">
+              </a>
+            </li>
+          `;
+        })
+        .join("");
+    } catch (err) {
+      listElement.innerHTML = "<li>Failed to load tracks.</li>";
+      console.error("Error fetching Last.fm tracks:", err);
+    }
+  }
+
+  // Initial fetch
+  updateTracks();
+</script>
+
+<style>
+  .lastfm-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-block-end: var(--space-12);
+
+    p {
+      font-family: var(--font-display);
+    }
+
+    ul {
+      display: flex;
+      gap: var(--space-2);
+      list-style: none;
+      margin-block: 0;
+      padding-inline-start: 0;
+    }
+
+    li {
+      align-items: center;
+      display: inline-flex;
+      gap: var(--space-2);
+      margin: 0;
+    }
+
+    img {
+      border-radius: var(--radius-sm);
+    }
+  }
+</style>
