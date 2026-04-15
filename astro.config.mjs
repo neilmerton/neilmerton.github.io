@@ -1,10 +1,12 @@
 import mdx from "@astrojs/mdx";
 import { defineConfig, fontProviders } from 'astro/config';
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
   site: 'https://neil.merton.dev',
   trailingSlash: 'never',
   integrations: [mdx()],
+
   fonts: [
     {
       provider: fontProviders.bunny(),
@@ -22,6 +24,7 @@ export default defineConfig({
       cssVariable: "--font-mono"
     }
   ],
+
   markdown: {
     shikiConfig: {
       themes: {
@@ -31,9 +34,13 @@ export default defineConfig({
       wrap: false,
     },
   },
+
   redirects: {
     "/reading": "/about/reading",
     "/work": "/portfolio",
     "/work/[slug]": "/portfolio/[slug]"
-  }
+  },
+
+  adapter: vercel(),
+  output: "static",
 });

@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro';
 
+export const prerender = false;
+
 export const GET: APIRoute = async () => {
   const KEY = import.meta.env.LAST_FM_KEY;
   const USER = import.meta.env.LAST_FM_USER;
