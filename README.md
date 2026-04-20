@@ -2,11 +2,6 @@
 
 A minimal, type-safe personal website, built with [Astro](https://astro.build), plain CSS, and semantic HTML.
 
-<img width="2596" height="1820" alt="Screenshot of home page - 21 Feb 2026" src="https://github.com/user-attachments/assets/e065eda2-c812-4a40-8e4b-15777b97d3c9" />
-
-
----
-
 ## Features
 
 - **6 pages**: About (3 sub-pages), Experience, Portfolio, Blog, Concerts, Contact
