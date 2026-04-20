@@ -26,16 +26,17 @@ const readingTimeResult = readingTime(post.body || "");
         {post.data.title}
       </a>
     </h2>
-    <time class="blog-card__date" datetime={post.data.pubDate.toISOString()}>
-      {formatDate(post.data.pubDate)}
-    </time>
   </header>
 
-  <p class="blog-card__description">{post.data.description}</p>
-
-  <p class="blog-card__reading-time">
-    {readingTimeResult}
+  <p class="blog-card__meta">
+    <time datetime={post.data.pubDate.toISOString()}>
+      {formatDate(post.data.pubDate)}
+    </time>
+    <span>&bull;</span>
+    <span>{readingTimeResult}</span>
   </p>
+
+  <p class="blog-card__description">{post.data.description}</p>
 
   {
     post.data.tags.length > 0 && (
@@ -82,13 +83,6 @@ const readingTimeResult = readingTime(post.body || "");
     }
   }
 
-  .blog-card__date {
-    font-size: var(--text-sm);
-    color: var(--color-text-subtle);
-    flex-shrink: 0;
-    font-variant-numeric: tabular-nums;
-  }
-
   .blog-card__description {
     color: var(--color-text-muted);
     font-size: var(--text-md);
@@ -97,18 +91,22 @@ const readingTimeResult = readingTime(post.body || "");
     margin-block-end: var(--space-4);
   }
 
-  .blog-card__reading-time {
+  .blog-card__meta {
+    align-items: center;
     color: var(--color-text-subtle);
+    display: flex;
+    gap: var(--space-2);
     font-size: var(--text-sm);
+    font-variant-numeric: tabular-nums;
     margin-block-end: var(--space-4);
   }
 
   .blog-card__tags {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 </style>
