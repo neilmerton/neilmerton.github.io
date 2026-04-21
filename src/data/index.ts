@@ -105,9 +105,9 @@ export const roles: Role[] = [
       'Unit testing with Vitest and end-to-end testing with Playwright.',
       'Maintained Lighthouse accessibility score in the 90s site-wide.',
       'Maintained code consistency and quality through linting (ESLint and Husky), and code reviews (GitHub Copilot Review).',
-      'Maintained CI/CD pipelines and error monitoring in Sentry.',
+      'Maintained Frontend CI/CD pipelines and error monitoring in Sentry.',
     ],
-    technologies: ['TypeScript', 'Vue.js', 'Pinia', 'PWA', 'SCSS', 'Vitest', 'Playwright', 'Figma', 'PrimeVue', 'TanStack Query', 'Highcharts', 'i18n'],
+    technologies: ['TypeScript', 'Vue.js', 'Pinia', 'PWA', 'SCSS', 'Vitest', 'Playwright', 'Figma', 'PrimeVue', 'TanStack Query', 'Highcharts', 'i18n', 'AWS'],
   },
   {
     title: 'Lead Frontend Engineer',
@@ -122,8 +122,9 @@ export const roles: Role[] = [
       'Migrated MVP from ASP.NET WebApp to modern frontend stack, including offline capabilities through Workbox.',
       'Reduced average page load time by 35% through image optimisation and code splitting.',
       'Implemented interactive, context-aware help guides, improving user onboarding and reducing support tickets by 20%.',
+      'Mentored two Frontend Engineers, regular 1-2-1s and quarterly performance reviews.'
     ],
-    technologies: ['JavaScript', 'Vue.js', 'SCSS', 'Sketch', 'Vuetify', 'Chart.js'],
+    technologies: ['JavaScript', 'Vue.js', 'SCSS', 'Sketch', 'Vuetify', 'Chart.js', 'Azure'],
   },
   {
     title: 'Head of Innovation',

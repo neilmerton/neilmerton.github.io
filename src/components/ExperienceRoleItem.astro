@@ -18,9 +18,9 @@ const formatDateEmployment = (dateStr?: string): string => {
 ---
 
 <li class="role">
-  <div class="role__header">
+  <header class="role__header">
+    <h3 class="role__title">{role.title}</h3>
     <div class="role__meta">
-      <h3 class="role__title">{role.title}</h3>
       <p class="role__company">
         {
           role.companyUrl ? (
@@ -31,21 +31,21 @@ const formatDateEmployment = (dateStr?: string): string => {
             role.company
           )
         }
-        <span class="role__sep" aria-hidden="true"> · </span>
+        <span class="role__sep" aria-hidden="true">&bull;</span>
         <span class="role__location">{role.location}</span>
       </p>
+      <time
+        class="role__dates"
+        aria-label={`${formatDateEmployment(role.startDate)} to ${formatDateEmployment(role.endDate)}`}
+      >
+        <span>{formatDateEmployment(role.startDate)}</span>
+        <span aria-hidden="true"> &rarr; </span>
+        <span class={!role.endDate ? "role__dates--current" : ""}>
+          {formatDateEmployment(role.endDate)}
+        </span>
+      </time>
     </div>
-    <time
-      class="role__dates"
-      aria-label={`${formatDateEmployment(role.startDate)} to ${formatDateEmployment(role.endDate)}`}
-    >
-      <span>{formatDateEmployment(role.startDate)}</span>
-      <span aria-hidden="true"> - </span>
-      <span class={!role.endDate ? "role__dates--current" : ""}>
-        {formatDateEmployment(role.endDate)}
-      </span>
-    </time>
-  </div>
+  </header>
 
   <p class="role__description">{role.description}</p>
 
@@ -84,12 +84,11 @@ const formatDateEmployment = (dateStr?: string): string => {
   }
 
   .role__header {
-    display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--space-6);
-    margin-block-end: var(--space-4);
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-block-end: var(--space-6);
   }
 
   .role__title {
@@ -98,13 +97,20 @@ const formatDateEmployment = (dateStr?: string): string => {
     margin-block-end: var(--space-1);
   }
 
+  .role__meta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .role__company {
-    font-size: var(--text-sm);
     color: var(--color-text-muted);
+    font-size: var(--text-sm);
   }
 
   .role__company a {
     color: var(--color-accent);
+    display: inline-block;
 
     &:hover {
       color: var(--color-accent-hover);
@@ -112,8 +118,8 @@ const formatDateEmployment = (dateStr?: string): string => {
   }
 
   .role__sep {
+    color: var(--color-text-subtle);
     margin-inline: var(--space-2);
-    color: var(--color-border);
   }
 
   .role__location {
