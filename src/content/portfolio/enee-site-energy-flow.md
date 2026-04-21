@@ -6,7 +6,7 @@ codePenEmbedPen: "pvELQYQ"
 cover: "./enee-site-energy-flow/site-energy-flow.webp"
 date: "2026-04-01"
 status: "live"
-tags: ["Vue.js", "CSS", "HTML", "SVG"]
+tags: ["Vue.js", "CSS", "HTML", "SVG", "AI"]
 title: "enee.io Site Energy Flow"
 ---
 
@@ -16,6 +16,7 @@ title: "enee.io Site Energy Flow"
 - Animated flow indicators when assets consuming or receiving energy
 
 ## Technologies Used
+- GitHub Copilot: generate initial implementation in static HTML, JS and CSS.
 - Vue.js: Reusable component that accepts endpoint data.
 - SVG: elements and animation paths.
 
