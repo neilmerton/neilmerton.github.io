@@ -107,7 +107,7 @@ export const roles: Role[] = [
       'Maintained code consistency and quality through linting (ESLint and Husky), and code reviews (GitHub Copilot Review).',
       'Maintained CI/CD pipelines and error monitoring in Sentry.',
     ],
-    technologies: ['TypeScript', 'Vue.js', 'Pinia', 'PWA', 'SCSS', 'Vitest', 'Playwright', 'Figma', 'PrimeVue', 'TanStack Query', 'Highcharts'],
+    technologies: ['TypeScript', 'Vue.js', 'Pinia', 'PWA', 'SCSS', 'Vitest', 'Playwright', 'Figma', 'PrimeVue', 'TanStack Query', 'Highcharts', 'i18n'],
   },
   {
     title: 'Lead Frontend Engineer',
