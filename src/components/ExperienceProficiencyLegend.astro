@@ -5,7 +5,7 @@
       aria-hidden="true"
     >
     </dt>
-    <dd>Expert, use daily, deep knowledge</dd>
+    <dd>Expert, daily use, deep knowledge</dd>
   </div>
   <div>
     <dt
@@ -13,7 +13,7 @@
       aria-hidden="true"
     >
     </dt>
-    <dd>Proficient, use regularly, comfortable</dd>
+    <dd>Proficient, regular use, comfortable</dd>
   </div>
   <div>
     <dt
@@ -27,24 +27,24 @@
 
 <style>
   .proficiency-legend {
+    color: var(--color-text-muted);
     display: flex;
     flex-wrap: wrap;
+    font-size: var(--text-xs);
     gap: var(--space-4);
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
   }
 
   .proficiency-legend > div {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: var(--space-2);
   }
 
   .proficiency-legend__dot {
-    width: 10px;
-    height: 10px;
     border-radius: 2px;
+    height: 10px;
     flex-shrink: 0;
+    width: 10px;
   }
 
   .proficiency-legend__dot--expert {
