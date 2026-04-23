@@ -1,8 +1,9 @@
 ---
 // RecentTracks.astro
+import record from "../assets/record.svg";
 ---
 
-<div id="lastfm-container" class="lastfm-widget container container--wide">
+<div id="lastfm-container" class="lastfm-widget container container--wide" data-record-src={record.src}>
   <p>Recent Listens</p>
   <ul id="track-list">
     <li class="loading">Loading tracks...</li>
@@ -23,6 +24,8 @@
     const listElement = document.getElementById("track-list");
     if (!listElement) return;
 
+    const recordSrc = document.getElementById("lastfm-container")?.dataset.recordSrc ?? "";
+
     try {
       const response = await fetch("/api/recent-tracks");
       const data = await response.json();
@@ -33,7 +36,7 @@
           return `
             <li>
               <a href="${track.url}" target="_blank" rel="noopener noreferrer">
-                <img alt="${track.name} by ${track.artist["#text"]}" src="${track.image[0]["#text"]}">
+                <img alt="${track.name} by ${track.artist["#text"]}" src="${track.image[0]["#text"]}" onerror="this.src='${recordSrc}'">
               </a>
             </li>
           `;
