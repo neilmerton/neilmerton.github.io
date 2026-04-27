@@ -42,6 +42,7 @@ type SocialPlatform =
   | 'codepen'
   | 'dev.to'
   | 'hashnode'
+  | 'lastfm'
   | 'other';
 
 export interface SocialLink {

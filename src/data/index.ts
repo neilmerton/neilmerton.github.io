@@ -31,6 +31,11 @@ export const siteConfig: SiteConfig = {
       url: 'https://codepen.io/neilmerton',
       label: 'CodePen',
     },
+    {
+      platform: 'lastfm',
+      url: 'https://www.last.fm/user/botboi',
+      label: 'Last.fm',
+    },
   ],
   blogIntro: `Thoughts on frontend development, accessibility, and the craft of building for the web. There's also the occasional diversion into mountain biking and music.`,
   blogPageSize: 5,
