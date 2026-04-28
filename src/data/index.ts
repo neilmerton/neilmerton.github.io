@@ -70,8 +70,8 @@ export const techStack: TechItem[] = [
   { name: 'Next.js', category: 'framework', proficiency: 'familiar' },
   { name: 'Nuxt.js', category: 'framework', proficiency: 'familiar' },
   { name: 'Node.js', category: 'framework', proficiency: 'proficient' },
+  { name: 'React.js', category: 'framework', proficiency: 'familiar' },
   { name: 'Vue.js', category: 'framework', proficiency: 'expert' },
-  { name: 'Svelte', category: 'framework', proficiency: 'familiar' },
   // Tools
   { name: 'Figma', category: 'tool', proficiency: 'expert' },
   { name: 'Git / GitHub', category: 'tool', proficiency: 'proficient' },
