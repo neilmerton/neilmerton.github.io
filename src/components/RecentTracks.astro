@@ -3,7 +3,11 @@
 import record from "../assets/record.svg";
 ---
 
-<div id="lastfm-container" class="lastfm-widget container container--wide" data-record-src={record.src}>
+<div
+  id="lastfm-container"
+  class="lastfm-widget container container--wide"
+  data-record-src={record.src}
+>
   <p>Recent Listens</p>
   <ul id="track-list">
     <li class="loading">Loading tracks...</li>
@@ -22,9 +26,12 @@ import record from "../assets/record.svg";
 
   async function updateTracks() {
     const listElement = document.getElementById("track-list");
-    if (!listElement) return;
+    if (!listElement) {
+      return;
+    }
 
-    const recordSrc = document.getElementById("lastfm-container")?.dataset.recordSrc ?? "";
+    const recordSrc =
+      document.getElementById("lastfm-container")?.dataset.recordSrc ?? "";
 
     try {
       const response = await fetch("/api/recent-tracks");
@@ -68,6 +75,7 @@ import record from "../assets/record.svg";
       gap: var(--space-2);
       list-style: none;
       margin-block: 0;
+      overflow-x: auto;
       padding-inline-start: 0;
     }
 
@@ -76,6 +84,11 @@ import record from "../assets/record.svg";
       display: inline-flex;
       gap: var(--space-2);
       margin: 0;
+    }
+
+    a {
+      height: 34px;
+      width: 34px;
     }
 
     img {

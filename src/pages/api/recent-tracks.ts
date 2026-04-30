@@ -5,8 +5,9 @@ export const prerender = false;
 export const GET: APIRoute = async () => {
   const KEY = import.meta.env.LAST_FM_KEY;
   const USER = import.meta.env.LAST_FM_USER;
+  const LIMIT = 15;
 
-  const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${KEY}&format=json&limit=10`;
+  const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${KEY}&format=json&limit=${LIMIT}`;
 
   try {
     const response = await fetch(url);
