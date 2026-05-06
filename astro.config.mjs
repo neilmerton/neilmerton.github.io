@@ -36,6 +36,7 @@ export default defineConfig({
   },
 
   redirects: {
+    "/concerts": "/about/concerts",
     "/reading": "/about/reading",
     "/work": "/portfolio",
     "/work/[slug]": "/portfolio/[slug]"
