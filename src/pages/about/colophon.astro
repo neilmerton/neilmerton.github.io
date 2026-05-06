@@ -5,12 +5,13 @@ import { siteConfig } from "@data/index";
 import Layout from "@layouts/Layout.astro";
 
 const pageDescription = `Learn more about how ${siteConfig.name} built this website and the approach to its development and deployment.`;
+const pageHeroDescription = `Learn more about how I built this website and the approach to its development and deployment.`;
 ---
 
 <Layout title="Colophon / About" description={pageDescription}>
   <article class="container">
     <PageHero
-      description={pageDescription}
+      description={pageHeroDescription}
       leading="Information"
       title="Colophon"
     >

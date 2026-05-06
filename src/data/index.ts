@@ -46,15 +46,15 @@ export const navItems: NavItem[] = [
   { label: 'Experience', href: '/experience' },
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Concerts', href: '/concerts' },
   { label: 'Contact', href: '/contact' },
 ];
 
 export const navItemsAbout: NavItem[] = [
   { label: 'Overview', href: '/about' },
+  { label: 'Colophon', href: '/about/colophon' },
+  { label: 'Concerts', href: '/about/concerts' },
   { label: 'Reading', href: '/about/reading' },
   { label: 'Uses', href: '/about/uses' },
-  { label: 'Colophon', href: '/about/colophon' },
 ];
 
 export const techStack: TechItem[] = [

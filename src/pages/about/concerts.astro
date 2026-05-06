@@ -1,4 +1,5 @@
 ---
+import AboutNav from "@components/AboutNav.astro";
 import ConcertListItem from "@components/ConcertListItem.astro";
 import PageHero from "@components/PageHero.astro";
 import Layout from "@layouts/Layout.astro";
@@ -61,11 +62,19 @@ const pageDescription = `A log of concerts I've attended, with details and some 
 ---
 
 <Layout
-  title="Concerts"
+  title="Concerts / About"
   description="A log of concerts I've attended, with details and some notes."
 >
   <div class="container">
-    <PageHero description={pageDescription} leading="Music" title="Concerts" />
+    <PageHero
+      description={pageDescription}
+      leading="Information"
+      title="Concerts"
+    >
+      <Fragment slot="nav">
+        <AboutNav />
+      </Fragment>
+    </PageHero>
 
     {
       artists.length > 0 && (
