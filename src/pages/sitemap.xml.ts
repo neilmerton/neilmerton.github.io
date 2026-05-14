@@ -1,4 +1,5 @@
 import { navItems, navItemsAbout, siteConfig } from '@data/index';
+import { slugify } from '@utils/index';
 import type { APIContext } from 'astro';
 import { getCollection } from 'astro:content';
 
@@ -64,7 +65,7 @@ export async function GET(context: APIContext) {
   // Add tag pages
   allTags.forEach(tag => {
     urls.push({
-      loc: `${site}/blog/tag/${encodeURIComponent(tag)}`,
+      loc: `${site}/blog/tag/${slugify(tag)}`,
       lastMod: pageLastMod,
       changefreq: 'monthly',
       priority: 0.5
