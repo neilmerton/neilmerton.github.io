@@ -97,6 +97,19 @@ of engineering rigour and thoughtful design.
 
 export const roles: Role[] = [
   {
+    title: 'Senior Frontend Engineer',
+    company: 'Synanetics',
+    companyUrl: 'https://synanetics.com',
+    startDate: '2026-06',
+    endDate: undefined,
+    location: 'Remote',
+    description: 'Contribute to development of systems used by health and care sectors.',
+    highlights: [
+      'To follow',
+    ],
+    technologies: ['TypeScript', 'React'],
+  },
+  {
     title: 'Lead Frontend Engineer',
     company: 'enee.io',
     companyUrl: 'https://enee.io',
