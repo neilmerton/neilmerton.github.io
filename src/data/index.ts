@@ -97,7 +97,7 @@ of engineering rigour and thoughtful design.
 
 export const roles: Role[] = [
   {
-    title: 'Senior Frontend Engineer',
+    title: 'Senior Fullstack Engineer',
     company: 'Synanetics',
     companyUrl: 'https://synanetics.com',
     startDate: '2026-06',
@@ -105,9 +105,10 @@ export const roles: Role[] = [
     location: 'Remote',
     description: 'Contribute to development of systems used by health and care sectors.',
     highlights: [
-      'To follow',
+      'Serer-side code for greenfield testing and resulting web application.',
+      'New components for shared component library and design system.',
     ],
-    technologies: ['TypeScript', 'React'],
+    technologies: ['TypeScript', 'React', 'CSS', 'SCSS', 'TanStack Query', 'Postgres', 'Playwright', 'Vitest', 'React Testing Library', 'Storybook', 'Google Cloud'],
   },
   {
     title: 'Lead Frontend Engineer',
