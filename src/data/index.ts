@@ -105,7 +105,7 @@ export const roles: Role[] = [
     location: 'Remote',
     description: 'Contribute to development of systems used by health and care sectors.',
     highlights: [
-      'Serer-side code for greenfield testing and resulting web application.',
+      'Server-side code for greenfield testing and resulting web application.',
       'New components for shared component library and design system.',
     ],
     technologies: ['TypeScript', 'React', 'CSS', 'SCSS', 'TanStack Query', 'Postgres', 'Playwright', 'Vitest', 'React Testing Library', 'Storybook', 'Google Cloud'],
