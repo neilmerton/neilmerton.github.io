@@ -1,5 +1,6 @@
 ---
 import { formatDate, readingTime, slugify } from "@utils/index";
+import Tag from "@components/Tag.astro";
 
 interface Props {
   post: {
@@ -43,9 +44,7 @@ const readingTimeResult = readingTime(post.body || "");
       <ul class="blog-card__tags" role="list" aria-label="Post tags">
         {post.data.tags.map((tag) => (
           <li>
-            <a href={`/blog/tag/${slugify(tag)}`} class="tag">
-              {tag}
-            </a>
+            <Tag href={`/blog/tag/${slugify(tag)}`}>{tag}</Tag>
           </li>
         ))}
       </ul>

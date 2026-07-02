@@ -1,6 +1,7 @@
 ---
 import type { Role } from "@interfaces/index";
 import { formatDate } from "@utils/index";
+import Tag from "@components/Tag.astro";
 
 interface Props {
   role: Role;
@@ -64,7 +65,7 @@ const formatDateEmployment = (dateStr?: string): string => {
       <ul class="role__tech-tags" role="list" aria-label="Technologies used">
         {role.technologies.map((t) => (
           <li>
-            <span class="tag">{t}</span>
+            <Tag>{t}</Tag>
           </li>
         ))}
       </ul>

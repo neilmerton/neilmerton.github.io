@@ -1,5 +1,6 @@
 ---
 import { formatDate } from "@utils/index";
+import Tag from "@components/Tag.astro";
 
 interface Props {
   book: {
@@ -66,12 +67,9 @@ const statusLabel =
         <ul class="book-card__tags" role="list" aria-label="Tags">
           {book.data.tags.map((tag) => (
             <li>
-              <a
-                href={`/about/reading?tag=${encodeURIComponent(tag)}`}
-                class="tag"
-              >
+              <Tag href={`/about/reading?tag=${encodeURIComponent(tag)}`}>
                 {tag}
-              </a>
+              </Tag>
             </li>
           ))}
         </ul>

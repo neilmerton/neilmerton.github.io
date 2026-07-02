@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Tag from "@components/Tag.astro";
 import { getPortfolioImages } from "@utils/index";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
@@ -64,7 +65,7 @@ const { Content } = await render(item);
           >
             {item.data.tags.map((tag) => (
               <li>
-                <span class="tag">{tag}</span>
+                <Tag>{tag}</Tag>
               </li>
             ))}
           </ul>

@@ -2,6 +2,7 @@
 import BlogListItem from "@components/BlogListItem.astro";
 import PageHero from "@components/PageHero.astro";
 import Pagination from "@components/Pagination.astro";
+import Tag from "@components/Tag.astro";
 import { siteConfig } from "@data/index";
 import Layout from "@layouts/Layout.astro";
 import { slugify, sortByDateDesc } from "@utils/index";
@@ -51,19 +52,17 @@ const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
         <nav class="tag-filter" aria-label="Filter posts by tag">
           <ul class="tag-filter__list" role="list">
             <li>
-              <a href="/blog" class="tag">
-                All
-              </a>
+              <Tag href="/blog">All</Tag>
             </li>
             {allTags.map((t) => (
               <li>
-                <a
+                <Tag
                   href={`/blog/tag/${slugify(t)}`}
-                  class={`tag ${slugify(t) === tag ? "tag--active" : ""}`}
+                  class={slugify(t) === tag ? "tag--active" : undefined}
                   aria-current={slugify(t) === tag ? "page" : undefined}
                 >
                   {t}
-                </a>
+                </Tag>
               </li>
             ))}
           </ul>

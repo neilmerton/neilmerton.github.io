@@ -2,6 +2,7 @@
 import AboutNav from "@components/AboutNav.astro";
 import PageHero from "@components/PageHero.astro";
 import ReadingListItem from "@components/ReadingListItem.astro";
+import Tag from "@components/Tag.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 
@@ -78,19 +79,16 @@ const heroDescription = `A log of books I'm reading, have finished, and plan to 
         <nav class="tag-filter" aria-label="Filter books by tag">
           <ul class="tag-filter__list" role="list">
             <li>
-              <a href="/about/reading" class="tag" id="tag-all">
-                All
-              </a>
+              <Tag href="/about/reading" id="tag-all">All</Tag>
             </li>
             {allTags.map((tag) => (
               <li>
-                <a
+                <Tag
                   href={`/about/reading?tag=${encodeURIComponent(tag)}`}
-                  class="tag"
                   data-tag={tag}
                 >
                   {tag}
-                </a>
+                </Tag>
               </li>
             ))}
           </ul>

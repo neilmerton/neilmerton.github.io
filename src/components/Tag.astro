@@ -1,0 +1,29 @@
+---
+interface Props {
+  href?: string;
+  title?: string;
+  external?: boolean;
+  class?: string;
+  [key: string]: unknown;
+}
+
+const { href, title, external = false, class: className, ...rest } = Astro.props;
+---
+
+{
+  href ? (
+    <a
+      class:list={["tag", className]}
+      href={href}
+      title={title}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      {...rest}
+    >
+      <slot />
+    </a>
+  ) : (
+    <span class:list={["tag", className]} title={title} {...rest}>
+      <slot />
+    </span>
+  )
+}
