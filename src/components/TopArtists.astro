@@ -1,0 +1,72 @@
+---
+// TopArtists.astro
+---
+
+<div
+  id="top-artists-container"
+  class="top-artists-widget container container--wide"
+>
+  <p>Top Artists Last 7 Days</p>
+  <ul id="artist-list">
+    <li class="loading">Loading artists...</li>
+  </ul>
+</div>
+
+<script>
+  interface Artist {
+    name: string;
+    playcount: string;
+    url: string;
+  }
+
+  async function updateArtists() {
+    const listElement = document.getElementById("artist-list");
+    if (!listElement) {
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/top-artists");
+      const data = await response.json();
+      const artists: Artist[] = data.topartists.artist;
+
+      listElement.innerHTML = artists
+        .map((artist) => {
+          const plays = `${artist.playcount} plays`;
+          return `<li><a class="tag" href="${artist.url}" title="${plays}" target="_blank" rel="noopener noreferrer">${artist.name}</a></li>`;
+        })
+        .join("");
+    } catch (err) {
+      listElement.innerHTML = "<li>Failed to load artists.</li>";
+      console.error("Error fetching Last.fm top artists:", err);
+    }
+  }
+
+  updateArtists();
+</script>
+
+<style>
+  .top-artists-widget {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-block-end: var(--space-12);
+
+    p {
+      font-family: var(--font-display);
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      list-style: none;
+      margin-block: 0;
+      padding-inline-start: 0;
+    }
+
+    li {
+      margin: 0;
+    }
+  }
+</style>
