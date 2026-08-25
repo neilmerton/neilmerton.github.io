@@ -6,6 +6,7 @@ export default defineConfig({
   site: 'https://neil.merton.dev',
   trailingSlash: 'never',
   integrations: [mdx()],
+  compressHTML: true,
 
   fonts: [
     {

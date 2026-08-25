@@ -89,7 +89,7 @@ const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags))].sort();
     {
       page.data.length === 0 && (
         <p class="blog-empty">
-          No posts found for this tag.{' '}
+          No posts found for this tag.
           <a href="/blog">View all posts</a>.
         </p>
       )
