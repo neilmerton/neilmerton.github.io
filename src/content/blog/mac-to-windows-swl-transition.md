@@ -2,7 +2,7 @@
 title: "Switching from Mac to Windows + WSL: A Survival Guide After 8 Years on macOS"
 description: "My field guide to surviving the jump from Mac to Windows and WSL, without losing a week to filesystem gotchas."
 pubDate: "2026-08-25"
-tags: ["learning", "mac", "windows", "wsl", "vscode", "web development"]
+tags: ["docker", "learning", "mac", "windows", "wsl", "vscode", "web development"]
 ---
 
 After eight years of `brew install`, Terminal.app, and never thinking twice about file paths, I recently had to move my day-to-day development work onto Windows with WSL (Windows Subsystem for Linux). It was not the horror show I expected, but it also wasn't a drop-in replacement. Here's what I wish someone had told me before I started.
