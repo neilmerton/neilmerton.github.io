@@ -34,23 +34,23 @@ const venueCounts: Record<string, number> = {};
 allConcerts.forEach((concert) => {
   const artists = [concert.data.artist, ...(concert.data.support || [])];
   const venue = concert.data.venue;
+  const haveBeenTo = concert.data.date <= new Date();
+
+  // Only count concerts that have already happened
+  if (!haveBeenTo) {
+    return;
+  }
+
+  if (!venueCounts[venue]) {
+    venueCounts[venue] = 0;
+  }
+  venueCounts[venue]++;
 
   artists.forEach((artist) => {
-    const haveBeenTo = concert.data.date <= new Date();
-
-    if (!artistCounts[artist] && haveBeenTo) {
+    if (!artistCounts[artist]) {
       artistCounts[artist] = 0;
     }
-
-    if (!venueCounts[venue] && haveBeenTo) {
-      venueCounts[venue] = 0;
-    }
-
-    // Only count concerts that have already happened
-    if (haveBeenTo) {
-      artistCounts[artist]++;
-      venueCounts[venue]++;
-    }
+    artistCounts[artist]++;
   });
 });
 
