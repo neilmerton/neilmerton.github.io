@@ -103,9 +103,11 @@ export const roles: Role[] = [
     startDate: '2026-06',
     endDate: undefined,
     location: 'Remote',
-    description: 'Contribute to development of systems used by health and care sectors.',
+    description: 'Contribute to development of systems used by health and care sectors, mentoring junior engineers.',
     highlights: [
-      'Server-side code for greenfield testing and resulting web application.',
+      'Server-side code for greenfield blood testing and resulting web application.',
+      'Authentication for context-launch and standalone login.',
+      'Audit event processing system storing results in GCP Pub/Sub.',
       'New components for shared component library and design system.',
     ],
     technologies: ['TypeScript', 'React', 'CSS', 'SCSS', 'TanStack Query', 'Postgres', 'Playwright', 'Vitest', 'React Testing Library', 'Storybook', 'Google Cloud'],
