@@ -97,11 +97,24 @@ of engineering rigour and thoughtful design.
 
 export const roles: Role[] = [
   {
+    title: 'Lead Frontend Developer',
+    company: 'Inspired Thinking Group',
+    companyUrl: 'https://inspiredthinking.group',
+    startDate: '2026-09',
+    endDate: undefined,
+    location: 'Remote',
+    description: 'Contribute to development of systems used by various clients within ITG.',
+    highlights: [
+      'New customer experience for user account management.',
+    ],
+    technologies: ['TypeScript', 'React', 'CSS', 'SCSS', 'TanStack Query', 'Jest', 'React Testing Library', 'Storybook', 'AEM (Adobe Experience Manager)'],
+  },
+  {
     title: 'Senior Fullstack Engineer',
     company: 'Synanetics',
     companyUrl: 'https://synanetics.com',
     startDate: '2026-06',
-    endDate: undefined,
+    endDate: '2026-08',
     location: 'Remote',
     description: 'Contribute to development of systems used by health and care sectors, mentoring junior engineers.',
     highlights: [
