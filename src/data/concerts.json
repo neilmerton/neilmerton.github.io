@@ -498,5 +498,15 @@
     "date": "2026-09-19",
     "venue": "O2 Victoria Warehouse, Manchester, UK",
     "photo": ""
+  },
+  {
+    "id": 61,
+    "artist": "The Jesus And Mary Chain",
+    "date": "2027-01-23",
+    "venue": "Manchester Academy, Manchester, UK",
+    "photo": "",
+    "support": [
+      "The Psychedelic Furs"
+    ]
   }
 ]
